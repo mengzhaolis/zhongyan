@@ -56,4 +56,14 @@ class AdministratorController extends CommonController
         $id = $this->model->new_add($this->database,$data);
         return $id;
     }
+    //管理员列表
+    public function admin_list()
+    {
+        return view('Admin.Administrator.admin_list');
+    }
+    //添加管理员
+    public function admin_add()
+    {
+        return view('Admin.Administrator.admin_add');
+    }
 }

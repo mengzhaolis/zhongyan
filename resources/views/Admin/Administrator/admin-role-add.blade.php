@@ -27,7 +27,7 @@
 				@if($v['pid']==0)
 					<dt>
 						<label>
-							<input type="checkbox" value="" name="user-Character-0" id="user-Character-0">
+							<input type="checkbox" value="{{$v['pid']}}" name="id" id="user-Character-0">
 							{{$v['type_name']}}</label>
 					</dt>
 				@endif
@@ -36,18 +36,18 @@
 						<dl class="cl permission-list2">
 							<dt>
 								<label class="">
-									<input type="checkbox" value="" name="user-Character-0-0" id="user-Character-0-0">
+									<input type="checkbox" value="" name="id" id="user-Character-0-0">
 									栏目管理</label>
 							</dt>
 						@foreach($v['son'] as $val)
 							<dd>
 								<label class="">
-									<input type="checkbox" value="" name="user-Character-0-0-0" id="{{$val['id']}}">
+									<input type="checkbox" value="" name="id" id="{{$val['id']}}">
 									{{$val['type_name']}}</label>
 								
 								</dd>
 								@endforeach
-								<label class="c-orange"><input type="checkbox" value="" name="user-Character-0-0-0" id="user-Character-0-0-5"> 只能操作自己发布的</label>
+								<label class="c-orange"><input type="checkbox" value="" name="id" id="user-Character-0-0-5"> 只能操作自己发布的</label>
 						</dl>
 						
 					</dd>

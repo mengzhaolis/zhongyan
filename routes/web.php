@@ -88,10 +88,10 @@ Route::group(['prefix' => '/administrator'],function(){
     Route::any('/permission','Admin\AdministratorController@permission');
     //权限添加
     Route::any('/permission_add','Admin\AdministratorController@permission_add');
-    //专题回收站
-    Route::any('/zt_recycle','Admin\AdministratorController@zt_recycle');
-    //专题置顶-取消置顶
-    Route::any('/zt_top','Admin\AdministratorController@zt_top');
+    //管理员列表
+    Route::any('/admin_list','Admin\AdministratorController@admin_list');
+    //添加管理员
+    Route::any('/admin_add','Admin\AdministratorController@admin_add');
 });
 //注册管理
 Route::group(['prefix' => '/register'],function(){
