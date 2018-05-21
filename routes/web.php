@@ -97,8 +97,8 @@ Route::group(['prefix' => '/administrator'],function(){
 Route::group(['prefix' => '/register'],function(){
     //注册数据列表
     Route::any('/register_list','Admin\RegisterController@register_list');
-    //角色添加页面
-    Route::any('/role_add','Admin\RegisterController@role_add');
+    //注册列表数据导出
+    Route::any('/excel_go','Admin\RegisterController@excel_go');
     //权限列表页
     Route::any('/permission','Admin\RegisterController@permission');
     //权限添加
@@ -107,4 +107,19 @@ Route::group(['prefix' => '/register'],function(){
     Route::any('/zt_recycle','Admin\RegisterController@zt_recycle');
     //专题置顶-取消置顶
     Route::any('/zt_top','Admin\RegisterController@zt_top');
+});
+//图片管理
+Route::group(['prefix' => '/images'],function(){
+    //图片列表
+    Route::any('/images_list','Admin\ImagesController@images_list');
+    //注册列表数据导出
+    Route::any('/excel_go','Admin\ImagesController@excel_go');
+    //权限列表页
+    Route::any('/permission','Admin\ImagesController@permission');
+    //权限添加
+    Route::any('/permission_add','Admin\ImagesController@permission_add');
+    //专题回收站
+    Route::any('/zt_recycle','Admin\ImagesController@zt_recycle');
+    //专题置顶-取消置顶
+    Route::any('/zt_top','Admin\ImagesController@zt_top');
 });
