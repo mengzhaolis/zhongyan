@@ -24,15 +24,25 @@ class AdministratorController extends CommonController
         $data = $request->input();
         if(empty($data))
         {
-           
-            return view('Admin.Administrator.administrator');
+           $data = DB::table("role")->where('status','=',1)->get();
+           return view('Admin.Administrator.administrator',['data'=>$data]);
         }
     }
     //添加角色
-    public function role_add()
+    public function role_add(Request $request)
     {
-         $data = $this->menu->first($this->database); 
-        return view('Admin.Administrator.admin-role-add',['data'=>$data]);
+        $data = $request->except('_token');
+        
+        if(empty($data))
+        {
+            $data = $this->menu->first($this->database); 
+            return view('Admin.Administrator.admin-role-add',['data'=>$data]);
+        }
+        // return $data;
+        $data['created_at']=time();
+        // return $data;
+        $id = $this->model->new_add('role',$data);
+        return $id;     
     }
     //权限管理列表页
     public function permission()
@@ -62,8 +72,14 @@ class AdministratorController extends CommonController
         return view('Admin.Administrator.admin_list');
     }
     //添加管理员
-    public function admin_add()
+    public function admin_add(Request $request)
     {
-        return view('Admin.Administrator.admin_add');
+        $data = $request->except('_token');
+        if(empty($data))
+        {
+            $data = DB::table('role')->where('status','=',1)->get();
+            return view('Admin.Administrator.admin_add',['data'=>$data]);
+        }
+        
     }
 }

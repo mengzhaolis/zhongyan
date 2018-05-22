@@ -6,17 +6,18 @@
 </head>
 <body>
 <article class="page-container">
-	<form action="" method="post" class="form form-horizontal" id="form-admin-role-add">
+	<form action="javascript:void(0)" method="post" class="form form-horizontal" id="form-admin-role-add">
+		<input type="hidden" name="" id="token" value="{{csrf_token()}}">
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>角色名称：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="" id="roleName" name="roleName">
+				<input type="text" class="input-text" value="" placeholder="" id="role_name" name="role_name">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3">备注：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="">
+				<input type="text" class="input-text" value="" placeholder="" id="role_bei" name="">
 			</div>
 		</div>
 		<div class="row cl">
@@ -27,27 +28,22 @@
 				@if($v['pid']==0)
 					<dt>
 						<label>
-							<input type="checkbox" value="{{$v['pid']}}" name="id" id="user-Character-0">
+							<input type="checkbox" value="{{$v['id']}}" name="check" id="user-Character-0">
 							{{$v['type_name']}}</label>
 					</dt>
 				@endif
 				
 					<dd>
 						<dl class="cl permission-list2">
+							
+						@foreach($v['son'] as $val)
 							<dt>
 								<label class="">
-									<input type="checkbox" value="" name="id" id="user-Character-0-0">
-									栏目管理</label>
-							</dt>
-						@foreach($v['son'] as $val)
-							<dd>
-								<label class="">
-									<input type="checkbox" value="" name="id" id="{{$val['id']}}">
+									<input type="checkbox" value="{{$val['id']}}" name="check" id="user-Character-0-0">
 									{{$val['type_name']}}</label>
-								
-								</dd>
+							</dt>
 								@endforeach
-								<label class="c-orange"><input type="checkbox" value="" name="id" id="user-Character-0-0-5"> 只能操作自己发布的</label>
+								<!-- <label class="c-orange"><input type="checkbox" value="11" name="check" id="user-Character-0-0-5"> 只能操作自己发布的</label> -->
 						</dl>
 						
 					</dd>
@@ -58,7 +54,7 @@
 		</div>
 		<div class="row cl">
 			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
-				<button type="submit" class="btn btn-success radius" id="admin-role-save" name="admin-role-save"><i class="icon-ok"></i> 确定</button>
+				<button class="btn btn-success radius" id="admin-role-save" name="admin-role-save"><i class="icon-ok"></i> 确定</button>
 			</div>
 		</div>
 	</form>
@@ -94,22 +90,49 @@ $(function(){
 			}
 		}
 	});
+
+});
+//角色对应权限数据提交
+
+$("button").click(function(){
+	var array = new Array();
+	var token = $("#token").val();
+	var role_name = $.trim($("#role_name").val());
+	var role_bei = $.trim($("#role_bei").val());
 	
-	$("#form-admin-role-add").validate({
-		rules:{
-			roleName:{
-				required:true,
-			},
-		},
-		onkeyup:false,
-		focusCleanup:true,
-		success:"valid",
-		submitHandler:function(form){
-			$(form).ajaxSubmit();
-			var index = parent.layer.getFrameIndex(window.name);
-			parent.layer.close(index);
-		}
+	// console.log(role_name.length);
+	// return;
+	if(role_name.length==0)
+	{
+		alert('角色名不能为空');
+		return;
+	}
+
+	$('input[name="check"]:checked').each(function () {
+		array.push($(this).val());//向数组中添加元素
+		role_juris = array.join(',');
+		
 	});
+
+	// alert(1);return;
+	$.ajax({
+			type: 'POST',
+			url: '/administrator/role_add',
+			data: {'_token':token,'role_name':role_name,'role_bei':role_bei,'role_juris':role_juris},
+			success: function(data){
+				console.log(data)
+				if(data!='')
+				{
+					// $(obj).remove();
+					layer.msg('操作成功!',{icon: 6,time:3000});
+					window.location.reload();
+				}else
+				{
+					layer.msg('操作失败!',{icon: 3,time:3000});
+				}
+				
+			}
+		});
 });
 </script>
 <!--/请在上方写此页面业务相关的脚本-->

@@ -25,7 +25,7 @@
 							<option value="0">请选择顶级分类</option>
 							
                             @foreach($data as $val)
-                                <option value="{{$val->id}}">{{$val->juris_name}}</option>
+                                <option value="{{$val->id}}">{{$val->type_name}}</option>
                             @endforeach
 						</select>
 						</span>
