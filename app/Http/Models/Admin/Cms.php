@@ -172,6 +172,7 @@ class Cms extends Model
  
     public function new_list($database='',$where=0,$status)
     {
+        // return $database;
         if(empty($database))
         {
             return '';

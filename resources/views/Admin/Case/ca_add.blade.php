@@ -9,30 +9,35 @@
 	<form action="javascript:void(0)" method="post" class="form form-horizontal" id="form-article-add">
     {{csrf_field()}}
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>资讯标题：</label>
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>案例标题：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="title">
+				<input type="text" class="input-text" value="" placeholder="" id="" name="case_name">
 			</div>
 		</div>
-		<div class="row cl">
+		<!-- <div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">简略标题：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<input type="text" class="input-text" value="" placeholder="" id="" name=" title_jian">
 			</div>
-		</div>
+		</div> -->
         <!-- 分类 -->
-		<!-- <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类栏目：</label>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>案例类型：</label>
 			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-				<select name="" class="select">
-					<option value="0">一级分类</option>
-					<option value="1">一级分类</option>
-					<option value="11">├二级分类</option>
-					<option value="12">├二级分类</option>
-					<option value="13">├二级分类</option>
+				<select name="case_type" class="select">
+					<option value="0">请选择分类</option>
+                    @foreach($type as $v)
+                        <option value="{{$v['id']}}">{{$v['type_name']}}</option>
+                            @foreach($v['son'] as $val)
+                                <option value="$val['id']">&nbsp;&nbsp;--|{{$val['type_name']}}</option>
+                                @foreach($val['son'] as $value)
+                                    <option value="$value['id']">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--|{{$value['type_name']}}</option>
+                                @endforeach
+                            @endforeach
+                    @endforeach
 				</select>
 				</span> </div>
-		</div> -->
+		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">排序(反序)：</label>
 			<div class="formControls col-xs-8 col-sm-9">
@@ -44,7 +49,7 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">作者：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="drive" id="" placeholder="" value="" class="input-text">
+				<input type="text" name="case_driver" id="" placeholder="" value="" class="input-text">
 			</div>
 		</div>
 		<!-- <div class="row cl">
@@ -53,12 +58,12 @@
 				<input type="text" name="" id="" placeholder="" value="" class="input-text">
 			</div>
 		</div> -->
-		<div class="row cl">
+		<!-- <div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">文章来源：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<input type="text" name="news_url" id="" placeholder="" value="" class="input-text">
 			</div>
-		</div>
+		</div> -->
 		<!-- <div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">价格计算单位：</label>
 			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
@@ -265,7 +270,7 @@ $("#form-article-add").validate({
     {
         $(form).ajaxSubmit({
             'type':'post',
-            'url' :'/message/message_add',
+            'url' :'/case/ca_add',
             'success':function(data)
             {
                 console.log(data)
@@ -273,7 +278,7 @@ $("#form-article-add").validate({
                 {
                     layer.msg('添加成功!',{icon:1,time:1000});
                     window.close(); 
-					window.location.href='{{url("/message/message")}}'; 
+					window.location.href='{{url("/case/ca_list")}}'; 
                 }else
                 {
                     layer.msg('添加失败!',{icon:1,time:3000});

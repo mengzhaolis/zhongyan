@@ -20,7 +20,7 @@
 		<input type="text" name="" id="" placeholder=" 资讯名称" style="width:250px" class="input-text">
 		<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜资讯</button>
 	</div>
-	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="product_add('添加资讯','{{url('/message/message_add')}}')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加产品</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="product_add('添加资讯','{{url('/case/ca_add')}}')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加产品</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
 	<div class="mt-20">
 		<table class="table table-border table-bordered table-bg table-hover table-sort table-responsive">
 			<thead>
@@ -41,9 +41,9 @@
 						<input type="hidden" id="token" value="{{csrf_token()}}">
 						<td><input type="checkbox" value="" name=""></td>
 						<td>{{$val->id}}</td>
-						<td class="text-l"><u style="cursor:pointer" class="text-primary">{{$val->title}}</u></td>
-						<td>{{$val->drive}}</td>
-						<td>{{$val->look_num}}</td>
+						<td class="text-l"><u style="cursor:pointer" class="text-primary">{{$val->case_name}}</u></td>
+						<td>{{$val->case_driver}}</td>
+						<td>{{$val->case_num}}</td>
 						<td>{{date('Y-m-d H-i-s',$val->created_at)}}</td>
 						<td class="td-status">
 						@if($val->status ==1)
