@@ -82,16 +82,18 @@ Route::group(['prefix' => '/case'],function(){
     Route::any('/ca_list','Admin\CaseController@ca_list');
     //案例管理数据添加
     Route::any('/ca_add','Admin\CaseController@ca_add');
+    //案例封面图片上传
+    Route::any('/img_add','Admin\CaseController@img_add');
     //专题列表数据伪删除
-    Route::any('/ca_del','Admin\CaseController@ca_del');
+    Route::any('/stop','Admin\CaseController@stop');
     //专题列表数据编辑功能
-    Route::any('/ca_update','Admin\CaseController@ca_update');
-    //执行数据修改
     Route::any('/ca_up','Admin\CaseController@ca_up');
+    //执行数据修改
+    // Route::any('/ca_up','Admin\CaseController@ca_up');
     //专题回收站
     Route::any('/ca_recycle','Admin\CaseController@ca_recycle');
     //专题置顶-取消置顶
-    Route::any('/ca_top','Admin\CaseController@ca_top');
+    Route::any('/top','Admin\CaseController@top');
 });
 Auth::routes();
 

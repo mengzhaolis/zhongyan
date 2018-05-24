@@ -219,7 +219,7 @@ var img_url = $('.ing').attr('src');
         var srcc=window.URL.createObjectURL(fils);
 		$(".ing").attr({'src':srcc,'width':80+'px','heigth':80+'px'});  
          $.ajax({  //发送ajax请求
-              url: "/message/img_add",  
+              url: "/case/img_add",  
               type: "post",  
               data: fordate, 
               processData : false,  

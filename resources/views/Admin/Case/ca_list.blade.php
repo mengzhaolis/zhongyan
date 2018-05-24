@@ -155,7 +155,7 @@ function article_stop(obj,id){
 	layer.confirm('确认要取消吗？',function(index){
 		$.ajax({
 			type: 'POST',
-			url: '/message/top',
+			url: '/case/top',
 			data: {'_token':token,'id':id,'type':0},
 			success: function(data){
 				// console.log(data);
@@ -178,7 +178,7 @@ function member_stop(obj,id){
 	layer.confirm('确认要停用吗？',function(index){
 		$.ajax({
 			type: 'POST',
-			url: '/message/message',
+			url: '/case/stop',
 			data: {'_token':token,'id':id},
 			success: function(data){
 				// console.log(data);
