@@ -8,15 +8,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Models\Admin\Cms;
 use App\Http\Models\Admin\menu;
+use App\Http\Models\Admin\administrator;
 use Illuminate\Support\Facades\Storage;
 
 class AdministratorController extends CommonController
 {
     private $database = 'juris';
+    private $user = 'users';
     public function __construct()
     {
         $this->model = new Cms;
         $this->menu = new menu;
+        $this->administrator = new administrator;
     }
     //角色管理
     public function role(Request $request)
@@ -69,17 +72,22 @@ class AdministratorController extends CommonController
     //管理员列表
     public function admin_list()
     {
-        return view('Admin.Administrator.admin_list');
+        $data = DB::table('users')->leftJoin('role','users.role','=','role.id')->where('users.status','=',1)->get();
+
+        return view('Admin.Administrator.admin_list',['data'=>$data]);
     }
     //添加管理员
     public function admin_add(Request $request)
     {
-        $data = $request->except('_token');
+        $data = $request->except('_token','password2');
         if(empty($data))
         {
             $data = DB::table('role')->where('status','=',1)->get();
             return view('Admin.Administrator.admin_add',['data'=>$data]);
         }
-        
+        $data['password']=bcrypt($data['password']);
+        $data['created_at']=date();
+        $id = $this->administrator->admin_add($this->user,$data);
+        return $id;
     }
 }

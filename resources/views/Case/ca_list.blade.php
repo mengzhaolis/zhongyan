@@ -1,4 +1,4 @@
-﻿@include('Admin.common._meta')
+@include('Admin.common._meta')
 <title>资讯列表</title>
 </head>
 <body>

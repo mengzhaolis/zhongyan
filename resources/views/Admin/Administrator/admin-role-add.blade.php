@@ -21,6 +21,23 @@
 			</div>
 		</div>
 		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>权限级别：</label>
+			<div class="formControls col-xs-8 col-sm-9 skin-minimal">
+				<div class="radio-box">
+					<input name="sex" type="radio" id="sex-1" checked value="0">
+					<label for="sex-1">顶级</label>
+				</div>
+				<div class="radio-box">
+					<input type="radio" id="sex-2" name="sex" value="1">
+					<label for="sex-2">一级</label>
+				</div>
+				<div class="radio-box">
+					<input type="radio" id="sex-2" name="sex" value="2">
+					<label for="sex-2">二级</label>
+				</div>
+			</div>
+		</div>
+		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-3">网站角色：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 			@foreach($data as $v)	
@@ -99,7 +116,7 @@ $("button").click(function(){
 	var token = $("#token").val();
 	var role_name = $.trim($("#role_name").val());
 	var role_bei = $.trim($("#role_bei").val());
-	
+	var level = $("input[type='radio']:checked").val(); 
 	// console.log(role_name.length);
 	// return;
 	if(role_name.length==0)
@@ -118,7 +135,7 @@ $("button").click(function(){
 	$.ajax({
 			type: 'POST',
 			url: '/administrator/role_add',
-			data: {'_token':token,'role_name':role_name,'role_bei':role_bei,'role_juris':role_juris},
+			data: {'_token':token,'role_name':role_name,'role_bei':role_bei,'role_juris':role_juris,'level':level},
 			success: function(data){
 				console.log(data)
 				if(data!='')

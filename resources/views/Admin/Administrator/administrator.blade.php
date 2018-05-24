@@ -14,8 +14,9 @@
 				<th width="25"><input type="checkbox" value="" name=""></th>
 				<th width="40">ID</th>
 				<th width="200">角色名</th>
-				<th>登录名</th>
-				<th width="300">描述</th>
+				<th>描述</th>
+				<th>状态</th>
+				<th>等级</th>
 				<th width="70">操作</th>
 			</tr>
 		</thead>
@@ -25,8 +26,24 @@
 				<td><input type="checkbox" value="" name=""></td>
 				<td>{{$val->id}}</td>
 				<td>{{$val->role_name}}</td>
-				<td><a href="#">{{$val->u_id}}</a></td>
 				<td>{{$val->role_bei}}</td>
+				<td class="td-status">
+					@if($val->status ==1)
+					<span class="label label-success radius">已启用</span>
+					@else if($val->status==0)
+					<span class="label label-success radius">未启用</span>
+					@endif
+				</td>
+				<td class="td-status">
+					@if($val->level ==0)
+					<span class="label label-success radius">顶级</span>
+					@elseif($val->level==1)
+					<span class="label label-success radius">一级</span>
+					@endif
+					@if($val->level==2)
+					<span class="label label-success radius">二级</span>
+					@endif
+				</td>
 				<td class="f-14"><a title="编辑" href="javascript:;" onclick="admin_role_edit('角色编辑','admin-role-add.html','1')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_role_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 			</tr>
 		@endforeach	

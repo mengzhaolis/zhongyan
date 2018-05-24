@@ -18,6 +18,9 @@ class RegisterController extends Controller
     | validation and creation. By default this controller uses a trait to
     | provide this functionality without requiring any additional code.
     |
+    |这个控制器处理新用户和他们的注册。
+    |验证和创造。默认情况下，这个控制器使用一个trait。
+    |不需要任何附加代码就可以提供此功能。
     */
 
     use RegistersUsers;
@@ -27,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin/index';
 
     /**
      * Create a new controller instance.

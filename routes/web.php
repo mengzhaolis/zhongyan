@@ -15,6 +15,7 @@
 //     return view('welcome');
 // });
 
+Route::get('/login','Admin\LoginController@login');
 //数据不存在展示页
 Route::get('/news_list','Admin\AdminController@news_list');
 
@@ -74,6 +75,23 @@ Route::group(['prefix' => '/zt'],function(){
     Route::any('/zt_recycle','Admin\ZhuantitleController@zt_recycle');
     //专题置顶-取消置顶
     Route::any('/zt_top','Admin\ZhuantitleController@zt_top');
+});
+//案例管理
+Route::group(['prefix' => '/case'],function(){
+    //案例数据列表展示页
+    Route::any('/ca_list','Admin\CaseController@ca_list');
+    //案例管理数据添加
+    Route::any('/ca_add','Admin\CaseController@ca_add');
+    //专题列表数据伪删除
+    Route::any('/ca_del','Admin\CaseController@ca_del');
+    //专题列表数据编辑功能
+    Route::any('/ca_update','Admin\CaseController@ca_update');
+    //执行数据修改
+    Route::any('/ca_up','Admin\CaseController@ca_up');
+    //专题回收站
+    Route::any('/ca_recycle','Admin\CaseController@ca_recycle');
+    //专题置顶-取消置顶
+    Route::any('/ca_top','Admin\CaseController@ca_top');
 });
 Auth::routes();
 
