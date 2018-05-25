@@ -98,6 +98,25 @@ Route::group(['prefix' => '/case'],function(){
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
+//团队管理
+Route::group(['prefix' => '/team'],function(){
+    //案例数据列表展示页
+    Route::any('/team_list','Admin\TeamController@team_list');
+    //案例管理数据添加
+    Route::any('/team_add','Admin\TeamController@team_add');
+    //案例封面图片上传
+    Route::any('/img_add','Admin\TeamController@img_add');
+    //专题列表数据伪删除
+    Route::any('/stop','Admin\TeamController@stop');
+    //专题列表数据编辑功能
+    Route::any('/Team_up','Admin\TeamController@Team_up');
+    //执行数据修改
+    Route::any('/Team_update','Admin\TeamController@Team_update');
+    //专题回收站
+    Route::any('/Team_recycle','Admin\TeamController@Team_recycle');
+    //专题置顶-取消置顶
+    Route::any('/top','Admin\TimeController@top');
+});
 //管理员管理
 Route::group(['prefix' => '/administrator'],function(){
     //角色管理

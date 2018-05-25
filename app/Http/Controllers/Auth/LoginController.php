@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 
 class LoginController extends Controller
 {
@@ -65,6 +66,8 @@ class LoginController extends Controller
     //用户验证成功
     protected function authenticated(Request $request, $user)
     {
+        
         var_dump($request->input());die;
+
     }
 }

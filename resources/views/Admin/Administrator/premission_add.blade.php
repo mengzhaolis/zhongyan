@@ -25,7 +25,10 @@
 							<option value="0">请选择顶级分类</option>
 							
                             @foreach($data as $val)
-                                <option value="{{$val->id}}">{{$val->type_name}}</option>
+                                <option value="{{$val['id']}}">{{$val['type_name']}}</option>
+								@foreach($val['son'] as $value)
+								<option value="{{$value['id']}}">&nbsp;&nbsp;&nbsp;&nbsp;|--{{$value['type_name']}}</option>
+								@endforeach
                             @endforeach
 						</select>
 						</span>

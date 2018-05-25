@@ -61,7 +61,7 @@ class AdministratorController extends CommonController
         
         if(empty($data))
         {
-            $data =DB::table("$this->database")->where("pid",'=',0)->get();
+            $data =$this->menu->first('juris');
             // var_dump($data);die;
             return view('Admin.Administrator.premission_add',['data'=>$data]);
         }
