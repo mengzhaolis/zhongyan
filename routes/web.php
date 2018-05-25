@@ -87,9 +87,9 @@ Route::group(['prefix' => '/case'],function(){
     //专题列表数据伪删除
     Route::any('/stop','Admin\CaseController@stop');
     //专题列表数据编辑功能
-    Route::any('/ca_up','Admin\CaseController@ca_up');
+    Route::any('/case_up','Admin\CaseController@case_up');
     //执行数据修改
-    // Route::any('/ca_up','Admin\CaseController@ca_up');
+    Route::any('/case_update','Admin\CaseController@case_update');
     //专题回收站
     Route::any('/case_recycle','Admin\CaseController@case_recycle');
     //专题置顶-取消置顶

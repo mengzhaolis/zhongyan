@@ -36,7 +36,7 @@
 				<ul>
 					<li><a data-href="{{url('/case/ca_list')}}" data-title="案例管理" href="javascript:void(0)">案例管理</a></li>
 					<!-- <li><a data-href="product-category.html" data-title="分类管理" href="javascript:void(0)">分类管理</a></li> -->
-					<li><a data-href="" data-title="案例管理回收站" href="javascript:void(0)">回收站</a></li>
+					<li><a data-href="{{url('/case/case_recycle')}}" data-title="案例管理回收站" href="javascript:void(0)">回收站</a></li>
 				</ul>
 			</dd>
 		</dl>

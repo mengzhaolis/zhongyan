@@ -107,7 +107,7 @@ class CaseController extends CommonController
         if(empty($data))
         {
             $data = $this->model->new_list($this->database,0,0);
-            return view('Admin.Message.message_recycle',['data'=>$data]);
+            return view('Admin.Case.ca_recycle',['data'=>$data]);
         }
         if(empty($data['id']))
         {
@@ -116,5 +116,25 @@ class CaseController extends CommonController
         $data['created_at'] =time();
         $data['status'] =1;
         return $this->model->list_hd($this->database,$data['id'],$data['type'],$data);
+    }
+    //案例编辑
+    public function case_up(Request $request)
+    {
+        $id = $request->input('id');
+        $data = DB::table("$this->database")->leftjoin('images',"$this->database.face_img",'=','images.id')->where("$this->database.id",'=',$id)->first();
+        $data->c_id =$id;
+        $case_type = DB::table("$this->database")->leftJoin('type',"$this->database.case_type",'=','type.id')->where("$this->database.status",'=',1)->first();
+        $type = $this->menu->first('type');
+        return view('Admin.Case.case_up',['data'=>$data,'case_type'=>$case_type,'type'=>$type]);
+    }
+    //执行编辑
+    public function case_update(Request $request)
+    {
+        $data = $request->except('_token');
+        
+        $data['created_at'] = time();
+        $data['case_num'] = rand(1111,9999);
+        $id = $this->model->list_update($this->database,$data['id'],2,$data);
+        return $id;
     }
 }
