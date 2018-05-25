@@ -29,9 +29,9 @@
                     @foreach($type as $v)
                         <option value="{{$v['id']}}">{{$v['type_name']}}</option>
                             @foreach($v['son'] as $val)
-                                <option value="$val['id']">&nbsp;&nbsp;--|{{$val['type_name']}}</option>
+                                <option value="{{$val['id']}}">&nbsp;&nbsp;--|{{$val['type_name']}}</option>
                                 @foreach($val['son'] as $value)
-                                    <option value="$value['id']">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--|{{$value['type_name']}}</option>
+                                    <option value="{{$value['id']}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--|{{$value['type_name']}}</option>
                                 @endforeach
                             @endforeach
                     @endforeach
@@ -146,7 +146,7 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">文章摘要：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<textarea name="describe" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="$.Huitextarealength(this,200)"></textarea>
+				<textarea name="case_miaoshu" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="$.Huitextarealength(this,200)"></textarea>
 				<p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
 			</div>
 		</div>

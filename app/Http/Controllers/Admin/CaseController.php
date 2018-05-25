@@ -35,6 +35,8 @@ class CaseController extends CommonController
             $type = $this->menu->first('type');
            return view("Admin.Case.ca_add",['type'=>$type]);
         }
+        $data['case_num']=rand(1111,9999);
+        $data['created_at']=time();
         $id = $this->model->new_add($this->database,$data);
         return $id;
     }
@@ -89,13 +91,30 @@ class CaseController extends CommonController
             $id = $this->model->list_top($this->database,$data['id'],0);
             return $id;
         }
-        //资讯编辑
-    
+        
     }
+    //资讯编辑
     public function ca_up(Request $request)
     {
         $id = $request->input('id');
         $data = DB::table("$this->database")->leftjoin('images',"$this->database.face_img",'=','images.id')->where("$this->database.id",'=',$id)->first();
         return view('Admin.Message.message_up',['data'=>$data]);
+    }
+    //资讯回收站
+    public function case_recycle(Request $request)
+    {
+        $data = $request->except('_token');
+        if(empty($data))
+        {
+            $data = $this->model->new_list($this->database,0,0);
+            return view('Admin.Message.message_recycle',['data'=>$data]);
+        }
+        if(empty($data['id']))
+        {
+            return '';
+        }
+        $data['created_at'] =time();
+        $data['status'] =1;
+        return $this->model->list_hd($this->database,$data['id'],$data['type'],$data);
     }
 }

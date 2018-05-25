@@ -91,7 +91,7 @@ Route::group(['prefix' => '/case'],function(){
     //执行数据修改
     // Route::any('/ca_up','Admin\CaseController@ca_up');
     //专题回收站
-    Route::any('/ca_recycle','Admin\CaseController@ca_recycle');
+    Route::any('/case_recycle','Admin\CaseController@case_recycle');
     //专题置顶-取消置顶
     Route::any('/top','Admin\CaseController@top');
 });
