@@ -59,8 +59,16 @@
 									<input type="checkbox" value="{{$val['id']}}" name="check" id="user-Character-0-0">
 									{{$val['type_name']}}</label>
 							</dt>
-								@endforeach
-								<!-- <label class="c-orange"><input type="checkbox" value="11" name="check" id="user-Character-0-0-5"> 只能操作自己发布的</label> -->
+							@foreach($val['son'] as $value)
+								<dd>
+									<label class="">
+										<input type="checkbox" value="{{$value['id']}}" name="check" id="user-Character-0-0-0"> {{$value['type_name']}}
+									</label>
+									
+								</dd>
+							@endforeach
+						@endforeach
+								
 						</dl>
 						
 					</dd>

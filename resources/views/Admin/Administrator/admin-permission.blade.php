@@ -41,6 +41,25 @@
 					<td>{{$val['juris_url']}}</td>
 					<td><a title="编辑" href="javascript:;" onclick="admin_permission_edit('角色编辑','admin-permission-add.html','1','','310')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_permission_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
+					@foreach($val['son'] as $value)
+						<tr class="text-c">
+							<td>
+								<input type="checkbox" name="" value="">
+							</td>
+							<td>{{$value['id']}}</td>
+							<td style="color:green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--{{$value['type_name']}}</td>
+							<td>{{$value['juris_url']}}</td>
+							<td>
+								<a title="编辑" href="javascript:;" onclick="admin_permission_edit('角色编辑','admin-permission-add.html','1','','310')" class="ml-5"
+								 style="text-decoration:none">
+									<i class="Hui-iconfont">&#xe6df;</i>
+								</a>
+								<a title="删除" href="javascript:;" onclick="admin_permission_del(this,'1')" class="ml-5" style="text-decoration:none">
+									<i class="Hui-iconfont">&#xe6e2;</i>
+								</a>
+							</td>
+						</tr>
+					@endforeach
 				@endforeach
 			@endforeach
 		</tbody>

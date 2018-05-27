@@ -47,12 +47,13 @@ class LoginController extends Controller
         // the IP address of the client making these requests into this application.
         if ($this->hasTooManyLoginAttempts($request)) {
             $this->fireLockoutEvent($request);
-
+            // var_dump($request->input('email'));die;
+            
             return $this->sendLockoutResponse($request);
         }
 
         if ($this->attemptLogin($request)) {
-
+            
             return $this->sendLoginResponse($request);
         }
 
@@ -63,11 +64,28 @@ class LoginController extends Controller
 
         return $this->sendFailedLoginResponse($request);
     }
+     protected function sendLoginResponse(Request $request)
+    {
+        $request->session()->regenerate();
+
+        $this->clearLoginAttempts($request);
+        // var_dump($request->input());die;
+        Redis::set('email',$request->input('email'));
+        return $this->authenticated($request, $this->guard()->user())
+                ?: redirect()->intended($this->redirectPath());
+    }
     //用户验证成功
     protected function authenticated(Request $request, $user)
     {
         
-        var_dump($request->input());die;
+        
+    }
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
 
+        $request->session()->invalidate();
+
+        return redirect('/login');
     }
 }

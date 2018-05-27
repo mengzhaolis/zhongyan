@@ -72,8 +72,8 @@ class AdministratorController extends CommonController
     //管理员列表
     public function admin_list()
     {
-        $data = DB::table('users')->leftJoin('role','users.role','=','role.id')->where('users.status','=',1)->get();
-
+        $data = DB::table('users')->leftJoin('role','users.role','=','role.id')->select('users.*', 'role.id as r_id', 'role.role_name')->where('users.status','=',1)->get();
+        // var_dump($data);die;
         return view('Admin.Administrator.admin_list',['data'=>$data]);
     }
     //添加管理员

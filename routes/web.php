@@ -15,7 +15,9 @@
 //     return view('welcome');
 // });
 
-Route::get('/login','Admin\LoginController@login');
+Route::get('/login','Auth\LoginController@login');
+Route::get('/logout','Auth\LoginController@logout');
+Route::get('/left','Admin\CommonController@left');
 //数据不存在展示页
 Route::get('/news_list','Admin\AdminController@news_list');
 
