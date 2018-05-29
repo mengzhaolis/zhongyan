@@ -160,7 +160,7 @@ class Cms extends Model
             return 3;
         }
         $img_path = Storage::url($img_path);
-        $id = DB::table('images')->insertGetId(['img_path' =>$img_path]);
+        $id = DB::table("$database")->insertGetId(['img_path' =>$img_path]);
         return $id;
     }
     /**

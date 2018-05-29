@@ -155,10 +155,10 @@ Route::group(['prefix' => '/register'],function(){
 Route::group(['prefix' => '/images'],function(){
     //图片列表
     Route::any('/images_list','Admin\ImagesController@images_list');
-    //图片管理
+    //图片分类-图片添加
     Route::any('/images_add','Admin\ImagesController@images_add');
-    //权限列表页
-    Route::any('/permission','Admin\ImagesController@permission');
+    //图片分类-数据添加
+    Route::any('/images_data_add','Admin\ImagesController@images_data_add');
     //权限添加
     Route::any('/permission_add','Admin\ImagesController@permission_add');
     //专题回收站
