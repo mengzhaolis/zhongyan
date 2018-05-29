@@ -1,97 +1,161 @@
 @include('Admin.common._meta')
-
-<title>图片管理</title>
-<link href="lib/lightbox2/2.8.1/css/lightbox.css" rel="stylesheet" type="text/css" >
+<title>图片列表</title>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 图片管理 <span class="c-gray en">&gt;</span> 图片展示 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 图片管理 <span class="c-gray en">&gt;</span> 图片列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
-	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"> <a href="javascript:;" onclick="edit()" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 
-    添加图片</a> <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> </span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
-	<div class="portfolio-content">
-		<ul class="cl portfolio-area">
-			<li class="item">
-				<div class="portfoliobox">
-					<input class="checkbox" name="" type="checkbox" value="">
-					<div class="picbox"><a href="temp/big/keting.jpg" data-lightbox="gallery" data-title="客厅1"><img src="temp/Thumb/keting.jpg"></a></div>
-					<div class="textbox">客厅 
-                    <span style="float:right;cursor:pointer;">
-                        <a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe609;</i></a>
-                        <a title="修改" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
-                        
-                    </span>
-                    </div>
-				</div>
-			</li>
-			<li class="item">
-				<div class="portfoliobox">
-					<input class="checkbox" name="" type="checkbox" value="">
-					<div class="picbox "><a href="temp/big/keting2.jpg" data-lightbox="gallery" data-title="客厅2"><img src="temp/Thumb/keting2.jpg"></a></div>
-					<div class="textbox">客厅 </div>
-				</div>
-			</li>
-			<li class="item">
-				<div class="portfoliobox">
-					<input class="checkbox" name="" type="checkbox" value="">
-					<div class="picbox"><a href="temp/big/keting3.jpg" data-lightbox="gallery" data-title="客厅3"><img src="temp/Thumb/keting3.jpg"></a></div>
-					<div class="textbox">客厅 </div>
-				</div>
-			</li>
-			<li class="item">
-				<div class="portfoliobox">
-					<input class="checkbox" name="" type="checkbox" value="">
-					<div class="picbox"><a href="temp/big/keting4.jpg" data-lightbox="gallery" data-title="客厅4"><img src="temp/Thumb/keting4.jpg"></a></div>
-					<div class="textbox">客厅 </div>
-				</div>
-			</li>
-			<li class="item">
-				<div class="portfoliobox">
-					<input class="checkbox" name="" type="checkbox" value="">
-					<div class="picbox"><a href="temp/big/chufang.jpg" data-lightbox="gallery" data-title="厨房"><img src="temp/Thumb/chufang.jpg"></a></div>
-					<div class="textbox">厨房 </div>
-				</div>
-			</li>
-			<li class="item">
-				<div class="portfoliobox">
-					<input class="checkbox" name="" type="checkbox" value="">
-					<div class="picbox"><a href="temp/big/shufang.jpg" data-lightbox="gallery" data-title="书房"><img src="temp/Thumb/shufang.jpg"></a></div>
-					<div class="textbox">书房 </div>
-				</div>
-			</li>
-			<li class="item">
-				<div class="portfoliobox">
-					<input class="checkbox" name="" type="checkbox" value="">
-					<div class="picbox"><a href="temp/big/woshi.jpg" data-lightbox="gallery" data-title="卧室"><img src="temp/Thumb/woshi.jpg"></a></div>
-					<div class="textbox">卧室 </div>
-				</div>
-			</li>
-			<li class="item">
-				<div class="portfoliobox">
-					<input class="checkbox" name="" type="checkbox" value="">
-					<div class="picbox"><a href="temp/big/weishengjian.jpg" data-lightbox="gallery" data-title="卫生间1"><img src="temp/Thumb/weishengjian.jpg"></a></div>
-					<div class="textbox">卫生间1 </div>
-				</div>
-			</li>
-			<li class="item">
-				<div class="portfoliobox">
-					<input class="checkbox" name="" type="checkbox" value="">
-					<div class="picbox"><a href="temp/big/weishengjian2.jpg" data-lightbox="gallery" data-title="卫生间2"><img src="temp/Thumb/weishengjian2.jpg"></a></div>
-					<div class="textbox">卫生间2 </div>
-				</div>
-			</li>
-		</ul>
+	<div class="text-c"> 日期范围：
+		<input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}' })" id="logmin" class="input-text Wdate" style="width:120px;">
+		-
+		<input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d' })" id="logmax" class="input-text Wdate" style="width:120px;">
+		<input type="text" name="" id="" placeholder=" 图片名称" style="width:250px" class="input-text">
+		<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜图片</button>
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" onclick="picture_add('添加图片','{{url('/images/images_add')}}')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加图片</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
+	<div class="mt-20">
+		<table class="table table-border table-bordered table-bg table-hover table-sort">
+			<thead>
+				<tr class="text-c">
+					<th width="40"><input name="" type="checkbox" value=""></th>
+					<th width="40">ID</th>
+					<th width="160">分类</th>
+					<th width="180">封面</th>
+					<th>图片名称</th>
+					<!-- <th width="150">Tags</th> -->
+					<th width="150">更新时间</th>
+					<!-- <th width="60">发布状态</th> -->
+					<th width="100">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="text-c">
+					<td><input name="" type="checkbox" value=""></td>
+					<td>001</td>
+					<td>分类名称</td>
+					<td><a href="javascript:;" onClick="picture_edit('图库编辑','picture-show.html','10001')"><img width="210" class="picture-thumb" src="temp/200x150.jpg"></a></td>
+					<td class="text-l"><a class="maincolor" href="javascript:;" onClick="picture_edit('图库编辑','picture-show.html','10001')">现代简约 白色 餐厅</a></td>
+					<!-- <td class="text-c">标签</td> -->
+					<td>2014-6-11 11:11:42</td>
+					<!-- <td class="td-status"><span class="label label-success radius">已发布</span></td> -->
+					<td class="td-manage"><a style="text-decoration:none" onClick="picture_stop(this,'10001')" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a> <a style="text-decoration:none" class="ml-5" onClick="picture_edit('图库编辑','picture-add.html','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="picture_del(this,'10001')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 </div>
+
 <!--_footer 作为公共模版分离出去-->
 @include('Admin.common._footer')
- <!--/_footer 作为公共模版分离出去-->
+<!--/_footer 作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="/H-ui.admin/lib/lightbox2/2.8.1/js/lightbox.min.js"></script> 
+<script type="text/javascript" src="/H-ui.admin/lib/My97DatePicker/4.8/WdatePicker.js"></script> 
+<script type="text/javascript" src="/H-ui.admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" src="/H-ui.admin/lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
-$(function(){
-	$(".portfolio-area li").Huihover();
+$('.table-sort').dataTable({
+	"aaSorting": [[ 1, "desc" ]],//默认第几个排序
+	"bStateSave": true,//状态保存
+	"aoColumnDefs": [
+	  //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+	  {"orderable":false,"aTargets":[0,8]}// 制定列不参与排序
+	]
 });
+
+/*图片-添加*/
+function picture_add(title,url){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+
+/*图片-查看*/
+function picture_show(title,url,id){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+
+/*图片-审核*/
+function picture_shenhe(obj,id){
+	layer.confirm('审核文章？', {
+		btn: ['通过','不通过'], 
+		shade: false
+	},
+	function(){
+		$(obj).parents("tr").find(".td-manage").prepend('<a class="c-primary" onClick="picture_start(this,id)" href="javascript:;" title="申请上线">申请上线</a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
+		$(obj).remove();
+		layer.msg('已发布', {icon:6,time:1000});
+	},
+	function(){
+		$(obj).parents("tr").find(".td-manage").prepend('<a class="c-primary" onClick="picture_shenqing(this,id)" href="javascript:;" title="申请上线">申请上线</a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-danger radius">未通过</span>');
+		$(obj).remove();
+    	layer.msg('未通过', {icon:5,time:1000});
+	});	
+}
+
+/*图片-下架*/
+function picture_stop(obj,id){
+	layer.confirm('确认要下架吗？',function(index){
+		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="picture_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已下架</span>');
+		$(obj).remove();
+		layer.msg('已下架!',{icon: 5,time:1000});
+	});
+}
+
+/*图片-发布*/
+function picture_start(obj,id){
+	layer.confirm('确认要发布吗？',function(index){
+		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="picture_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
+		$(obj).remove();
+		layer.msg('已发布!',{icon: 6,time:1000});
+	});
+}
+
+/*图片-申请上线*/
+function picture_shenqing(obj,id){
+	$(obj).parents("tr").find(".td-status").html('<span class="label label-default radius">待审核</span>');
+	$(obj).parents("tr").find(".td-manage").html("");
+	layer.msg('已提交申请，耐心等待审核!', {icon: 1,time:2000});
+}
+
+/*图片-编辑*/
+function picture_edit(title,url,id){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
+
+/*图片-删除*/
+function picture_del(obj,id){
+	layer.confirm('确认要删除吗？',function(index){
+		$.ajax({
+			type: 'POST',
+			url: '',
+			dataType: 'json',
+			success: function(data){
+				$(obj).parents("tr").remove();
+				layer.msg('已删除!',{icon:1,time:1000});
+			},
+			error:function(data) {
+				console.log(data.msg);
+			},
+		});		
+	});
+}
 </script>
 </body>
 </html>

@@ -56,6 +56,8 @@ Route::group(['prefix' => '/message'],function(){
     Route::any('/message_add','Admin\MessageController@message_add');
     //资讯编辑
     Route::any('/message_up','Admin\MessageController@message_up');
+    //执行文件编辑
+    Route::any('/message_update','Admin\MessageController@message_update');
     //资讯编辑更改图片
     Route::any('/img_up','Admin\MessageController@img_up');
     //回收站
@@ -153,8 +155,8 @@ Route::group(['prefix' => '/register'],function(){
 Route::group(['prefix' => '/images'],function(){
     //图片列表
     Route::any('/images_list','Admin\ImagesController@images_list');
-    //注册列表数据导出
-    Route::any('/excel_go','Admin\ImagesController@excel_go');
+    //图片管理
+    Route::any('/images_add','Admin\ImagesController@images_add');
     //权限列表页
     Route::any('/permission','Admin\ImagesController@permission');
     //权限添加

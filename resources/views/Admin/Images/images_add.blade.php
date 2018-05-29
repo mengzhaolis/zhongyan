@@ -1,215 +1,144 @@
-<!--_meta 作为公共模版分离出去-->
 @include('Admin.common._meta')
-<!--/meta 作为公共模版分离出去-->
-<meta name="csrf-token" content="{{ csrf_token() }}" />
-<link href="/H-ui.admin/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+<title>新增图片</title>
+<link href="lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div class="page-container">
-	<form action="javascript:void(0)" method="post" class="form form-horizontal" id="form-article-add">
-    {{csrf_field()}}
+	<form class="form form-horizontal" id="form-article-add">
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>资讯标题：</label>
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>图片标题：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="{{$data->title}}" placeholder="" id="" name="title">
-                <input type="hidden" name="id" value="{{$data->id}}">
+				<input type="text" class="input-text" value="" placeholder="" id="" name="">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">简略标题：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="{{$data->title_jian}}" placeholder="" id="" name=" title_jian">
+				<input type="text" class="input-text" value="" placeholder="" id="" name="">
 			</div>
 		</div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">排序(反序)：</label>
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类栏目：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="{{$data->asc}}" placeholder="" id="" name="asc">
-			</div>
-		</div>
-		
-		
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">作者：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="drive" id="" placeholder="" value="{{$data->drive}}" class="input-text">
-			</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">文章来源：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="news_url" id="" placeholder="" value="{{$data->news_url}}" class="input-text">
-			</div>
-		</div>
-        <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">封面图：</label>
-			<div style="width:80px;height:80px;float:left;">
-                <img src="{{$data->img_path}}" alt="" class="ing" style="width:80px;height:80px;margin-left:15px;">
-                
-                    <input type="file" multiple id="fil" style="float:left;margin-left:100px;margin-top:-43px;">
-                    <input type="hidden" id="face" name="face_img" value="">
-                    <input type="hidden" id="face_up" valude="{{$data->face_img}}">
-                
-            </div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">SEO关键字：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="seo_title" id="" placeholder="多个关键字用英文逗号隔开，限10个关键字" value="{{$data->seo_title}}" class="input-text">
+				<span class="select-box">
+				<select name="" class="select">
+					<option value="0">全部栏目</option>
+					<option value="1">新闻资讯</option>
+					<option value="11">├行业动态</option>
+					<option value="12">├行业资讯</option>
+					<option value="13">├行业新闻</option>
+				</select>
+				</span>
 			</div>
 		</div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">SEO摘要：</label>
+			<label class="form-label col-xs-4 col-sm-2">排序值：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<textarea name="seo_keyword" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="$.Huitextarealength(this,200)">{{$data->seo_keyword}}</textarea>
+				<input type="text" class="input-text" value="0" placeholder="" id="" name="">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">允许评论：</label>
+			<div class="formControls col-xs-8 col-sm-9 skin-minimal">
+				<div class="check-box">
+					<input type="checkbox" id="checkbox-1">
+					<label for="checkbox-1">&nbsp;</label>
+				</div>
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>发布日期：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss',maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin" class="input-text Wdate">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>结束日期：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\'datemin\')}' })" id="datemax" class="input-text Wdate">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">图片作者：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="0" placeholder="" id="" name="">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">图片来源：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="0" placeholder="" id="" name="">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">关键词：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="0" placeholder="" id="" name="">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2">图片摘要：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<textarea name="" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="$.Huitextarealength(this,200)"></textarea>
 				<p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
 			</div>
 		</div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">文章摘要：</label>
+			<label class="form-label col-xs-4 col-sm-2">缩略图：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<textarea name="describe" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="$.Huitextarealength(this,200)">{{$data->describe}}</textarea>
-				<p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
+				<div class="uploader-thum-container">
+					<div id="fileList" class="uploader-list"></div>
+					<div id="filePicker">选择图片</div>
+					<button id="btn-star" class="btn btn-default btn-uploadstar radius ml-10">开始上传</button>
+				</div>
 			</div>
 		</div>
 		<div class="row cl">
-			<!-- <label class="form-label col-xs-4 col-sm-2">图片上传：</label> -->
-			<!-- <div class="formControls col-xs-8 col-sm-9"> -->
-				<!-- <div class="uploader-list-container"> -->
+			<label class="form-label col-xs-4 col-sm-2">图片上传：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<div class="uploader-list-container"> 
 					<div class="queueList">
 						<div id="dndArea" class="placeholder">
-							
+							<div id="filePicker-2"></div>
+							<p>或将照片拖到这里，单次最多可选300张</p>
 						</div>
 					</div>
-					
-				<!-- </div> -->
-			<!-- </div> -->
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">详细内容：</label>
-			<div class="formControls col-xs-8 col-sm-9"> 
-				<script id="editor" type="text/plain" style="width:100%;height:400px;">{!! html_entity_decode($data->editorValue) !!}</script> 
+					<div class="statusBar" style="display:none;">
+						<div class="progress"> <span class="text">0%</span> <span class="percentage"></span> </div>
+						<div class="info"></div>
+						<div class="btns">
+							<div id="filePicker2"></div>
+							<div class="uploadBtn">开始上传</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="row cl">
 			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
-				<button class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</button>
-				<!-- <button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存草稿</button> -->
+				<button onClick="article_save_submit();" class="btn btn-primary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</button>
+				<button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存草稿</button>
 				<button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
 			</div>
 		</div>
 	</form>
 </div>
 
+
 <!--_footer 作为公共模版分离出去-->
-@include('Admin.common._footer')<!--/_footer 作为公共模版分离出去-->
+@include('Admin.common._footer')
+ <!--/_footer /作为公共模版分离出去-->
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="/H-ui.admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-<script type="text/javascript" src="/H-ui.admin/lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
-<script type="text/javascript" src="/H-ui.admin/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
-<script type="text/javascript" src="/H-ui.admin/lib/jquery.validation/1.14.0/messages_zh.js"></script>
-<script type="text/javascript" src="/H-ui.admin/lib/webuploader/0.1.5/webuploader.min.js"></script> 
-<script type="text/javascript" src="/H-ui.admin/lib/ueditor/1.4.3/ueditor.config.js"></script>
-<script type="text/javascript" src="/H-ui.admin/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
-<script type="text/javascript" src="/H-ui.admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
-<script>
-$.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});
-</script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.js"></script> 
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.js"></script> 
+<script type="text/javascript" src="lib/webuploader/0.1.5/webuploader.min.js"></script> 
 <script type="text/javascript">
-//封面图
-var img_url = $('.ing').attr('src');
-	//  alert(img_url)
-	if(img_url ==false)
-	{
-		$(".ing").attr({'src':'/avatar.jpg','width':80+'px','heigth':80+'px'});
-	}
-	var fil=$("#fil");  
-     $("<img>").insertBefore("#fil");  
-     fil.bind('change',function(){ 
-         var fordate=new FormData();  //得到一个FormData对象：
-         var fils=$("#fil").get(0).files[0];  //得到file对象
-        //  console.log(fils);
-		var id = $("#face_up").val();
-         fordate.append('image',fils);  //用append方法添加键值对
-         fordate.append('id',id);  //用append方法添加键值对
-		 
-        var srcc=window.URL.createObjectURL(fils);
-		$(".ing").attr({'src':srcc,'width':80+'px','heigth':80+'px'});  
-         $.ajax({  //发送ajax请求
-              url: "/message/img_up",  
-              type: "post",  
-              data: fordate, 
-              processData : false,  
-              contentType : false,   
-              success: function(data){  
-				console.log(data)
-				$("#face").val(data);
-                // layer.msg(data.message,{icon:data.status});
-				
-              },
-			  'error':function(data)
-			  {
-				var result = JSON.parse(data.responseText);
-                // 非200请求，获取错误消息
-                layer.msg(data.message,{icon:data.status});
-			  }
-            });  
-
-     });
-//表单提交
-$("#form-article-add").validate({
-    rules:
-    {
-        title:{
-            required: true,
-        },
-        asc:{
-            required: true,
-        },
-        drive:
-        {
-            required: true,
-        },
-        news_url:
-        {
-            required: true,
-        },
-        seo_title:
-        {
-            required: true,
-        },
-
-    },
-    onkeyup:false,
-    focusCleanup:true,
-    success:"valid",
-    submitHandler:function(form)
-    {
-        $(form).ajaxSubmit({
-            'type':'post',
-            'url' :'/message/message_update',
-            'success':function(data)
-            {
-                console.log(data);
-                // return;
-                if(data !='')
-                {
-                    layer.msg('修改成功!',{icon:1,time:1000});
-                    window.close(); 
-					window.location.href='{{url("/message/message")}}'; 
-                }else
-                {
-                    layer.msg('修改失败!',{icon:1,time:3000});
-                }
-            }
-        });
-    }
-});
+function article_save(){
+	alert("刷新父级的时候会自动关闭弹层。")
+	window.parent.location.reload();
+}
 
 $(function(){
 	$('.skin-minimal input').iCheck({
@@ -664,22 +593,7 @@ $(function(){
                     });
                 } else {
                     $wrap.css( 'filter', 'progid:DXImageTransform.Microsoft.BasicImage(rotation='+ (~~((file.rotation/90)%4 + 4)%4) +')');
-                    // use jquery animate to rotation
-                    // $({
-                    //     rotation: rotation
-                    // }).animate({
-                    //     rotation: file.rotation
-                    // }, {
-                    //     easing: 'linear',
-                    //     step: function( now ) {
-                    //         now = now * Math.PI / 180;
 
-                    //         var cos = Math.cos( now ),
-                    //             sin = Math.sin( now );
-
-                    //         $wrap.css( 'filter', "progid:DXImageTransform.Microsoft.Matrix(M11=" + cos + ",M12=" + (-sin) + ",M21=" + sin + ",M22=" + cos + ",SizingMethod='auto expand')");
-                    //     }
-                    // });
                 }
 
 
@@ -892,10 +806,6 @@ $(function(){
     });
 
 })( jQuery );
-
-$(function(){
-	var ue = UE.getEditor('editor');
-});
 </script>
 </body>
 </html>

@@ -70,7 +70,7 @@ class LoginController extends Controller
 
         $this->clearLoginAttempts($request);
         // var_dump($request->input());die;
-        Redis::set('email',$request->input('email'));
+        // Redis::set('email',$request->input('email'));
         return $this->authenticated($request, $this->guard()->user())
                 ?: redirect()->intended($this->redirectPath());
     }

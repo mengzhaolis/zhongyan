@@ -97,7 +97,7 @@ class MessageController extends CommonController
     public function message_up(Request $request)
     {
         $id = $request->input('id');
-        $data = DB::table("$this->database")->leftjoin('images',"$this->database.face_img",'=','images.id')->where("$this->database.id",'=',$id)->first();
+        $data = DB::table("$this->database")->leftjoin('images',"$this->database.face_img",'=','images.id')->select("channel_table.*","images.id as img_id","img_path")->where("$this->database.id",'=',$id)->first();
         return view('Admin.Message.message_up',['data'=>$data]);
     }
     //资讯回收站
@@ -143,5 +143,17 @@ class MessageController extends CommonController
         // {
         //     return $add;
         // }
+    }
+    //执行修改
+    public function message_update(Request $request)
+    {
+        $data = $request->except('_token');
+        // var_dump($data);die;
+        if(!empty($data))
+        {
+            $id = $this->model->list_update("$this->database",$data['id'],2,$data);
+            return $id;
+        }
+        return '';
     }
 }
