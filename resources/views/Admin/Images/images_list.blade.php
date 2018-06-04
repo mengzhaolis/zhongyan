@@ -23,7 +23,7 @@
 					<th width="40">ID</th>
 					<th width="160">分类</th>
 					<th width="180">封面</th>
-					<th>图片名称</th>
+					<!-- <th>图片名称</th> -->
 					<!-- <th width="150">Tags</th> -->
 					<th width="150">更新时间</th>
 					<!-- <th width="60">发布状态</th> -->
@@ -36,8 +36,8 @@
                         <td><input name="" type="checkbox" value=""></td>
                         <td>{{$val->id}}</td>
                         <td>{{$val->img_type_name}}</td>
-                        <td><a href="javascript:;" onClick="picture_edit('图库编辑','picture-show.html','10001')"><img width="210" class="picture-thumb" src="{{$val->img_path}}"></a></td>
-                        <td class="text-l"><a class="maincolor" href="javascript:;" onClick="picture_edit('图库编辑','picture-show.html','10001')">现代简约 白色 餐厅</a></td>
+                        <td><a href="{{url('/images/images_show')}}?id={{$val->id}}"><img width="100" class="picture-thumb" src="{{$val->img_path}}"></a></td>
+                        <!-- <td class="text-l"><a class="maincolor" href="javascript:;" onClick="picture_edit('图库编辑','picture-show.html','10001')">现代简约 白色 餐厅</a></td> -->
                         <!-- <td class="text-c">标签</td> -->
                         <td>{{date('Y-m-d H-i-s',$val->created_at)}}</td>
                         <!-- <td class="td-status"><span class="label label-success radius">已发布</span></td> -->
@@ -163,6 +163,15 @@ $("#img_add").click(function(){
     
 
 })
+/*图片-添加*/
+function picture_add(title,url){
+	var index = layer.open({
+		type: 2,
+		title: title,
+		content: url
+	});
+	layer.full(index);
+}
 /*图片-查看*/
 function picture_show(title,url,id){
 	var index = layer.open({

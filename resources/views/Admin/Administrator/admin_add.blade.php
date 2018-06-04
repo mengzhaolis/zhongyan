@@ -117,6 +117,8 @@ $(function(){
 					}else
 					{
 						layer.msg('添加失败!',{icon:5,time:2000});
+						window.close();
+						window.location.href="/administrator/admin_list";
 					}
 					
 				}

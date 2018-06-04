@@ -13,10 +13,18 @@ use Excel;
 
 class RegisterController extends CommonController
 {
+    public $database='register';
+    public function __construct()
+    {
+        $this->model=new Cms;
+    }
     //注册用户数据列表
     public function register_list()
     {
-        return view('Admin.Register.register_list');
+        $data = DB::table('register')->get();
+        $people = DB::table('users')->where([['status','=',1],['role','=',4]])->get();
+        // var_dump($people);die;
+        return view('Admin.Register.register_list',['data'=>$data,'people'=>$people]);
     }
     //数据导出
     public function excel_go()

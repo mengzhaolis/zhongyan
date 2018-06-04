@@ -11,7 +11,9 @@
 		<input type="text" class="input-text" style="width:250px" placeholder="输入会员名称、电话、邮箱" id="" name="">
 		<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
 	</div>
-	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a href="{{url('/register/excel_go')}}" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 导出数据</a></span> <span class="r">共有数据：<strong>88</strong> 条</span> </div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a href="{{url('/register/excel_go')}}" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 导出数据</a>
+	<a href="javascript:;" onclick="fen()" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe6ab;</i> 分发资源</a>
+	</span> <span class="r">共有数据：<strong>88</strong> 条</span> </div>
 	<div class="mt-20">
 	<table class="table table-border table-bordered table-hover table-bg table-sort">
 		<thead>
@@ -29,16 +31,17 @@
 			</tr>
 		</thead>
 		<tbody>
+			@foreach($data as $val)
 			<tr class="text-c">
 				<td><input type="checkbox" value="1" name=""></td>
-				<td>1</td>
-				<td><u style="cursor:pointer" class="text-primary" onclick="member_show()">张三</u></td>
-				<td>13000000000男</td>
-				<td>13000000000</td>
-				<td>admin@mail.com</td>
+				<td>{{$val->id}}</td>
+				<td><u style="cursor:pointer" class="text-primary" onclick="member_show()">{{$val->user_name}}</u></td>
+				<td>{{$val->user_phone}}</td>
+				<td>{{$val->user_address}}</td>
+				<td>{{$val->reg_url}}</td>
 				<!-- <td class="text-l">北京市 海淀区</td> -->
-				<td>2014-6-11 11:11:42</td>
-				<td class="td-status"><span class="label label-success radius">医疗医药市场工业产品应用用户定量房地产开发</span></td>
+				<td>{{date("Y-m-d H-i-s",$val->created_at)}}</td>
+				<td class="td-status"><span class="label label-success radius">{{$val->crcm_type}}</span></td>
 				<td class="td-manage">
 				<!-- <a style="text-decoration:none" onClick="member_stop(this,'10001')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a>  -->
 				<a title="编辑" href="javascript:;" onclick="member_show()" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
@@ -51,7 +54,7 @@
 								<a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
 							</div>
 							<div class="modal-body">
-								<p>对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容对话框内容…</p>
+								<p>{{$val->crcm_need}}</p>
 							</div>
 							<div class="modal-footer">
 								<button class="btn btn-primary">确定</button>
@@ -64,9 +67,34 @@
 				<!-- <a style="text-decoration:none" class="ml-5" onClick="change_password('修改密码','change-password.html','10001','600','270')" href="javascript:;" title="修改密码"><i class="Hui-iconfont">&#xe63f;</i></a>  -->
 				<a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 			</tr>
+			@endforeach
 		</tbody>
 	</table>
 	</div>
+	<!-- 分发资源选择对象开始 -->
+	<div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content radius">
+			<div class="modal-header">
+				<h3 class="modal-title">请选择分发人</h3>
+				<a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+			</div>
+			<div class="modal-body">
+				@foreach($people as $peoples)
+					<div class="radio-box">
+						<input name="sex" type="radio" id="sex-1" value="{{$peoples->id}}">
+						<label for="sex-1">{{$peoples->name}}</label>
+					</div>
+				@endforeach
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary">确定</button>
+				<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+			</div>
+		</div>
+	</div>
+	<!-- 分发资源结束 -->
+</div>
 </div>
 <!--_footer 作为公共模版分离出去-->
 @include('Admin.common._footer')
@@ -96,25 +124,13 @@ function member_add(title,url,w,h){
 function member_show(){
 	$("#modal-demo").modal("show")
 }
-/*用户-停用*/
-// function member_stop(obj,id){
-// 	layer.confirm('确认要停用吗？',function(index){
-// 		$.ajax({
-// 			type: 'POST',
-// 			url: '',
-// 			dataType: 'json',
-// 			success: function(data){
-// 				$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="member_start(this,id)" href="javascript:;" title="启用"><i class="Hui-iconfont">&#xe6e1;</i></a>');
-// 				$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已停用</span>');
-// 				$(obj).remove();
-// 				layer.msg('已停用!',{icon: 5,time:1000});
-// 			},
-// 			error:function(data) {
-// 				console.log(data.msg);
-// 			},
-// 		});		
-// 	});
-// }
+/*分发资源*/
+function fen()
+{
+	
+	$("#modal").modal("show")
+}
+
 
 /*用户-启用*/
 // function member_start(obj,id){

@@ -159,10 +159,10 @@ Route::group(['prefix' => '/images'],function(){
     Route::any('/images_add','Admin\ImagesController@images_add');
     //图片分类-数据添加
     Route::any('/images_data_add','Admin\ImagesController@images_data_add');
-    //权限添加
-    Route::any('/permission_add','Admin\ImagesController@permission_add');
-    //专题回收站
-    Route::any('/zt_recycle','Admin\ImagesController@zt_recycle');
-    //专题置顶-取消置顶
-    Route::any('/zt_top','Admin\ImagesController@zt_top');
+    //添加图片-数据添加将图片图库
+    Route::any('/images_add_img','Admin\ImagesController@images_add_img');
+    //图片添加-将图片对应的描述进行添加入库
+    Route::any('/images_data_update','Admin\ImagesController@images_data_update');
+    //按分类图片展示
+    Route::any('/images_show','Admin\ImagesController@images_show');
 });

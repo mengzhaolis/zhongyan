@@ -86,7 +86,7 @@ class AdministratorController extends CommonController
             return view('Admin.Administrator.admin_add',['data'=>$data]);
         }
         $data['password']=bcrypt($data['password']);
-        $data['created_at']=date();
+        $data['created_at']=date("Y-m-d H-i-s",time());
         $id = $this->administrator->admin_add($this->user,$data);
         return $id;
     }
