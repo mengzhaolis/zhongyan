@@ -142,10 +142,10 @@ Route::group(['prefix' => '/register'],function(){
     Route::any('/register_list','Admin\RegisterController@register_list');
     //注册列表数据导出
     Route::any('/excel_go','Admin\RegisterController@excel_go');
-    //权限列表页
-    Route::any('/permission','Admin\RegisterController@permission');
-    //权限添加
-    Route::any('/permission_add','Admin\RegisterController@permission_add');
+    //注册数据分发-数据入库
+    Route::any('/share','Admin\RegisterController@share');
+    //注册数据分发-查看分发数据的情况
+    Route::any('/resource_list','Admin\RegisterController@resource_list');
     //专题回收站
     Route::any('/zt_recycle','Admin\RegisterController@zt_recycle');
     //专题置顶-取消置顶

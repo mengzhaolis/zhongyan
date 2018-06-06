@@ -77,7 +77,7 @@
                         <a data-href="{{url('/register/register_list')}}" data-title="注册列表" href="javascript:;">注册列表</a>
                     </li>
                     <li>
-                        <a data-href="feedback-list.html" data-title="资源整合" href="javascript:void(0)">资源整合</a>
+                        <a data-href="/register/resource_list" data-title="资源整合" href="javascript:void(0)">资源整合</a>
                     </li>
                 </ul>
             </dd>
