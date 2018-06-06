@@ -9,6 +9,7 @@
 	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"> <a href="javascript:;" onclick="edit()" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe6df;</i> 编辑</a> <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> </span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
 	<div class="portfolio-content">
 		<ul class="cl portfolio-area">
+            <input type="hidden" id="token" value="{{csrf_token()}}">
 			@foreach($data as $val)
                 <li class="item">
                     <div class="portfoliobox">
@@ -16,8 +17,8 @@
                         <div class="picbox"><a href="{{$val->img_path}}" data-lightbox="gallery" data-title="{{$val->img_name}}"><img src="{{$val->img_path}}"></a></div>
                         <div class="textbox"> <a href="{{$val->img_url}}">{{$val->img_name}}</a>
                         <span style="float:right">  
-                            <a style="text-decoration:none" onClick="picture_stop(this,'10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>
-                            <a style="text-decoration:none" onClick="picture_stop(this,'10001')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe609;</i></a>
+                            
+                            <a style="text-decoration:none" onClick="picture_del(this,'{{$val->id}}')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe609;</i></a>
                         </span>
                         </div>
                     </div>
@@ -36,6 +37,34 @@
 $(function(){
 	$(".portfolio-area li").Huihover();
 });
+/*图片-删除*/
+function picture_del(obj,id){
+	var token = $('#token').val();
+	layer.confirm('确认要删除吗？',function(index){
+		$.ajax({
+			type: 'POST',
+			url: '/images/images_stop',
+			data: {'_token':token,'id':id},
+			success: function(data){
+				// console.log(data);
+				// return;
+				if(data=='')
+				{
+					layer.msg('操作失败!',{icon: 3,time:1500});
+					return;
+				}
+				
+				$(obj).remove();
+				layer.msg('操作成功!',{icon: 1,time:1500});
+				window.location.reload();
+				
+			},
+			// error:function(data) {
+				
+			// },
+		});		
+	});
+}
 </script>
 </body>
 </html>

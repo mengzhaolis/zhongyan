@@ -6,12 +6,14 @@ use App\Http\Controllers\Admin\CommonController;
 use Illuminate\Support\Facades\Redis;
 use App\Http\Models\Admin\menu;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class AdminController extends CommonController
 {
     //首页
-    public function index()
+    public function index(Request $request)
     {   
+        // var_dump($request->session()->get('email'));die;
         // $data = $this->left();
         // return view('Admin.Index_User.index',['data'=>$data]);
         return view('Admin.Index_User.index');

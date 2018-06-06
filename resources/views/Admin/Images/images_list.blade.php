@@ -41,7 +41,13 @@
                         <!-- <td class="text-c">标签</td> -->
                         <td>{{date('Y-m-d H-i-s',$val->created_at)}}</td>
                         <!-- <td class="td-status"><span class="label label-success radius">已发布</span></td> -->
-                        <td class="td-manage"><a style="text-decoration:none" onClick="picture_stop(this,'10001')" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a> <a style="text-decoration:none" class="ml-5" onClick="picture_edit('图库编辑','picture-add.html','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="picture_del(this,'10001')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+                        <td class="td-manage">
+							@if($val->asc>0)
+							<a style="text-decoration:none" onClick="picture_stop(this,'{{$val->id}}')" href="javascript:;" title="取消置顶"><i class="Hui-iconfont">&#xe6de;</i></a> 
+							@else
+							<a style="text-decoration:none" onClick="picture_start(this,'{{$val->id}}')" href="javascript:;" title="置顶"><i class="Hui-iconfont">&#xe6dc;</i></a>
+							@endif
+							 <a style="text-decoration:none" class="ml-5" onClick="picture_del(this,'{{$val->id}}')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
                     </tr>
                 @endforeach
 			</tbody>
@@ -61,6 +67,13 @@
                         <div class="formControls col-xs-8 col-sm-9">
                             <input type="text" class="input-text" value="0" placeholder="" id="img_type_name" name="img_type_name">
                             <input type="hidden" id="token" value="{{csrf_token()}}">
+                        </div>
+                    </div>
+					<div class="row cl">
+                        <label class="form-label col-xs-4 col-sm-2">分类排序：</label>
+                        <div class="formControls col-xs-8 col-sm-9">
+                            <input type="text" class="input-text" value="0" placeholder="" id="asc" name="img_type_name">
+                            
                         </div>
                     </div>
                     <div class="row cl">
@@ -148,6 +161,7 @@ var img_url = $('.ing').attr('src');
 $("#img_add").click(function(){
     var token = $("#token").val();
     var img_id = $("#face").val();
+    var asc = $("#asc").val();
     // alert(img_id);return;
     var img_type_name = $.trim($("#img_type_name").val());
     if(img_type_name.length==0)
@@ -156,9 +170,17 @@ $("#img_add").click(function(){
         return;
     }
     var url = "/images/images_data_add";
-    var data = {'_token':token,'img_type_name':img_type_name,'id':img_id};
+    var data = {'_token':token,'img_type_name':img_type_name,'id':img_id,'asc':asc};
     $.post(url,data,function(data){
-        console.log(data);
+        if(data !='')
+		{
+			layer.msg('添加成功!',{icon:1,time:1000});
+			window.close(); 
+			window.location.href='{{url("/images/images_list")}}'; 
+		}else
+		{
+			layer.msg('添加失败!',{icon:1,time:3000});
+		}
     });
     
 
@@ -182,77 +204,83 @@ function picture_show(title,url,id){
 	layer.full(index);
 }
 
-/*图片-审核*/
-function picture_shenhe(obj,id){
-	layer.confirm('审核文章？', {
-		btn: ['通过','不通过'], 
-		shade: false
-	},
-	function(){
-		$(obj).parents("tr").find(".td-manage").prepend('<a class="c-primary" onClick="picture_start(this,id)" href="javascript:;" title="申请上线">申请上线</a>');
-		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
-		$(obj).remove();
-		layer.msg('已发布', {icon:6,time:1000});
-	},
-	function(){
-		$(obj).parents("tr").find(".td-manage").prepend('<a class="c-primary" onClick="picture_shenqing(this,id)" href="javascript:;" title="申请上线">申请上线</a>');
-		$(obj).parents("tr").find(".td-status").html('<span class="label label-danger radius">未通过</span>');
-		$(obj).remove();
-    	layer.msg('未通过', {icon:5,time:1000});
-	});	
-}
+
 
 /*图片-下架*/
 function picture_stop(obj,id){
-	layer.confirm('确认要下架吗？',function(index){
-		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="picture_start(this,id)" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe603;</i></a>');
-		$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已下架</span>');
-		$(obj).remove();
-		layer.msg('已下架!',{icon: 5,time:1000});
+
+	layer.confirm('确认要取消吗？',function(index){
+		var url = "/images/images_top";
+		var token = $("#token").val();
+		var data = {'_token':token,'id':id,'type':1};
+		$.post(url,data,function(msg){
+			if(msg!='')
+			{
+				$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="picture_start(this,{{$val->id}})" href="javascript:;" title="置顶"><i class="Hui-iconfont">&#xe6dc;</i></a>');
+				$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">未置顶</span>');
+				$(obj).remove();
+				layer.msg('操作成功!',{icon: 1,time:1000});
+			}else
+			{
+				layer.msg('参数错误!',{icon: 5,time:1000});
+			}
+
+		})
+
 	});
 }
 
 /*图片-发布*/
 function picture_start(obj,id){
-	layer.confirm('确认要发布吗？',function(index){
-		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="picture_stop(this,id)" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a>');
-		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已发布</span>');
-		$(obj).remove();
-		layer.msg('已发布!',{icon: 6,time:1000});
+	layer.confirm('确认要置顶吗？',function(index){
+		var url = "/images/images_top";
+		var token = $("#token").val();
+		var data = {'_token':token,'id':id,'type':2};
+		$.post(url,data,function(msg){
+			if(msg!='')
+			{
+				$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="picture_stop(this,{{$val->id}})" href="javascript:;" title="取消置顶"><i class="Hui-iconfont">&#xe6de;</i></a>');
+				$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已置顶</span>');
+				$(obj).remove();
+				layer.msg('操作成功!',{icon: 6,time:1000});
+			}else
+			{
+				layer.msg('参数错误!',{icon: 5,time:1000});
+			}
+
+		});
+		
 	});
 }
 
-/*图片-申请上线*/
-function picture_shenqing(obj,id){
-	$(obj).parents("tr").find(".td-status").html('<span class="label label-default radius">待审核</span>');
-	$(obj).parents("tr").find(".td-manage").html("");
-	layer.msg('已提交申请，耐心等待审核!', {icon: 1,time:2000});
-}
 
-/*图片-编辑*/
-function picture_edit(title,url,id){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		content: url
-	});
-	layer.full(index);
-}
+
 
 /*图片-删除*/
 function picture_del(obj,id){
+	var token = $('#token').val();
 	layer.confirm('确认要删除吗？',function(index){
 		$.ajax({
 			type: 'POST',
-			url: '',
-			dataType: 'json',
+			url: '/images/images_stop',
+			data: {'_token':token,'id':id},
 			success: function(data){
-				$(obj).parents("tr").remove();
-				layer.msg('已删除!',{icon:1,time:1000});
+				// console.log(data);
+				// return;
+				if(data=='')
+				{
+					layer.msg('操作失败!',{icon: 3,time:1500});
+					return;
+				}
+				
+				$(obj).remove();
+				layer.msg('操作成功!',{icon: 1,time:1500});
+				window.location.reload();
+				
 			},
-			error:function(data) {
-				console.log(data.msg);
-			},
+			// error:function(data) {
+				
+			// },
 		});		
 	});
 }

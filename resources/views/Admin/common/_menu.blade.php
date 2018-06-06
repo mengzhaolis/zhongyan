@@ -46,6 +46,7 @@
                     <li>
                         <a data-href="{{url('/images/images_list')}}" data-title="图片管理" href="javascript:void(0)">图片管理</a>
                     </li>
+                   
                 </ul>
             </dd>
         </dl>
@@ -78,6 +79,9 @@
                     </li>
                     <li>
                         <a data-href="/register/resource_list" data-title="资源整合" href="javascript:void(0)">资源整合</a>
+                    </li>
+                    <li>
+                        <a data-href="/sell/register_list" data-title="销售登陆" href="javascript:void(0)">销售登陆</a>
                     </li>
                 </ul>
             </dd>

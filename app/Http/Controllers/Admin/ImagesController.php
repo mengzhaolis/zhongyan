@@ -20,7 +20,7 @@ class ImagesController extends CommonController
     //图片列表展示
     public function images_list()
     {
-        $data = DB::table("$this->database")->where([['status','=',1],['pid','=',0]])->orderBy('asc','asc')->get();
+        $data = DB::table("$this->database")->where([['status','=',1],['pid','=',0]])->orderBy('asc','desc')->get();
         return view('Admin.Images.images_list',['data'=>$data]);
     }
     //图片分类-图片添加
@@ -98,6 +98,55 @@ class ImagesController extends CommonController
         $data = DB::table("$this->database")->where([["pid",'=',$id],['status','=',1]])->orderBy('asc','desc')->orderBy('updated_at','desc')->get();
         // var_dump($data);die;
         return view('Admin.Images.images_show',['data'=>$data]);
+    }
+    //设置图片分类数据置顶与取消置顶
+    public function images_top(Request $request)
+    {
+        $data = $request->except('_token');
+        if(empty($data))
+        {
+            return '';
+        }
+        if($data['type']==1)
+        {
+            $id = $this->model->list_top($this->database,$data['id'],0);
+            if(empty($id))
+            {
+                return '';
+            }
+            return $id;
+        }
+        if($data['type']==2)
+        {
+            $id = $this->model->list_top($this->database,$data['id'],10000);
+            if(empty($id))
+            {
+                return '';
+            }
+            return $id;
+        }
+        return '';
+    }
+    //图片分类-伪删除
+    public function images_stop(Request $request)
+    {
+        $id = $request->input('id');
+        if(empty($id))
+        {
+            return '';
+        }
+        $ret = $this->model->new_del($this->database,$id);
+        return $ret;
+    }
+    //图片分类-回收站
+    public function images_recycle(Request $request)
+    {
+        $data = $request->except('_token');
+        if(empty($data))
+        {
+            $data = DB::table("$this->database")->where([['status','=',0],['pid','=',0]])->orderBy('asc','desc')->get();
+            return view('Admin.Images.recycle_list',['data'=>$data]);
+        }
     }
 
 }

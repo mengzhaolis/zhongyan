@@ -146,8 +146,21 @@ Route::group(['prefix' => '/register'],function(){
     Route::any('/share','Admin\RegisterController@share');
     //注册数据分发-查看分发数据的情况
     Route::any('/resource_list','Admin\RegisterController@resource_list');
-    //专题回收站
-    Route::any('/zt_recycle','Admin\RegisterController@zt_recycle');
+    
+    //专题置顶-取消置顶
+    Route::any('/zt_top','Admin\RegisterController@zt_top');
+});
+//资源分发-销售人员专用
+Route::group(['prefix' => '/sell'],function(){
+    //分配人员列表
+    Route::any('/register_list','Admin\SellController@register_list');
+    //注册列表数据导出
+    Route::any('/excel_go','Admin\RegisterController@excel_go');
+    //注册数据分发-数据入库
+    Route::any('/share','Admin\RegisterController@share');
+    //注册数据分发-查看分发数据的情况
+    Route::any('/resource_list','Admin\RegisterController@resource_list');
+    
     //专题置顶-取消置顶
     Route::any('/zt_top','Admin\RegisterController@zt_top');
 });
@@ -165,4 +178,10 @@ Route::group(['prefix' => '/images'],function(){
     Route::any('/images_data_update','Admin\ImagesController@images_data_update');
     //按分类图片展示
     Route::any('/images_show','Admin\ImagesController@images_show');
+    //图片分类-置顶
+    Route::any('/images_top','Admin\ImagesController@images_top');
+    //图片分类-数据伪删除
+    Route::any('/images_stop','Admin\ImagesController@images_stop');
+    //图片分类-回收站
+    // Route::any('/images_recycle','Admin\ImagesController@images_recycle');
 });

@@ -16,7 +16,7 @@ class CommonController extends Controller
    { 
         $this->middleware('auth');
         // $this->left();
-
+        
    
 
     }
