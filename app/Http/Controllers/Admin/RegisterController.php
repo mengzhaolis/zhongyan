@@ -21,7 +21,7 @@ class RegisterController extends CommonController
     //注册用户数据列表
     public function register_list()
     {
-        $data = DB::table('register')->get();
+        $data = DB::table('register')->leftJoin('users','register.user_id','=','users.id')->select('register.*','users.name','users.id as u_id')->orderBy('created_at','desc')->get();
         $people = DB::table('users')->where([['status','=',1],['role','=',4]])->get();
         // var_dump($people);die;
         return view('Admin.Register.register_list',['data'=>$data,'people'=>$people]);
@@ -71,7 +71,16 @@ class RegisterController extends CommonController
         $data = $request->except('_token');
         $this->database = 'news';
         $data['created_at'] = time();
+        $array_id = explode(',',$data['data_id']);
+        $ret_id = DB::table('register')->whereIn('id',$array_id)->update(['user_id'=>$data['user_id']]);
+        if(empty($ret_id))
+        {
+            return '';
+        }
+        // var_dump($data);die;
+        // $id = DB::table('register')->
         $id = $this->model->new_add($this->database,$data);
+
         return  $id;
     }
     //注册数据分发-查看分发的数据

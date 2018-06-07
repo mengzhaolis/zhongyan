@@ -29,7 +29,8 @@
 				<th width="150">注册来源</th>
 				<!-- <th width="">地址</th> -->
 				<th width="110">注册时间</th>
-				<th width="140">调研类型</th>
+				<th width="60">调研类型</th>
+				<th width="60">负责人</th>
 				<th width="50">操作</th>
 			</tr>
 		</thead>
@@ -45,6 +46,9 @@
 				<!-- <td class="text-l">北京市 海淀区</td> -->
 				<td>{{date("Y-m-d H:i:s",$val->created_at)}}</td>
 				<td class="td-status"><span class="label label-success radius">{{$val->crcm_type}}</span></td>
+				<td class="td-status">
+					<span class="label radius" style="background-color:red">{{$val->name}}</span>
+				</td>
 				 <!--产看注册详细信息开始  -->
 				<div id="modal-demo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
@@ -151,6 +155,8 @@ $("#fen").click(function(){
 	var data = {'_token':token,'user_id':user_id,'data_id':data};
 	var url ="/register/share";
 	$.post(url,data,function(data){
+		// console.log(data);
+		// return;
 		if(data !='')
 		{
 			layer.msg('操作成功!',{icon:1,time:1000});
