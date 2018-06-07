@@ -32,7 +32,7 @@
 
 				@if($val->status==0)
 					<td class="td-status"><span class="label label-success radius" style="background-color:#999999">未操作</span></td>
-				@else if($val->status==1)
+				@elseif($val->status==1)
 					<td class="td-status"><span class="label label-success radius" style="background-color:#ff6600">1次失败</span></td>
 				@endif
 				@if($val->status==2)

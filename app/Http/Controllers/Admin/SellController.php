@@ -13,6 +13,11 @@ use Excel;
 
 class SellController extends CommonController
 {
+    public $database = 'register';
+    public function __construct()
+    {
+        $this->model = new Cms;
+    }
     //用户注册-销售人员专用
     public function register_list(Request $request)
     {
@@ -32,5 +37,28 @@ class SellController extends CommonController
         $array = DB::table('register')->whereIn('id',$data_id)->get();
         // $people = DB::table('users')->where([['status','=',1],['role','=',4]])->get();
         return view('Admin.Sell.register_list',['array'=>$array,'user_name'=>$id->name]);
+    }
+    //产看注册详情
+    public function sell_xiang(Request $request)
+    {
+        $id = $request->except('_token');
+        if(empty($id))
+        {
+            return '';
+        }
+        $xiang = DB::table('register')->where('id','=',$id['id'])->select('crcm_need')->first();
+        return $xiang->crcm_need;
+    }
+    //销售人员操作数据进行入库
+    public function sell_add(Request $request)
+    {
+        $data = $request->except('_token');
+        if(empty($data['id']))
+        {
+            return '';
+        }
+        $data['updated_at'] = time();
+        $id = $this->model->list_update($this->database,$data['id'],2,$data);
+        return $id;
     }
 }

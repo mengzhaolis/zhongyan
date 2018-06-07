@@ -152,12 +152,12 @@ Route::group(['prefix' => '/register'],function(){
 });
 //资源分发-销售人员专用
 Route::group(['prefix' => '/sell'],function(){
-    //分配人员列表
+    //销售人员对应分配人员列表
     Route::any('/register_list','Admin\SellController@register_list');
-    //注册列表数据导出
-    Route::any('/excel_go','Admin\RegisterController@excel_go');
-    //注册数据分发-数据入库
-    Route::any('/share','Admin\RegisterController@share');
+    //销售人员查看对应注册数据的详情
+    Route::any('/sell_xiang','Admin\SellController@sell_xiang');
+    //销售人员记录自己对应数据的详细情况
+    Route::any('/sell_add','Admin\SellController@sell_add');
     //注册数据分发-查看分发数据的情况
     Route::any('/resource_list','Admin\RegisterController@resource_list');
     

@@ -2,7 +2,7 @@
 <title>注册管理</title>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 用户中心 <span class="c-gray en">&gt;</span> 用户管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 注册管理中心 <span class="c-gray en">&gt;</span> 资源管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
 	<div class="text-c"> 日期范围：
 		<input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin" class="input-text Wdate" style="width:120px;">
@@ -39,7 +39,11 @@
 			<tr class="text-c">
 				<td><input type="checkbox" value="{{$val->id}}" name="check"></td>
 				<td>{{$val->id}}</td>
-				<td><u style="cursor:pointer" class="text-primary" onclick="member_show()">{{$val->user_name}}</u></td>
+				@if($val->status==3)
+				<td><u style="cursor:pointer;color:green" class="text-primary">{{$val->user_name}}</u></td>
+				@else
+				<td><u style="cursor:pointer" class="text-primary">{{$val->user_name}}</u></td>
+				@endif
 				<td>{{$val->user_phone}}</td>
 				<td>{{$val->user_address}}</td>
 				<td>{{$val->reg_url}}</td>
@@ -52,7 +56,8 @@
 				<td>{{$user_name}}</td>
 				<td class="td-manage">
 				<!-- <a style="text-decoration:none" onClick="member_stop(this,'10001')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a>  -->
-				<a title="编辑" href="javascript:;" onclick="member_show()" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+				<a title="注册详情" href="javascript:;" onclick="member_show(this,{{$val->id}})" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe637;</i></a>
+				<input type="hidden" id="token" value="{{csrf_token()}}">
 				 <!--产看注册详细信息开始  -->
 				<div id="modal-demo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
@@ -62,7 +67,7 @@
 								<a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
 							</div>
 							<div class="modal-body">
-								<p>{{$val->crcm_need}}</p>
+								<p class="xiang"></p>
 							</div>
 							<div class="modal-footer">
 								<button class="btn btn-primary">确定</button>
@@ -72,30 +77,56 @@
 					</div>
 				</div>
 				 <!--产看注册详细信息结束  -->
-				<!-- <a style="text-decoration:none" class="ml-5" onClick="change_password('修改密码','change-password.html','10001','600','270')" href="javascript:;" title="修改密码"><i class="Hui-iconfont">&#xe63f;</i></a>  -->
-				<a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+				
+				<a title="线索反馈" href="javascript:;" onclick="member_change(this,'{{$val->id}}')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe692;</i></a></td>
+				<!-- 销售人员标识用户数据是否有效及原因开始 -->
+				<div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content radius">
+							<div class="modal-header">
+								<h3 class="modal-title">资源状态详情</h3>
+								<a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+							</div>
+							<div class="modal-body">
+								<div class="row cl">
+									<label class="form-label col-xs-4 col-sm-3"><span class="c-red" style="margin-left:15px;">*</span>&nbsp;&nbsp;数据状态:</label>
+									<div class="formControls col-xs-8 col-sm-9 skin-minimal">
+										<div class="radio-box">
+											<input name="sex" type="radio" id="sex-1" value="1">
+											<label for="sex-1">无效</label>
+										</div>
+										<div class="radio-box">
+											<input type="radio" id="sex-2" name="sex" value="3">
+											<label for="sex-2">有效</label>
+										</div>
+										<!-- <div class="radio-box">
+											<input type="radio" id="sex-2" name="sex" value="2">
+											<label for="sex-2">二级</label>
+										</div> -->
+									</div>
+								</div>
+								<div class="row cl" style="margin-top:10px;">
+									<label class="form-label col-xs-4 col-sm-3"><span class="c-red" style="margin-left:15px;">*</span>&nbsp;&nbsp;状态描述:</label>
+									<div class="formControls col-xs-8 col-sm-9">
+										<textarea name="describe" cols="" rows="" class="textarea"  placeholder="请简要描述该数据状态"></textarea>
+										<!-- <p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p> -->
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button class="btn btn-primary" id="que">确定</button>
+								<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 销售人员标识用户数据是否有效及原因结束 -->
 			</tr>
 			@endforeach
 		</tbody>
 	</table>
 	</div>
-	<!-- 分发资源选择对象开始 -->
-	<div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content radius">
-			<div class="modal-header">
-				<h3 class="modal-title">请选择分发人</h3>
-				<input type="hidden" id="token" value="{{csrf_token()}}">
-				<a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
-			</div>
-			
-			<div class="modal-footer">
-				<button class="btn btn-primary" id="fen">确定</button>
-				<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
-			</div>
-		</div>
-	</div>
-	<!-- 分发资源结束 -->
+
 </div>
 </div>
 <!--_footer 作为公共模版分离出去-->
@@ -118,26 +149,19 @@
 // 	});
 	
 // });
-/*查看对应销售的资源*/
-$("#sel_Sub").change(function(){
-    var token = $("#token").val();
-    var id = $(this).val();
-    var url ="/register/resource_list";
+
+/*销售人员产看注册详情*/
+function member_show(obj,id){
+	var token = $("#token").val();
+	
+	var url ="/sell/sell_xiang";
     var data ={'_token':token,'id':id};
     $.post(url,data,function(data){
-        $('.table').html(data);
+        $('.xiang').html(data);
     })
-})
-/*用户-查看*/
-function member_show(){
-	$("#modal-demo").modal("show")
+	$("#modal-demo").modal("show");
 }
-/*分发资源*/
-function fen()
-{
-	
-	$("#modal").modal("show")
-}
+
 
 
 /*资源分发*/
@@ -164,22 +188,40 @@ $("#fen").click(function(){
 	});
 	
 });
-/*用户-删除*/
-function member_del(obj,id){
-	layer.confirm('确认要删除吗？',function(index){
-		$.ajax({
-			type: 'POST',
-			url: '',
-			dataType: 'json',
-			success: function(data){
-				$(obj).parents("tr").remove();
-				layer.msg('已删除!',{icon:1,time:1000});
-			},
-			error:function(data) {
-				console.log(data.msg);
-			},
-		});		
-	});
+/*销售人员操作数据*/
+function member_change(obj,id){
+	
+	$("#modal").modal("show");
+	$('#que').click(function(){
+		var token = $("#token").val();
+		var radio = $("input[name='sex']:checked").val();
+		// alert(radio);return;
+		if(radio==undefined)
+		{
+			alert('数据状态不能为空!!!');
+			return;
+		}
+		var miaoshu = $.trim($(".textarea").val());
+		if(miaoshu.length==0)
+		{
+			alert('状态描述不能为空!!!');
+			return;
+		}
+		var url ="/sell/sell_add";
+		data = {'_token':token,'id':id,'status':radio,'cause':miaoshu}
+		$.post(url,data,function(data){
+			if(data !='')
+			{
+				layer.msg('操作成功!',{icon:1,time:1000});
+				window.close(); 
+				window.location.href='{{url("/sell/register_list")}}'; 
+			}else
+			{
+				layer.msg('操作失败!',{icon:5,time:3000});
+			}
+		})
+	})
+	
 }
 </script> 
 </body>
