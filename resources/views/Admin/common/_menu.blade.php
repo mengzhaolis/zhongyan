@@ -81,7 +81,7 @@
                         <a data-href="/register/resource_list" data-title="资源分配" href="javascript:void(0)">资源分配</a>
                     </li>
                     <li>
-                        <a data-href="/register/resource_list" data-title="资源整合" href="javascript:void(0)">资源整合</a>
+                        <a data-href="/register/ziyuan_zheng" data-title="资源整合" href="javascript:void(0)">资源整合</a>
                     </li>
                     <li>
                         <a data-href="/sell/register_list" data-title="销售登陆" href="javascript:void(0)">销售登陆</a>

@@ -147,8 +147,8 @@ Route::group(['prefix' => '/register'],function(){
     //注册数据分发-查看分发数据的情况
     Route::any('/resource_list','Admin\RegisterController@resource_list');
     
-    //专题置顶-取消置顶
-    Route::any('/zt_top','Admin\RegisterController@zt_top');
+    //注册管理-资源整合
+    Route::any('/ziyuan_zheng','Admin\RegisterController@ziyuan_zheng');
 });
 //资源分发-销售人员专用
 Route::group(['prefix' => '/sell'],function(){
