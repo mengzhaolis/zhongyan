@@ -148,7 +148,11 @@ Route::group(['prefix' => '/register'],function(){
     Route::any('/resource_list','Admin\RegisterController@resource_list');
     
     //注册管理-资源整合
-    Route::any('/ziyuan_zheng','Admin\RegisterController@ziyuan_zheng');
+    Route::any('/register_zheng','Admin\RegisterController@register_zheng');
+    //注册管理-资源整合-分发资源
+    Route::any('/double_fen','Admin\RegisterController@double_fen');
+    //注册管理-资源整合-数据二次分发
+    Route::any('/double_two_fen','Admin\RegisterController@double_two_fen');
 });
 //资源分发-销售人员专用
 Route::group(['prefix' => '/sell'],function(){

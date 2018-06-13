@@ -57,7 +57,7 @@ class SellController extends CommonController
         {
             return '';
         }
-        $data['updated_at'] = time();
+        $data['changed_at'] = time();
         $id = $this->model->list_update($this->database,$data['id'],2,$data);
         return $id;
     }

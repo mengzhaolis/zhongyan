@@ -10,15 +10,16 @@
 				<!-- <th width="">地址</th> -->
 				<th width="110">注册时间</th>
 				<th width="110">分配时间</th>
-				<th width="110">处理时间</th>
-				<th width="110">调研类型</th>
+				<th width="100">处理时间</th>
+				<th width="100">调研类型</th>
 				<th width="60">线索状态</th>
 				<th width="60">联系人</th>
+				<th width="60">分配状态</th>
 				<th width="50">操作</th>
 			</tr>
 		</thead>
 		<tbody>
-			@foreach($array as $val)
+			@foreach($data as $val)
 			<tr class="text-c">
 				<td><input type="checkbox" value="{{$val->id}}" name="check"></td>
 				<td>{{$val->id}}</td>
@@ -42,7 +43,17 @@
 				@elseif($val->status==3)
 					<td class="td-status"><span class="label label-success radius" style="background-color:green">有效</span></td>
 				@endif
-				<td>{{$user_name}}</td>
+				
+				<td class="td-status"><span class="label label-success radius" style="background-color:blue">{{$val->name}}</span></td>
+				@if($val->nums==2)
+				<td class="td-status"><span class="label label-success radius" style="background-color:red">2次分配</span></td>
+				@elseif($val->nums==1)
+				<td class="td-status"><span class="label label-success radius" style="background-color:red">1次分配</span></td>
+				@endif
+				@if($val->nums==0)
+				<td class="td-status"><span class="label label-success radius" style="background-color:red">未分配</span></td>
+				
+				@endif
 				<td class="td-manage">
 				<!-- <a style="text-decoration:none" onClick="member_stop(this,'10001')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a>  -->
 				<a title="编辑" href="javascript:;" onclick="member_show()" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>

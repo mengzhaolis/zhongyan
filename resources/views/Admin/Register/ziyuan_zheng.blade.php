@@ -10,16 +10,19 @@
 		<input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d' })" id="datemax" class="input-text Wdate" style="width:120px;">
 		<span class="select-box" style="margin-left:3px;width:200px;">
         <select class="select" id="sel_Sub" name="id">
-            <option value="0">选择销售人员</option>
-            @foreach($data as $v)
-                <option value="{{$v->id}}">{{$v->name}}</option>
-            @endforeach  
+            <option value="">选择数据状态</option>
+            
+            <option value="0">未操作</option>
+            <option value="1">一次无效</option>
+            <option value="2">二次无效</option>
+            <option value="3">有效</option>
+             
         </select>
     </span>
 		<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
 	</div>
 	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a href="{{url('/register/excel_go')}}" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe644;</i> 导出数据</a>
-	
+	<a href="javascript:;" onclick="fen()" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe6ab;</i> 分发资源</a>
 	</span>
     
 						
@@ -29,6 +32,7 @@
 		<thead>
 			<tr class="text-c">
 				<th width="25"><input type="checkbox" name="" value=""></th>
+				<input type="hidden" id="token" value="{{csrf_token()}}">
 				<th width="40">ID</th>
 				<th width="100">用户名</th>
 				<th width="90">手机</th>
@@ -87,42 +91,59 @@
 /*查看对应销售的资源*/
 $("#sel_Sub").change(function(){
     var token = $("#token").val();
-    var id = $(this).val();
-    var url ="/register/resource_list";
-    var data ={'_token':token,'id':id};
+    var status = $(this).val();
+	// alert(status/*  */)
+    var url ="/register/register_zheng";
+    var data ={'_token':token,'status':status};
     $.post(url,data,function(data){
+		// console.log(data);
+		// return;
         $('.table').html(data);
     })
 })
 /*用户-查看*/
-function member_show(){
-	$("#modal-demo").modal("show")
-}
-/*分发资源*/
+
+/*分发资源-确定现实的销售人员*/
+var arr = new Array();
 function fen()
 {
-	
-	$("#modal").modal("show")
+	var token = $("#token").val();
+	$('input[name="check"]:checked').each(function () {
+		arr.push($(this).val());//向数组中添加元素
+	});
+	var data = arr.join(',');//将数组元素连接起来以构建一个字符串
+	var url = "/register/double_fen";
+	var data ={'_token':token,'data_id':data};
+	$.post(url,data,function(msg){
+		// console.log(msg);
+		// return;
+		
+		$(".modal-header").after(msg);
+		$("#modal").modal("show");
+	});
+	// $("#modal").modal("show");
 }
 
 
 /*资源分发*/
 var array = new Array();
 $("#fen").click(function(){
+	
 	$('input[name="check"]:checked').each(function () {
 		array.push($(this).val());//向数组中添加元素
 	});
 	var data = array.join(',');//将数组元素连接起来以构建一个字符串
-	var user_id = $("#sex").val();
+	var user_id = $("input[name='sex']:checked").val();
+	// alert(user_id);return;
 	var token = $("#token").val();
 	var data = {'_token':token,'user_id':user_id,'data_id':data};
-	var url ="/register/share";
+	var url ="/register/double_two_fen";
 	$.post(url,data,function(data){
 		if(data !='')
 		{
 			layer.msg('操作成功!',{icon:1,time:1000});
 			window.close(); 
-			window.location.href='{{url("/register/register_list")}}'; 
+			window.location.href='{{url("/register//register_zheng")}}'; 
 		}else
 		{
 			layer.msg('操作失败!',{icon:5,time:3000});
@@ -130,7 +151,7 @@ $("#fen").click(function(){
 	});
 	
 });
-/*用户-删除*/
+
 function member_del(obj,id){
 	layer.confirm('确认要删除吗？',function(index){
 		$.ajax({
