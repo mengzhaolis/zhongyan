@@ -2,6 +2,11 @@
 <title>注册管理</title>
 </head>
 <body>
+	<audio style="display:none" controls="controls" autoplay="autoplay">
+  <source src="/ling.mp3" type="audio/ogg" />
+  
+Your browser does not support the audio element.
+</audio>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 注册管理中心 <span class="c-gray en">&gt;</span> 资源管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
 	<div class="text-c"> 日期范围：
@@ -138,17 +143,10 @@
 <script type="text/javascript" src="/H-ui.admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
 <script type="text/javascript" src="/H-ui.admin/lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
-// $(function(){
-// 	$('.table-sort').dataTable({
-// 		"aaSorting": [[ 1, "desc" ]],//默认第几个排序
-// 		"bStateSave": true,//状态保存
-// 		"aoColumnDefs": [
-// 		  //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
-// 		  {"orderable":false,"aTargets":[0,8,9]}// 制定列不参与排序
-// 		]
-// 	});
+$(function(){
 	
-// });
+	
+});
 
 /*销售人员产看注册详情*/
 function member_show(obj,id){
