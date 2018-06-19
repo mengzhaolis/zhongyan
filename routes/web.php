@@ -18,8 +18,11 @@
 Route::get('/login','Auth\LoginController@login');
 Route::get('/logout','Auth\LoginController@logout');
 Route::get('/left','Admin\CommonController@left');
+
 //数据不存在展示页
 Route::get('/news_list','Admin\AdminController@news_list');
+//页面顶部信息数量
+Route::post('/nums','Admin\AdminController@nums');
 
 //后台首页and用户个人信息
 Route::group(['prefix' => '/admin'],function(){
@@ -170,6 +173,27 @@ Route::group(['prefix' => '/sell'],function(){
 });
 //图片管理
 Route::group(['prefix' => '/images'],function(){
+    //图片列表
+    Route::any('/images_list','Admin\ImagesController@images_list');
+    //图片分类-图片添加
+    Route::any('/images_add','Admin\ImagesController@images_add');
+    //图片分类-数据添加
+    Route::any('/images_data_add','Admin\ImagesController@images_data_add');
+    //添加图片-数据添加将图片图库
+    Route::any('/images_add_img','Admin\ImagesController@images_add_img');
+    //图片添加-将图片对应的描述进行添加入库
+    Route::any('/images_data_update','Admin\ImagesController@images_data_update');
+    //按分类图片展示
+    Route::any('/images_show','Admin\ImagesController@images_show');
+    //图片分类-置顶
+    Route::any('/images_top','Admin\ImagesController@images_top');
+    //图片分类-数据伪删除
+    Route::any('/images_stop','Admin\ImagesController@images_stop');
+    //图片分类-回收站
+    // Route::any('/images_recycle','Admin\ImagesController@images_recycle');
+});
+//费用计算器-计算器-需求评估
+Route::group(['prefix' => '/counts'],function(){
     //图片列表
     Route::any('/images_list','Admin\ImagesController@images_list');
     //图片分类-图片添加

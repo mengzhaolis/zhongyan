@@ -33,10 +33,10 @@ class SellController extends CommonController
         }
         // var_dump($data);die;
         //取得资源后做成数组
-        $data_id = json_decode(json_encode($data),true);
+        // $data_id = json_decode(json_encode($data),true);
         //将对应的资源id匹配注册表，获取到实际的数据
-        $array = DB::table('register')->whereIn('id',$data_id)->get();
-        // $people = DB::table('users')->where([['status','=',1],['role','=',4]])->get();
+        $array = DB::table('register')->whereIn('id',$data)->get();
+        // $people = DB::table('news')->where([['status','=',1],['role','=',4]])->get();
         return view('Admin.Sell.register_list',['array'=>$array,'user_name'=>$id->name]);
     }
     //产看注册详情
@@ -58,8 +58,16 @@ class SellController extends CommonController
         {
             return '';
         }
+        $status = DB::table('register')->where('id','=',$data['id'])->first();
+        $status_up = $status->status+$data['status'];
         $data['changed_at'] = time();
+        $data['status'] =$status_up;
         $id = $this->model->list_update($this->database,$data['id'],2,$data);
-        return $id;
+        if(empty($id))
+        {
+            return '';
+        }
+        $ids = DB::table('news')->where('data_id','=',$data['id'])->update(['status'=>1]);
+        return $ids;
     }
 }

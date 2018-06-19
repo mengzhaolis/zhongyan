@@ -7,7 +7,10 @@
 @include('Admin.common._header')
 @include('Admin.common._menu')
 
-
+<audio style="display:none" controls="controls" id="player">
+    <source src="/ling.mp3" type="audio/ogg" />
+    Your browser does not support the audio element.
+</audio>
 
 <div class="dislpayArrow hidden-xs">
     <a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a>
@@ -21,6 +24,8 @@
                     <em></em>
                 </li>
             </ul>
+            <input type="hidden" id="token" value="{{csrf_token()}}">
+            
         </div>
         <div class="Hui-tabNav-more btn-group">
             <a id="js-tabNav-prev" class="btn radius btn-default size-S" href="javascript:;">
@@ -30,10 +35,12 @@
                 <i class="Hui-iconfont">&#xe6d7;</i>
             </a>
         </div>
+        
     </div>
     <div id="iframe_box" class="Hui-article">
         <div class="show_iframe">
             <div style="display:none" class="loading"></div>
+            <input type="hidden" id="email" value="<?php echo session('email') ?>">
             <iframe scrolling="yes" frameborder="0" src="{{url('/admin/welcome')}}"></iframe>
         </div>
     </div>
@@ -47,5 +54,41 @@
 </div>
 @include('Admin.common._footer');
 </body>
+<script>
+$(function(){
 
+    nums()
+
+})
+var ref ='';
+ref = setInterval(function(){
+    nums();
+},60*60*1000);
+function nums()
+{
+    var email = $("#email").val();
+    // alert(email)
+    var token = $("#token").val();
+    var url ="/nums";
+    var data ={'_token':token,'email':email};
+    $.post(url,data,function(data){
+        if(data['nums']!=0)
+        {
+            // alert(1)
+            var player = $("#player")[0]; /*jquery对象转换成js对象*/
+            
+                player.play(); /*播放*/
+           
+            // $('#player').attr('autoplay','autoplay');
+            $('.nums').html(data['nums']);
+            $('.name').html(data['name']);
+        }else
+        {
+            $('.name').html(data['name']);
+        }
+        
+        
+    })
+}
+</script>
 </html>

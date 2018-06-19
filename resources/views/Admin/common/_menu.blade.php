@@ -20,13 +20,13 @@
         </dl>
         <dl id="menu-article">
             <dt>
-                <i class="Hui-iconfont">&#xe687;</i> 专题管理
+                <i class="Hui-iconfont">&#xe687;</i> 课程管理
                 <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
             </dt>
             <dd>
                 <ul>
                     <li>
-                        <a data-href="{{url('/zt/zt_list')}}" data-title="专题管理" href="javascript:void(0)">专题管理</a>
+                        <a data-href="{{url('/zt/zt_list')}}" data-title="课程管理" href="javascript:void(0)">课程管理</a>
                     </li>
                 </ul>
                 <ul>
@@ -134,7 +134,7 @@
         </dl>
         <dl id="menu-tongji">
             <dt>
-                <i class="Hui-iconfont">&#xe61a;</i> 系统统计
+                <i class="Hui-iconfont">&#xe61a;</i> 费用计算器
                 <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
             </dt>
             <dd>
@@ -152,13 +152,13 @@
                         <a data-href="charts-4.html" data-title="柱状图" href="javascript:void(0)">柱状图</a>
                     </li>
                     <li>
-                        <a data-href="charts-5.html" data-title="饼状图" href="javascript:void(0)">饼状图</a>
+                        <a data-href="charts-5.html" data-title="需求评估" href="javascript:void(0)">需求评估</a>
                     </li>
                     <li>
                         <a data-href="charts-6.html" data-title="3D柱状图" href="javascript:void(0)">3D柱状图</a>
                     </li>
                     <li>
-                        <a data-href="charts-7.html" data-title="3D饼状图" href="javascript:void(0)">3D饼状图</a>
+                        <a data-href="charts-7.html" data-title="计算器" href="javascript:void(0)">计算器</a>
                     </li>
                 </ul>
             </dd>

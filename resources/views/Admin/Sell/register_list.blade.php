@@ -2,11 +2,7 @@
 <title>注册管理</title>
 </head>
 <body>
-	<audio style="display:none" controls="controls" autoplay="autoplay">
-  <source src="/ling.mp3" type="audio/ogg" />
-  
-Your browser does not support the audio element.
-</audio>
+	
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 注册管理中心 <span class="c-gray en">&gt;</span> 资源管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
 	<div class="text-c"> 日期范围：
@@ -36,6 +32,7 @@ Your browser does not support the audio element.
 				<th width="110">注册时间</th>
 				<th width="140">调研类型</th>
                 <th width="60">负责人</th>
+                <th width="60">操作状态</th>
 				<th width="50">操作</th>
 			</tr>
 		</thead>
@@ -59,6 +56,7 @@ Your browser does not support the audio element.
 
 				
 				<td>{{$user_name}}</td>
+				<td class="td-status"><span class="label label-success radius" style="background-color:#999999">未操作</span></td>
 				<td class="td-manage">
 				<!-- <a style="text-decoration:none" onClick="member_stop(this,'10001')" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a>  -->
 				<a title="注册详情" href="javascript:;" onclick="member_show(this,{{$val->id}})" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe637;</i></a>
@@ -143,10 +141,7 @@ Your browser does not support the audio element.
 <script type="text/javascript" src="/H-ui.admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
 <script type="text/javascript" src="/H-ui.admin/lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
-$(function(){
-	
-	
-});
+
 
 /*销售人员产看注册详情*/
 function member_show(obj,id){
@@ -212,7 +207,8 @@ function member_change(obj,id){
 			{
 				layer.msg('操作成功!',{icon:1,time:1000});
 				window.close(); 
-				window.location.href='{{url("/sell/register_list")}}'; 
+				// window.location.href='{{url("/sell/register_list")}}'; 
+				$(".label").html('已操作');
 			}else
 			{
 				layer.msg('操作失败!',{icon:5,time:3000});
