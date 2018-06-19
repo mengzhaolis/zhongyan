@@ -26,12 +26,17 @@
             <dd>
                 <ul>
                     <li>
-                        <a data-href="{{url('/zt/zt_list')}}" data-title="课程管理" href="javascript:void(0)">课程管理</a>
+                        <a data-href="{{url('/course/course_list')}}" data-title="课程管理" href="javascript:void(0)">课程管理</a>
                     </li>
                 </ul>
                 <ul>
                     <li>
-                        <a data-href="{{url('/zt/zt_recycle')}}" data-title="专题回收站管理" href="javascript:void(0)">回收站</a>
+                        <a data-href="{{url('/course/course_recycle')}}" data-title="课程注册" href="javascript:void(0)">课程注册</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a data-href="{{url('/course/course_recycle')}}" data-title="专题回收站管理" href="javascript:void(0)">回收站</a>
                     </li>
                 </ul>
             </dd>

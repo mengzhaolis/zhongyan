@@ -82,13 +82,14 @@
 			<tr class="text-c">
 				<th width="25"><input type="checkbox" name="" value=""></th>
 				<th width="80">ID</th>
-				<th width="100">专题名称</th>
-				<th width="40">链接</th>
+				<th width="100">课程名称</th>
+				<th width="40">课程分类</th>
 				<!-- <th width="90">手机</th>
 				<th width="150">邮箱</th>
 				<th width="">地址</th> -->
-				<th width="130">加入时间</th>
-				<th width="70">状态</th>
+				<th width="130">开始时间</th>
+				<th width="130">结束时间</th>
+				<th width="70">是否需要注册</th>
 				<th width="100">操作</th>
 			</tr>
 		</thead>
@@ -97,14 +98,15 @@
 				<tr class="text-c">
 					<td><input type="checkbox" value="{{$v->id}}" name=""></td>
 					<td>{{$v->id}}</td>
-					<td>{{$v->title}}</td>
-					<td><a href="{{$v->title_url}}" target="view_window">{{$v->title_url}}</a></td>
-					<td>{{date('Y-m-d H-i-s',$v->created_at)}}</td>
+					<td>{{$v->course_title}}</td>
+					<td>{{$v->course_type}}</td>
+					<td>{{$v->created_at}}</td>
+					<td>{{$v->updated_at}}</td>
 					<td class="td-status">
-					@if($v->status==1)
-						<span class="label label-success radius">已启用</span>
-					@else($v->status==0)
-						<span class="label label-success radius">已停用</span>
+					@if($v->sex==1)
+						<span class="label label-success radius">是</span>
+					@else if($v->sex==0)
+						<span class="label label-success radius">否</span>
 					@endif
 					</td>
 					<td class="td-manage">
@@ -202,7 +204,7 @@ function member_start(obj,id){
 	layer.confirm('确认要启用吗？',function(index){
 		$.ajax({
 			type: 'POST',
-			url: '/zt/zt_recycle',
+			url: '/course/course_recycle',
 			data: {'_token':token,'id':id,'type':1},
 			success: function(data){
 				if(data!='')
@@ -260,7 +262,7 @@ function member_del(obj,id){
 	layer.confirm('确认要删除吗？',function(index){
 		$.ajax({
 			type: 'POST',
-			url: '/zt/zt_recycle',
+			url: '/course/course_recycle',
 			data: {'_token':token,'id':id,'type':2},
 			success: function(data){
 				if(data!='')

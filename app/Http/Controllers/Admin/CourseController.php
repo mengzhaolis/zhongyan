@@ -10,7 +10,7 @@ use App\Http\Models\Admin\Cms;
 use App\Http\Models\Admin\menu;
 use Illuminate\Support\Facades\Storage;
 
-class ZhuantitleController extends CommonController
+class CourseController extends CommonController
 {   
     private $database = '';
     private $type = '';
@@ -21,13 +21,13 @@ class ZhuantitleController extends CommonController
     }
 
     //标题管理列表展示
-    public function zt_list(Request $request)
+    public function course_list(Request $request)
     {
         $data = $request->except('_token');
         
         if(empty($data))
         {
-            $this->database = 'zhuan_title';
+            $this->database = 'course';
             // $where='';
             $data = $this->model->new_list($this->database,0,1);
             // print_r($data);die;
@@ -35,7 +35,7 @@ class ZhuantitleController extends CommonController
             {
                 return view('Admin.List_error.404');
             }
-            return view('Admin.Zhuan_title.zhuan_title_list',['data'=>$data]);
+            return view('Admin.Course.course_list',['data'=>$data]);
         }
         $data['created_at'] = time();
         $this->database = 'zhuan_title';
@@ -47,14 +47,14 @@ class ZhuantitleController extends CommonController
         return $add;
     }
     //专题列表数据伪删除
-    public function zt_del(Request $request)
+    public function course_del(Request $request)
     {
         // return '';
         if(empty($request->input('id')))
         {
             return '';
         }
-        $this->database = 'zhuan_title';
+        $this->database = 'course';
         $int = $this->model->new_del($this->database,$request->input('id'));
         // return $int;
         if(!empty($int))
@@ -66,39 +66,38 @@ class ZhuantitleController extends CommonController
         }
     }
     //专题列表数据编辑
-    public function zt_update(Request $request)
+    public function course_update(Request $request)
     {
         $data = $request->except('_token');
         // print_r($data);die;
-        $this->database = 'zhuan_title';
+        $this->database = 'course';
         if(!empty($data['id']))
         {
-            $data = $this->model->list_update($this->database,$data['id'],1,0);
-            // var_dump($data);die;
-            return json_encode($data);
+            $data = DB::table('course')->where('id','=',$data['id'])->first();
+            return view('Admin.Course.course_update',['data'=>$data]);
         }
         return '';
        
     }
     //执行数据修改
-    public function zt_up(Request $request)
+    public function course_up(Request $request)
     {
         $data = $request->except('_token');
         if(empty($data))
         {
             return '';
         }
-        $data['created_at'] = time();
-        $this->database = 'zhuan_title';
+        // $data['created_at'] = time();
+        $this->database = 'course';
         $id = $this->model->list_update($this->database,$data['id'],2,$data);
         return $id;
     }
     //数据回收站
-    public function zt_recycle(Request $request)
+    public function course_recycle(Request $request)
     {
         $data = $request->except('_token');
         
-        $this->database = 'zhuan_title';
+        $this->database = 'course';
         if(empty($data))
         {
             
@@ -109,34 +108,52 @@ class ZhuantitleController extends CommonController
             {
                 return view('Admin.List_error.404');
             }
-            return view('Admin.Zhuan_title.zhuan_recycle',['data'=>$data]);
+            return view('Admin.Course.course_recycle',['data'=>$data]);
         }
         if(empty($data['id']))
         {
             return '';
         }
-        $data['created_at'] =time();
+        // $data['created_at'] =time();
         $data['status'] =1;
         return $this->model->list_hd($this->database,$data['id'],$data['type'],$data);
     }
     //专题置顶
-    public function zt_top(Request $request)
+    public function course_top(Request $request)
     {
         $data = $request->except('_token');
         if(empty($data))
         {
             return '';
         }
-        $this->database = 'zhuan_title';
         if($data['type']==1)
         {
-            $id = $this->model->list_top($this->database,$data['id'],$data['type']);
+            $id = DB::table('course')->where('id','=',$data['id'])->update(['asc'=>1]);
             return $id;
         }
         if($data['type']==0)
         {
-            $id = $this->model->list_top($this->database,$data['id'],$data['type']);
+            $id =  $id = DB::table('course')->where('id','=',$data['id'])->update(['asc'=>0]);
             return $id;
         }
+    }
+    /**
+     * 课程管理-课程添加
+     * mzl 2018-06-19
+     * 
+     */
+    public function course_add(Request $request)
+    {
+        $data = $request->except('_token');
+        
+        if(empty($data))
+        {
+            return view('Admin.Course.course_add');
+        }
+        // return $data;
+        $this->database = 'course';
+        $id = $this->model->new_add($this->database,$data);
+        return $id;
+        
     }
 }

@@ -68,20 +68,22 @@ Route::group(['prefix' => '/message'],function(){
     //文章缩略图
     Route::post('/img_add','Admin\MessageController@img_add');
 });
-//专题管理
-Route::group(['prefix' => '/zt'],function(){
-    //专题列表展示页
-    Route::any('/zt_list','Admin\ZhuantitleController@zt_list');
-    //专题列表数据伪删除
-    Route::any('/zt_del','Admin\ZhuantitleController@zt_del');
-    //专题列表数据编辑功能
-    Route::any('/zt_update','Admin\ZhuantitleController@zt_update');
+//课程管理
+Route::group(['prefix' => '/course'],function(){
+    //课程列表展示页
+    Route::any('/course_list','Admin\CourseController@course_list');
+    //课程管理-课程添加
+    Route::any('/course_add','Admin\CourseController@course_add');
+    //课程管理-列表数据伪删除
+    Route::any('/course_del','Admin\CourseController@course_del');
+    //课程管理-列表数据编辑
+    Route::any('/course_update','Admin\CourseController@course_update');
     //执行数据修改
-    Route::any('/zt_up','Admin\ZhuantitleController@zt_up');
-    //专题回收站
-    Route::any('/zt_recycle','Admin\ZhuantitleController@zt_recycle');
-    //专题置顶-取消置顶
-    Route::any('/zt_top','Admin\ZhuantitleController@zt_top');
+    Route::any('/course_up','Admin\CourseController@course_up');
+    //课程管理-回收站
+    Route::any('/course_recycle','Admin\CourseController@course_recycle');
+    //课程管理-课程列表数据置顶
+    Route::any('/course_top','Admin\CourseController@course_top');
 });
 //案例管理
 Route::group(['prefix' => '/case'],function(){
