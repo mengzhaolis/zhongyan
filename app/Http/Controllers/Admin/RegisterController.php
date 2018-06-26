@@ -203,5 +203,9 @@ class RegisterController extends CommonController
 
         return  $id;
     }
-    
+    //数据统计-销售人员成交率
+    public function is_ok()
+    {
+        return view('Admin.Counts.oklv');
+    }
 }

@@ -12,7 +12,9 @@
 		<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
 	</div>
 	<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a href="javascript:;" id="dao" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe644;</i> 导出数据</a>
-	<a href="javascript:;" id="dao" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe645;</i> 导入数据</a>
+	<span class="btn-upload"> <a href="javascript:void();" class="btn btn-primary radius upload=btn"><i class="Hui-iconfont">&#xe642;</i> 数据导入</a>
+		<input type="file" multiple name="file" class="input-file">
+	</span>
 	<a href="javascript:;" onclick="fen()" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe6ab;</i> 分发资源</a>
 	</span> 
 	

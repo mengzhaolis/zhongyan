@@ -72,6 +72,23 @@
                 </ul>
             </dd>
         </dl>
+        <dl id="menu-product">
+            <dt>
+                <i class="Hui-iconfont">&#xe725;</i> 视频管理
+                <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
+            </dt>
+            <dd>
+                <ul>
+                    <li>
+                        <a data-href="{{url('/video/video_list')}}" data-title="视频管理" href="javascript:void(0)">视频管理</a>
+                    </li>
+                    <!-- <li><a data-href="product-category.html" data-title="分类管理" href="javascript:void(0)">分类管理</a></li> -->
+                    <li>
+                        <a data-href="{{url('/case/case_recycle')}}" data-title="案例管理回收站" href="javascript:void(0)">回收站</a>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
         <dl id="menu-comments">
             <dt>
                 <i class="Hui-iconfont">&#xe622;</i> 注册管理
@@ -90,6 +107,9 @@
                     </li>
                     <li>
                         <a data-href="/sell/register_list" data-title="销售登陆" href="javascript:void(0)">销售登陆</a>
+                    </li>
+                     <li>
+                        <a data-href="{{url('/register/is_ok')}}" data-title="数据有效率" href="javascript:void(0)">数据有效率</a>
                     </li>
                 </ul>
             </dd>
@@ -133,7 +153,7 @@
                     <li>
                         <a data-href="{{url('/administrator/admin_list')}}" data-title="管理员列表" href="javascript:void(0)">管理员列表</a>
                     </li>
-
+                   
                 </ul>
             </dd>
         </dl>
@@ -144,7 +164,7 @@
             </dt>
             <dd>
                 <ul>
-                    <li>
+                    <!-- <li>
                         <a data-href="charts-1.html" data-title="折线图" href="javascript:void(0)">折线图</a>
                     </li>
                     <li>
@@ -155,15 +175,15 @@
                     </li>
                     <li>
                         <a data-href="charts-4.html" data-title="柱状图" href="javascript:void(0)">柱状图</a>
-                    </li>
+                    </li> -->
                     <li>
                         <a data-href="charts-5.html" data-title="需求评估" href="javascript:void(0)">需求评估</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a data-href="charts-6.html" data-title="3D柱状图" href="javascript:void(0)">3D柱状图</a>
-                    </li>
+                    </li> -->
                     <li>
-                        <a data-href="charts-7.html" data-title="计算器" href="javascript:void(0)">计算器</a>
+                        <a data-href="{{url('/cost/cost_list')}}" data-title="计算器" href="javascript:void(0)">计算器</a>
                     </li>
                 </ul>
             </dd>

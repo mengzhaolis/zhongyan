@@ -158,6 +158,8 @@ Route::group(['prefix' => '/register'],function(){
     Route::any('/double_fen','Admin\RegisterController@double_fen');
     //注册管理-资源整合-数据二次分发
     Route::any('/double_two_fen','Admin\RegisterController@double_two_fen');
+    //注册管理-销售人员承接数据个人有效率
+    Route::any('/is_ok','Admin\RegisterController@is_ok');
 });
 //资源分发-销售人员专用
 Route::group(['prefix' => '/sell'],function(){
@@ -194,12 +196,13 @@ Route::group(['prefix' => '/images'],function(){
     //图片分类-回收站
     // Route::any('/images_recycle','Admin\ImagesController@images_recycle');
 });
-//费用计算器-计算器-需求评估
-Route::group(['prefix' => '/counts'],function(){
-    //图片列表
-    Route::any('/images_list','Admin\ImagesController@images_list');
-    //图片分类-图片添加
-    Route::any('/images_add','Admin\ImagesController@images_add');
+
+//视频管理
+Route::group(['prefix' => '/video'],function(){
+    //视频管理-视频列表
+    Route::any('/video_list','Admin\VideoController@video_list');
+    //视频管理-视频添加
+    Route::any('/video_add','Admin\VideoController@video_add');
     //图片分类-数据添加
     Route::any('/images_data_add','Admin\ImagesController@images_data_add');
     //添加图片-数据添加将图片图库
@@ -214,4 +217,15 @@ Route::group(['prefix' => '/counts'],function(){
     Route::any('/images_stop','Admin\ImagesController@images_stop');
     //图片分类-回收站
     // Route::any('/images_recycle','Admin\ImagesController@images_recycle');
+});
+//费用计算器
+Route::group(['prefix' => '/cost'],function(){
+    //费用计算器-计算器数据展示
+    Route::any('/cost_list','Admin\CostController@cost_list');
+    //费用计算器-数据添加
+    Route::any('/cost_add','Admin\CostController@cost_add');
+    //编辑
+    Route::any('/cost_up','Admin\CostController@cost_up');
+    //执行编辑入库更改
+    Route::any('/cost_update_add','Admin\CostController@cost_update_add');
 });
