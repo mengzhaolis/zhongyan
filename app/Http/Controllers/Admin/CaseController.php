@@ -33,7 +33,8 @@ class CaseController extends CommonController
         if(empty($data))
         {
             $type = $this->menu->first('type');
-           return view("Admin.Case.ca_add",['type'=>$type]);
+            $data = DB::table('direction')->get();
+           return view("Admin.Case.ca_add",['type'=>$type,'data'=>$data]);
         }
         $data['case_num']=rand(1111,9999);
         $data['created_at']=time();

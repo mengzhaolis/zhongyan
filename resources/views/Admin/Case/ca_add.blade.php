@@ -38,13 +38,25 @@
 				</select>
 				</span> </div>
 		</div>
+        
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">排序(反序)：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<input type="text" class="input-text" value="0" placeholder="" id="" name="asc">
 			</div>
 		</div>
-		
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>案例类型：</label>
+			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+				<select name="direction_name" class="select">
+					<option value="0">请选择分类</option>
+                    @foreach($data as $a)
+                        <option value="{{$a->id}}">{{$a->direction_name}}</option>
+                          
+                    @endforeach
+				</select>
+				</span> </div>
+		</div>
 		
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">作者：</label>

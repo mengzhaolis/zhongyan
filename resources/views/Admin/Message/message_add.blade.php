@@ -21,18 +21,17 @@
 			</div>
 		</div>
         <!-- 分类 -->
-		<!-- <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类栏目：</label>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>资讯分类：</label>
 			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-				<select name="" class="select">
-					<option value="0">一级分类</option>
-					<option value="1">一级分类</option>
-					<option value="11">├二级分类</option>
-					<option value="12">├二级分类</option>
-					<option value="13">├二级分类</option>
+				<select name="message_type" class="select">
+					<option value="">请选择分类</option>
+					@foreach($type as $type)
+                        <option value="{{$type->id}}">{{$type->type_name}}</option>
+                    @endforeach
 				</select>
 				</span> </div>
-		</div> -->
+		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">排序(反序)：</label>
 			<div class="formControls col-xs-8 col-sm-9">
@@ -256,7 +255,10 @@ $("#form-article-add").validate({
         {
             required: true,
         },
-
+         message_type:
+        {
+            required: true,
+        },
     },
     onkeyup:false,
     focusCleanup:true,

@@ -44,7 +44,9 @@ class MessageController extends CommonController
     {
         if(empty($request->except('_token')))
         {
-            return view('Admin.Message.message_add');
+            //资讯分类选项
+            $type = DB::table('type')->where([['pid','=',0],['status','!=',0]])->get();
+            return view('Admin.Message.message_add',['type'=>$type]);
         }
         
         $data = $request->except('_token');

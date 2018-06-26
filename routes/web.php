@@ -49,19 +49,19 @@ Route::group(['prefix' => '/type'],function(){
     //分类回收站
     Route::any('/type_list_recycle','Admin\TypeController@type_list_recycle');
 });
-//后台最新资讯
+//后台最新动态
 Route::group(['prefix' => '/message'],function(){
-    //资讯列表展示页
+    //动态列表展示页
     Route::any('/message','Admin\MessageController@message');
     //文章置顶
     Route::any('/top','Admin\MessageController@top');
-    //资讯添加模板展示
+    //动态添加模板展示
     Route::any('/message_add','Admin\MessageController@message_add');
-    //资讯编辑
+    //动态编辑
     Route::any('/message_up','Admin\MessageController@message_up');
     //执行文件编辑
     Route::any('/message_update','Admin\MessageController@message_update');
-    //资讯编辑更改图片
+    //动态编辑更改图片
     Route::any('/img_up','Admin\MessageController@img_up');
     //回收站
     Route::any('/message_recycle','Admin\MessageController@message_recycle');
