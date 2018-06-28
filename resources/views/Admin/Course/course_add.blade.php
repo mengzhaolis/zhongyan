@@ -155,14 +155,14 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">SEO摘要：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<textarea name="seo_keyword" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="$.Huitextarealength(this,200)"></textarea>
+				<textarea name="seo_keyword" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" ></textarea>
 				<p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">文章摘要：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<textarea name="course_jian" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="$.Huitextarealength(this,200)"></textarea>
+				<textarea name="course_jian" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" ></textarea>
 				<p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
 			</div>
 		</div>
@@ -286,8 +286,9 @@ $("#form-article-add").validate({
                 if(data !='')
                 {
                     layer.msg('添加成功!',{icon:1,time:1000});
+                    parent.location.reload()
                     window.close(); 
-					window.location.href='{{url("/message/message")}}'; 
+					window.location.href='{{url("/course/course_list")}}'; 
                 }else
                 {
                     layer.msg('添加失败!',{icon:1,time:3000});

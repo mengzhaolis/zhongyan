@@ -1,0 +1,81 @@
+.footer{
+	width:100%;
+	height:355px;
+	background-color: #2c3247;
+	padding-top:50px;
+}
+.fooer_inner,.footer_bottom{
+	width:1200px;
+	margin:0 auto;
+}
+.footer_copyright{
+	height:255px;
+	border-bottom:1px solid #666666;
+}
+.footer_left_img{
+    width:145px;
+    height:120px;
+    padding-right:25px;
+    border-right:1px solid #666;
+}
+.footer_left_img div{
+	width:120px;
+	height:120px;
+    background-color: #a0a0a0;
+}
+.class_left_tel{
+	margin: 37px 0 0 20px;
+}
+.class_left_tel p{
+	color:#eee;
+}
+.telephone{
+	font-size:24px;
+}
+.footer_right ol{
+	height:28px;
+	background:url("/Home/images/footer/underline.png") no-repeat left bottom;
+	margin-bottom:20px;
+}
+.footer_right ol li{
+    float:left;
+    width:33px;
+    line-height: 25px;
+    margin-right:25px;
+    font-size:16px;
+}
+.current{
+	border-bottom:2px solid #c6cbdb;
+}
+.footer_right ol li a{
+	color:#eee;
+}
+.footer_right_list{
+	width:410px;
+	position:relative;
+}
+.footer_right_list ul{
+    position:absolute;
+    top:0;
+    left:0;
+}
+.footer_right_list ul li{
+	line-height: 23px;
+	color:#eee;
+}
+.footer_right_list .dalian{
+	display:none;
+}
+.item{
+	display:none;
+}
+.show{
+	display:block;
+}
+.footer_bottom{
+	line-height:50px;
+}
+.footer_bottom div{
+    color:#999;
+    font-size:12px;
+}

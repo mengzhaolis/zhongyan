@@ -1,0 +1,38 @@
+.nav{
+    width:100%;
+    height:51px;
+    background-color:#445a9a;
+}
+.nav ul{
+    width:1200px;
+    margin:0 auto;
+    padding-left:65px;
+}
+.nav li{
+    width:92px;
+    line-height:46px;
+    float:left;
+    text-align:center;
+    border-bottom:0;
+    margin-right: 15px;
+}
+.nav .nav_dot{
+    width:108px;
+}
+.nav .nav_three{
+    width:74px;
+}
+.nav .nav_six{
+    width:127px;
+}
+.nav li a{
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+}
+.nav li:hover{
+    border-bottom: 3px solid #fff;
+}
+.nav .noMarginRight{
+    margin-right: 0;
+}

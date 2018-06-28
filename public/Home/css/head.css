@@ -1,0 +1,85 @@
+
+/*搜索栏*/
+.search{
+    width:100%;
+    height:49px;
+    background-color:#eee;
+}
+.search_inner{
+    width:1200px;
+    margin:0 auto;
+}
+.search_inner p{
+    line-height:49px;
+}
+.search_innerR{
+    display: flex;
+    justify-content: space-between;
+}
+.search_innerR_txt{
+    width:275px;
+    height:34px;
+    margin-top:8px;
+}
+.txt{
+    width:100%;
+    height:100%;
+    border:1px solid #666;
+    border-radius:5px 0 0 5px;
+    background-color:#eee;
+}
+.search_innerR_btn{
+    width:34px;
+    height:34px;
+    margin-top:8px;
+    border:1px solid #666;
+    border-left:0;
+    border-radius:0 5px 5px 0;
+    background:url("/Home/images/header/search.png") no-repeat center center;
+    cursor: pointer;
+}
+.search_innerR span{
+    line-height:49px;
+    margin-left:30px;
+}
+.search_innerR span img{
+    margin:0 2px -5px 0;
+}
+/*logo*/
+.logo{
+    width:1200px;
+    height:100px;
+    margin:0 auto;
+}
+.logo_img{
+   margin-top: 18px;
+}
+.logoR{
+    line-height:100px;
+}
+.logoR a{
+    display:block;
+    margin-left:32px;
+    color:#445a9a;
+    padding-left:44px;
+}
+.needsIcon{
+    background: url("/Home/images/header/needsIcon.png") no-repeat left center;
+}
+.onlineIcon{
+    background: url("/Home/images/header/onlineIcon.png") no-repeat left center;
+}
+.flicker{
+    background-position:left center;
+    background-repeat: no-repeat; 
+     background: url("/Home/images/header/calputer.png") no-repeat left center;
+    color:#445a9a;
+}
+.needsIcon:hover{
+    background: url("/Home/images/header/needsIconTint.png") no-repeat left center;
+    color:#5773c5;
+}
+.onlineIcon:hover{
+    background: url("/Home/images/header/onlineIconTint.png") no-repeat left center;
+    color:#5773c5;
+}

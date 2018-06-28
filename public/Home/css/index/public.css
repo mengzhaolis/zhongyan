@@ -1,0 +1,43 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td {
+    margin:0; 
+    padding:0; 
+    color:#333;
+    font-size:14px;
+    font-family:"Microsoft Yahei";
+    }
+*{
+    -webkit-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    }
+h1, h2, h3, h4, h5, h6 { 
+	font-weight:normal; 
+	font-size:100%; 
+}
+address, caption, cite, code, dfn, em, strong, th, var { 
+	font-style:normal; 
+	font-weight:normal;
+}
+ul,li{
+	list-style:none;
+}
+a{
+	text-decoration:none;
+	color:#333;
+}
+.L{
+	float:left;
+}
+.R{
+	float:right;
+}
+.clear{
+	clear:both;
+}
+em,i{
+	font-style:normal;
+}
+input{
+	outline:none;
+}

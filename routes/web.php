@@ -10,10 +10,20 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//网站首页-前端
+Route::any('/','Home\IndexController@index');
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+
+
+
+
+
+
+
+
+
+
+
 
 Route::get('/login','Auth\LoginController@login');
 Route::get('/logout','Auth\LoginController@logout');
