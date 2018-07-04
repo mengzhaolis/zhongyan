@@ -20,8 +20,8 @@
 </div>
 <div class="nav">
     <ul>
-        <li class="headPublic1"><a href="index.html">公司首页</a></li>
-        <li class="headPublic2"><a href="industry.html">工业研究</a></li>
+        <li class="headPublic1"><a href="{{url('/')}}">公司首页</a></li>
+        <li class="headPublic2"><a href="{{url('/park')}}">工业研究</a></li>
         <li class="headPublic3"><a href="realty.html">商业地产</a></li>
         <li class="headPublic4"><a href="competitorSpecial.html">竞争对手</a></li>
         <li class="nav_dot headPublic5"><a href="medicalTopicPage.html">医药&nbsp·&nbsp医疗</a></li>

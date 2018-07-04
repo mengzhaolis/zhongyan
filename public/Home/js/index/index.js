@@ -127,3 +127,16 @@ window.onload=function(){
  };
  
 })
+
+//首页底部注册-省市二级联动
+$('.city').change(function(){
+
+    var province_id = $(this).val();
+    var token = $("#token").val();
+    var url = '/city';
+    var data ={'_token':token,'province_id':province_id};
+    $.post(url,data,function(data){
+        $('.second').html(data);
+    })
+})
+

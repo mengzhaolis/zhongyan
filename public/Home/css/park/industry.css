@@ -1,0 +1,574 @@
+body{
+    width:100%;
+    min-width: 1200px;
+}
+/*导航条*/
+.nav .headPublic2{
+    border-bottom: 3px solid #fff;
+}
+.main{
+       background-color: #ecf0f8; 
+       padding-bottom: 50px;
+}
+/*轮播图*/
+.slider,.slider-panel img,.slider-extra {
+    width:100%;
+    height:500px;
+}
+.slider {
+    text-align:center;
+    margin:0 auto;
+    position:relative;
+}
+.slider-panel,.slider-nav,.slider-pre,.slider-next {
+    position:absolute;
+    z-index:8;
+}
+.slider-panel {
+    position:absolute;
+}
+.slider-panel img {
+    border:none;
+}
+.slider-extra {
+    position:relative;
+}
+.slider-nav {
+    margin-left:-51px;
+    position:absolute;
+    left:50%;
+    bottom:20px;
+}
+.slider-nav li {
+    width:55px;height:10px;
+    margin-right:30px;
+    border:1px solid #fff;
+    float:left;
+    overflow:hidden;
+}
+.slider-nav .slider-item-selected {
+    background:#fff;
+}
+.slider-page a {
+    background:rgba(0,0,0,0.2);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000,endColorstr=#33000000);
+    color:#fff;
+    text-align:center;
+    display:block;
+    font-family:"simsun";
+    font-size:22px;
+    width:28px;
+    height:62px;
+    line-height:62px;
+    margin-top:-31px;
+    position:absolute;
+    top:50%;
+}
+.slider-page a:HOVER {
+    background:rgba(0,0,0,0.4);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
+}
+.slider-next {
+    left:100%;
+    margin-left:-28px;
+}
+
+/*中研实力+行业动态*/
+.industryBgProblem{
+   width:100%;
+}
+.industryBgProblem_inner{
+    width:1200px;
+    margin:0 auto;
+    padding-top: 35px;
+}
+/*中研实力*/
+.industryBgProblem_left{
+    width:700px;
+    height:322px;
+    padding:15px 30px 30px 0;
+    border-right: 1px solid #a6b1d1;
+}
+.industryBgProblem h4{
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    font-family:"Noto Sans S Chinese";
+    background: linear-gradient(to right, #d03133,#574f8b,#44549a);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.industryBgProblem_left p{
+    border-top: 2px solid #445a9a;
+    margin-top: 17px;
+    padding-top: 18px;
+    line-height:24px;
+    height:230px;
+    overflow: hidden;
+}
+/*行业动态*/
+.industryBgProblem_right{
+    width:470px;
+    height:322px;
+    padding-top:15px;
+}
+.industryBgProblem_right>p>a{
+    float: right;
+    display: block;
+    line-height: 16px;
+    color: #445a9a;
+}
+.industryBgProblem_right ul{
+    border-top: 2px solid #445a9a;
+    margin-top: 17px;
+    padding-top: 6px;
+}
+.industryBgProblem_right .listFirst a{
+    background-size: 0,0;
+    padding-left: 0;
+    border:0;
+    margin-bottom: -11px;
+    position: relative;
+}
+.industryBgProblem_right .listFirst a span{
+    display: inline-block;
+    position: absolute;
+    bottom: 11px;
+    left: 0;
+    right: 0;
+    background-color: rgba(68,90,154,0.7);
+    color:#fff;
+    padding-left: 10px;
+    line-height: 32px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 30px;
+}
+.industryBgProblem_right li a{
+    display: block;
+    line-height:32px;
+    background: url("/Home/images/park/squares.png") no-repeat left center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left:15px;
+    padding-right: 20px;
+    border-bottom: 1px dashed #a6b1d1;
+}
+.industryBgProblem_right li a:hover{
+    color: #445a9a;
+}
+.industryBgProblem_right .listLast{
+    border-bottom: 0;
+}
+/*工业体系*/
+.industrialSystem{
+    width:1200px;
+    margin:12px auto 0;
+}
+h3{
+    font-size:28px;
+    font-weight: bold;
+    text-align: left;
+    line-height:57px;
+    background: url("/Home/images/park/lineLeft.png") no-repeat left bottom;
+}
+.industrialSystem h3{
+    margin-bottom: 47px;
+}
+.industrialSystem ul li{
+    float:left;
+    width:272px;
+    margin-left:34px;
+    background-size:100% 100%;
+    margin-bottom:48px;
+    position:relative;
+    cursor:pointer;
+}
+.industrialSystem .marginBottom{
+    margin-bottom: 30px;
+}
+.industrialSystem ul .noMarginLeft{
+    margin-left: 10px;
+}
+.industrialSystem_first{
+    background-image:url("/Home/images/park/architecture.png");
+}
+.industrialSystem_second{
+    background-image:url("/Home/images/park/environmentalProtection.png");
+}
+.industrialSystem_third{
+    background-image:url("/Home/images/park/car.png");
+}
+.industrialSystem_fourth{
+    background-image:url("/Home/images/park/energy.png");
+}
+.industrialSystem_fifth{
+    background-image:url("/Home/images/park/newMaterial.png");
+}
+.industrialSystem_sixth{
+    background-image:url("/Home/images/park/solarEnergy.png");
+}
+.industrialSystem_seventh{
+    background-image:url("/Home/images/park/mechanicalEquipment.png");
+}
+.industrialSystem_eighth{
+    background-image:url("/Home/images/park/consumption.png");
+}
+.industrialSystem li .title{
+    color:#fff;
+    display:block;
+    width:124px;
+    height:44px;
+    background: url("/Home/images/park/arrow.png") no-repeat;
+    background-size:100% 100%;
+    position:absolute;
+    top:-18px;
+    left:-10px;
+    line-height:34px;
+}
+.industrialSystem li .title em{
+    margin-left:24px;
+}
+.industrialSystem li .six em{
+    margin-left:14px;
+}
+.industrialSystem li span{
+    display:block;
+    text-align: center;
+    width:114px;
+    float:left;
+    margin:136px 0 10px 14px;
+    line-height:30px;
+    background: #070e1d;
+    border-radius: 5px;
+}
+.industrialSystem li span img{
+    margin-right:8px;
+    vertical-align: middle;
+}
+.industrialSystem li span a{
+    color:#fff;
+}
+/*为什么选择我们*/
+.why{
+    width:100%;
+    height:549px;
+    padding-top:32px;
+    background:url("/Home/images/park/background.png") no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+.why_inner,.service_inner,.classicCase_inner,.flowChart_inner{
+    width:1200px;
+    margin:0 auto;
+}
+.why_inner h3,.flowChart_inner h3{
+    text-align:center;
+    margin-bottom:70px;
+    line-height: 55px;
+    background: url("/Home/images/park/line.png") no-repeat center bottom;
+}
+.why_inner ul{
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.why_inner li{
+    float:left;
+    width:170px;
+    height: 250px;
+    margin-bottom:90px;
+}
+.why_details_title{
+    background-image:url("/Home/images/park/round.png");
+    background-size:100% 100%;
+    padding:50px 0;
+    text-align:center;
+}
+
+.why_details_title em{
+    font-size:34px;
+    color:#9e0914;
+    text-align:center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.why_details_title i{
+    font-size:24px;
+    color:#4b5584;
+    text-align:center;
+}
+.why_details_explain{
+   margin-top:20px;
+}
+.why_details_explain p{
+    color:#333;
+    text-align:left;
+}
+.why_details_explain em{
+    color:#9e0a14;
+}
+/*产品服务*/
+.service{
+    width:100%;
+    height:515px;
+    background-color: #ecf0f8;
+    padding-top:3px;
+}
+.service_inner_list ul{
+    margin-top: 30px;
+}
+.service_inner_list li{
+    width:282px;
+    height:178px;
+    float:left;
+    margin:10px;
+    position:relative;
+}
+.service_inner_list .noMarginL{
+    margin-left:0;
+}
+.service_inner_list div{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding:30px;
+}
+.service_inner_list div span{
+    font-size: 16px;
+    font-weight: bold;
+    color: #eeeeee;
+}
+.empty{
+    margin-top: 8px;
+    width: 0;
+    height:2px;
+    background: #ecf0f8;
+}
+.text{
+    width:225px;
+    position: absolute;
+    top:80px;
+    left:272px;
+    color: #eeeeee;
+    line-height: 18px;
+    opacity:0;
+}
+/*经典案例*/
+.classicCase{
+    width:100%;
+}
+.classicCase h3{
+    margin-bottom: 30px;
+}
+.classicCase h3 a{
+    font-size: 14px;
+    color: #445a9a;
+    float: right;
+    line-height: 80px;
+}
+.classicCase_inner li{
+    width:185px;
+    background-color: #fff;
+    padding:4px 4px 0;
+    float:left;
+    margin-right:18px;
+    margin-bottom:20px;
+    cursor:pointer;
+}
+.classicCase_inner li img{
+    width:100%;
+    height:80.5%;
+} 
+.classicCase_inner li p{
+    height:36px;
+    line-height:36px;
+    text-align:center;
+    color:#333;
+    overflow: hidden;
+    font-size:12px;
+}
+.classicCase_inner .noMarginR{
+    margin-right:0;
+}
+
+/*中研流程图*/
+.flowChart{
+    width:100%;
+    overflow:hidden;
+}
+.flowChart h3{
+    margin-top: -6px;
+    margin-bottom: 29px;
+}
+.flowChart_inner_border{
+    display: flex;
+    justify-content: space-between;
+    height:350px;
+}
+.flowChart_inner_left img{
+    width: 390px;
+    height: 350px;
+}
+.flowChart_inner_right{
+    width:813px;
+    height:350px;
+    border:2px solid #425898;
+    flex:3;
+    position: relative;
+}
+.flowContent{
+  position: relative;
+}
+.leftArrow{
+  position: absolute;
+  top:70px;
+  left:29px;
+  transform: rotate(180deg);
+  cursor: pointer;
+}
+.changeRotateLeft{
+  transform: rotate(0deg);
+}
+.rightArrow{
+  position: absolute;
+  top:73px;
+  right:29px;
+  cursor: pointer;
+}
+.changeRotateRight{
+  transform: rotate(180deg);
+  top:70px;
+}
+.demandList{
+  width:688px;
+  overflow: hidden;
+  margin:0 auto;
+  position: relative;
+}
+.demandLine{
+  width: 1017px;
+  height:2px;
+  background: #666666;
+  margin-top: 91px;
+  margin-bottom:100px;
+  position: relative;
+  z-index: 5;
+}
+.demandLine>ul>li{
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    background:url("../images/industry/roundBlack.png") no-repeat;
+    margin-top: -5px;
+    cursor:pointer;
+    z-index: 10;
+}
+.demandLine>ul>.bgchange{
+    background:url("../images/industry/roundBlue.png") no-repeat;
+}
+.demandLine>ul>li>.change{
+    color:#fff;
+    background-color: #8a97bd;
+}
+.demandLine>ul>.listOne{
+  left:55px;
+}
+.demandLine>ul>.listTwo{
+  left:183px;
+}
+.demandLine>ul>.listThire{
+  left:300px;
+}
+.demandLine>ul>.listFour{
+  left:410px;
+}
+.demandLine>ul>.listFive{
+  left:520px;
+}
+.demandLine>ul>.listSix{
+  left:630px;
+}
+.demandLine>ul>.listSeven{
+  left:740px;
+}
+.demandLine>ul>.listEight{
+  left:850px;
+}
+.demandLine>ul>.listNine{
+  left:960px;
+}
+.demandLine>ul>li>em{
+  position: absolute;
+  left:6px;
+}
+.TopLine{
+   top:-15px;
+}
+.BomLine{
+  top:7px;
+}
+.demandLine>ul>li>div{
+    font-size: 14px;
+    color: #333;
+    padding: 3px 6px;
+    border-radius: 5px;
+    border: 1px solid #666;
+    text-align: center;
+    cursor:pointer;
+}
+.demandTopPoin{
+    position: absolute;
+    bottom:23px;
+}
+.demandBomPoin{
+    position: absolute;
+}
+.marginLeft20{
+    top: 21px;
+}
+.demontLeft20{
+    top: 21px;
+}
+.fourWords{
+    width:70px;
+    left: -29px;
+}
+.sixWords{
+    width: 98px;
+    left: -43px
+}
+.tenWords{
+    width:154px;
+    left:-73px;
+}
+.demandContent{
+    width: 495px;
+    height:57px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.demandContent ul li{
+    width:100%;
+    height:100%;
+    display:none;
+    line-height:20px;
+}
+.bottom{
+    width: 495px;
+    margin: 0 auto;
+    text-align: right;
+    margin-top: 14px;
+}
+.lasts{
+    margin-right: 20px;
+}
+.fontColor{
+    color:#445a9a;
+}

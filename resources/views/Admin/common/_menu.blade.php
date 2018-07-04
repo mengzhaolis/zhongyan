@@ -55,6 +55,20 @@
                 </ul>
             </dd>
         </dl>
+        <dl id="menu-picture">
+            <dt>
+                <i class="Hui-iconfont">&#xe61d;</i> 行业管理
+                <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
+            </dt>
+            <dd>
+                <ul>
+                    <li>
+                        <a data-href="{{url('/guild/guild_list')}}" data-title="行业管理" href="javascript:void(0)">行业管理</a>
+                    </li>
+                   
+                </ul>
+            </dd>
+        </dl>
         <dl id="menu-product">
             <dt>
                 <i class="Hui-iconfont">&#xe620;</i> 案例管理
@@ -204,6 +218,26 @@
                     <li>
                         <a data-href="{{url('/type/type_list_recycle')}}" data-title="回收站" href="javascript:void(0)">回收站</a>
                     </li>
+                </ul>
+            </dd>
+        </dl>
+        <dl id="menu-admin">
+            <dt>
+                <i class="Hui-iconfont">&#xe62d;</i> seo管理
+                <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
+            </dt>
+            <dd>
+                <ul>
+                    <li>
+                        <a data-href="{{url('/seo/seo_list')}}" data-title="seo管理" href="javascript:void(0)">seo管理</a>
+                    </li>
+                    <li>
+                        <a data-href="{{url('/administrator/permission/')}}" data-title="权限管理" href="javascript:void(0)">权限管理</a>
+                    </li>
+                    <li>
+                        <a data-href="{{url('/administrator/admin_list')}}" data-title="管理员列表" href="javascript:void(0)">管理员列表</a>
+                    </li>
+                   
                 </ul>
             </dd>
         </dl>

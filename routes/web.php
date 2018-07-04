@@ -12,7 +12,10 @@
 */
 //网站首页-前端
 Route::any('/','Home\IndexController@index');
-
+//首页底部注册-省市二级联动
+Route::any('/city','Home\IndexController@city');
+//网站工业频道页-前端
+Route::any('/park','Home\ParkController@park');
 
 
 
@@ -207,6 +210,17 @@ Route::group(['prefix' => '/images'],function(){
     // Route::any('/images_recycle','Admin\ImagesController@images_recycle');
 });
 
+//行业管理
+Route::group(['prefix' => '/guild'],function(){
+    //行业列表
+    Route::any('/guild_list','Admin\GuildController@guild_list');
+    //行业管理-添加行业
+    Route::any('/guild_add','Admin\GuildController@guild_add');
+    //行业管理-添加封面图
+    Route::any('/images_add','Admin\GuildController@images_add');
+});
+
+
 //视频管理
 Route::group(['prefix' => '/video'],function(){
     //视频管理-视频列表
@@ -238,4 +252,25 @@ Route::group(['prefix' => '/cost'],function(){
     Route::any('/cost_up','Admin\CostController@cost_up');
     //执行编辑入库更改
     Route::any('/cost_update_add','Admin\CostController@cost_update_add');
+});
+//seo管理
+Route::group(['prefix' => '/seo'],function(){
+    //seo管理-数据分类
+    Route::any('/seo_list','Admin\SeoController@seo_list');
+    //seo管理-数据分类添加
+    Route::any('/seo_add','Admin\SeoController@seo_add');
+    //编辑
+    Route::any('/seo_up','Admin\SeoController@seo_up');
+    //执行编辑入库更改
+    Route::any('/seo_type_update','Admin\SeoController@seo_type_update');
+    //seo分类数据删除
+    Route::any('/seo_type_del','Admin\SeoController@seo_type_del');
+    //seo数据列表
+    Route::any('/seo_data_list','Admin\SeoController@seo_data_list');
+    //seo数据添加
+    Route::any('/seo_data_add','Admin\SeoController@seo_data_add');
+    //seo数据编辑
+    Route::any('/seo_data_up','Admin\SeoController@seo_data_up');
+    //seo数据编辑
+    Route::any('/seo_update','Admin\SeoController@seo_update');
 });

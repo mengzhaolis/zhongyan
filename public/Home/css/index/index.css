@@ -327,10 +327,40 @@ h3{
 .industry ul li{
     width: 282px;
     height: 326px;
-    background-image: url("/Home/images/index/trade.png");
-    padding: 126px 30px 0;
     position: relative;
 }
+.industry ul li img{
+    width: 100%;
+    height:100%;
+}
+.listTop{
+    position: absolute;
+    top:125px;
+    left:30px;
+    right:30px;
+}
+.industry li .listBottom{
+    height:50px;
+    border:1px solid #44579a;
+    background-color:rgba(68,90,154,0.5);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5px 0;
+}
+.industry li .listBottom a{
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    width: 137px;
+    line-height: 40px;
+}
+.industry li .listBottom a+a{
+    border-left: 1px solid #a6b1d1;
+}
+
+
 .industry li h4{
     font-size: 16px;
     font-weight: bold;

@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Storage;
 
 class CostController extends CommonController
 { 
+    public function __construct()
+    {
+        $this->model = new Cms;
+        $this->menu = new menu;
+    }
     /**
      * 费用计算器-计算器数据展示
      * mzl 2018-06-22
@@ -19,8 +24,8 @@ class CostController extends CommonController
     public function cost_list()
     {
         $data = DB::table('cost')->where('status','=',1)->get();
-
-        return view('Admin.Cost.cost_list',['data'=>$data]);
+        $type = $this->menu->first('type');
+        return view('Admin.Cost.cost_list',['data'=>$data,'type'=>$type]);
     }
     /**
      * 费用计算器-调研分类添加

@@ -1,21 +1,17 @@
-@include('Home.common.head')
-    <meta charset="UTF-8">
-    <title>首页</title>
-    <link rel="stylesheet" type="text/css" href="/Home/css/index/public.css">
-    <link rel="stylesheet" type="text/css" href="/Home/css/index/wrap.css">
-    <link rel="stylesheet" type="text/css" href="/Home/css/index/index.css">
-
+@include('Home.common.head')   
+<link rel="stylesheet" type="text/css" href="/Home/css/index/index.css">
+<meta charset="UTF-8">
+<title>首页</title>
 </head>
 <body>
-    @include('Home.common._meat')jieguo
+    @include('Home.common._meat')
 
 <!--轮播图-->
 <div class="slider">
   <ul class="slider-main">
-    <li class="slider-panel"> <a><img src="./images/index/hospital.png"></a> </li>
-    <li class="slider-panel"> <a><img src="./images/index/banner.png"></a> </li>
-    <li class="slider-panel"> <a><img src="./images/index/real_state.png"></a> </li>
-    <li class="slider-panel"> <a><img src="./images/index/industry.png"></a> </li>
+  @foreach($banner as $banner)
+    <li class="slider-panel"> <a href="{{$banner->img_url}}"><img src="{{$banner->img_path}}"></a> </li>
+  @endforeach
   </ul>
   <div class="slider-extra">
     <ul class="slider-nav">
@@ -148,42 +144,21 @@
              <div class="clear"></div>
              <p class="TitleP">工业<span>/</span>商业地产<span>/</span>竞争对手<span>/</span>医药&nbsp;·&nbsp;医疗<span>/</span>营销咨询<span>/</span>科技园区<span>/</span>互联网大数据</p>
              <ul>
-                 <li>
-                     <h4>我是标题我是标题我是标题</h4>
-                     <em></em>
-                     <p>我是内容我是内容我是内容我是内容我是内容我是内容</p>
-                     <div>
+                @foreach($guild as $guild)
+                <li>
+                    <img src="{{$guild->img_path}}">
+                    <div class="listTop">
+                         <h4>{{$guild->guild_title}}</h4>
+                         <em></em>
+                         <p>{{$guild->guild_miao}}</p>
+                    </div>
+                     <div class="listBottom">
                          <a href="">参考报价</a>
                          <a href="">需求评估</a>
                      </div>
                  </li>
-                   <li>
-                     <h4>我是标题我是标题我是标题</h4>
-                     <em></em>
-                     <p>我是内容我是内容我是内容我是内容我是内容我是内容</p>
-                     <div>
-                         <a href="">参考报价</a>
-                         <a href="">需求评估</a>
-                     </div>
-                 </li>
-                   <li>
-                     <h4>我是标题我是标题我是标题</h4>
-                     <em></em>
-                     <p>我是内容我是内容我是内容我是内容我是内容我是内容</p>
-                     <div>
-                         <a href="">参考报价</a>
-                         <a href="">需求评估</a>
-                     </div>
-                 </li>
-                   <li>
-                     <h4>我是标题我是标题我是标题</h4>
-                     <em></em>
-                     <p>我是内容我是内容我是内容我是内容我是内容我是内容</p>
-                     <div>
-                         <a href="">参考报价</a>
-                         <a href="">需求评估</a>
-                     </div>
-                 </li>
+                 
+                @endforeach
              </ul>
     	</div>
     </div>
@@ -412,76 +387,22 @@
                 <div id="indemo">
                     <div id="demo1">
                         <ul>
-                            <li>
-                                <div class="diaplayShow">
-                                    <p><img src="./images/index/industrial.png"/></p>
-                                    <div class="arrowHeight">
-                                        <p class="arrow"></p>
-                                        <p>工业研究</p>
+                            @foreach($case as $case)
+                                <li>
+                                    <div class="diaplayShow">
+                                        <p><img src="{{$case->img_path}}"/></p>
+                                        <div class="arrowHeight">
+                                            <p class="arrow"></p>
+                                            <p>{{$case->case_name}}</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="diaplayHide">
-                                    <p class="IndustrialResearch">工业研究</p>
-                                    <p class="IndustrialResearchText">三的卡萨啊；是鲁大师是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的的</p>
-                                    <p class="ForDetails"><a href="">了解详情</a></p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="diaplayShow">
-                                    <p><img src="./images/index/business.png"/></p>
-                                    <div class="arrowHeight">
-                                        <p class="arrow"></p>
-                                        <p>商业地产</p>
+                                    <div class="diaplayHide">
+                                        <p class="IndustrialResearch">{{$case->case_name}}</p>
+                                        <p class="IndustrialResearchText">{{$case->case_miaoshu}}</p>
+                                        <p class="ForDetails"><a href="">了解详情</a></p>
                                     </div>
-                                </div>
-                                <div class="diaplayHide">
-                                    <p class="IndustrialResearch">工业研究</p>
-                                    <p class="IndustrialResearchText">三的卡萨啊；是鲁大师是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的的</p>
-                                    <p class="ForDetails"><a href="">了解详情</a></p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="diaplayShow">
-                                    <p><img src="./images/index/competitor.png"/></p>
-                                    <div class="arrowHeight">
-                                        <p class="arrow"></p>
-                                        <p>竞争对手</p>
-                                    </div>
-                                </div>
-                                <div class="diaplayHide">
-                                    <p class="IndustrialResearch">工业研究</p>
-                                    <p class="IndustrialResearchText">三的卡萨啊；是鲁大师是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的的</p>
-                                    <p class="ForDetails"><a href="">了解详情</a></p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="diaplayShow">
-                                    <p><img src="./images/index/hospital2.png"/></p>
-                                    <div class="arrowHeight">
-                                        <p class="arrow"></p>
-                                        <p>医疗·医药</p>
-                                    </div>
-                                </div>
-                                <div class="diaplayHide">
-                                    <p class="IndustrialResearch">工业研究</p>
-                                    <p class="IndustrialResearchText">三的卡萨啊；是鲁大师是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的的</p>
-                                    <p class="ForDetails"><a href="">了解详情</a></p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="diaplayShow">
-                                    <p class="diaplayShow"><img src="./images/index/marketing.png"/></p>
-                                    <div class="arrowHeight">
-                                        <p class="arrow"></p>
-                                        <p>营销咨询</p>
-                                    </div>
-                                </div>
-                                <div class="diaplayHide">
-                                    <p class="IndustrialResearch">工业研究</p>
-                                    <p class="IndustrialResearchText">三的卡萨啊；是鲁大师是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的是鲁大师的的</p>
-                                    <p class="ForDetails"><a href="">了解详情</a></p>
-                                </div>
-                            </li>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                     <div id="demo2"></div>
@@ -514,9 +435,13 @@
     			<form>
     				<label for="name"><em>*</em>您的姓名：</label><input type="text" id="name" placeholder="请输入您的姓名" /><br/>
     				<label for="tel"><em>*</em>您的电话：</label><input type="text" id="tel" placeholder="请输入您的电话"><br/>
+                    <input type="hidden" id="token" value="{{csrf_token()}}">
     				<label for="city">所在城市：</label>
-                    <select class="first">
+                    <select class="first city">
     					<option>-省-</option>
+                        @foreach($province as $province)
+                            <option value="{{$province->id}}">{{$province->province_name}}</option>
+                        @endforeach
     				</select>
     				<select class="second">
     					<option>-市区-</option>

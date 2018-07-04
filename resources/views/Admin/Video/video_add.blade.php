@@ -1,7 +1,7 @@
 <!--_meta 作为公共模版分离出去-->
 @include('Admin.common._meta')
 <!--/meta 作为公共模版分离出去-->
-<!-- <meta name="csrf-token" content="{{ csrf_token() }}" /> -->
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 <link href="/H-ui.admin/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -13,96 +13,7 @@
 			<div class="formControls col-xs-8 col-sm-9">
 				<input type="text" class="input-text" value="" placeholder="" id="" name="case_name">
 			</div>
-		</div>
-		<!-- <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">简略标题：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="" id="" name=" title_jian">
-			</div>
-		</div> -->
-        <!-- 分类 -->
-		
-		<!-- <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">排序(反序)：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="0" placeholder="" id="" name="asc">
-			</div>
-		</div> -->
-		
-		
-		<!-- <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">作者：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="case_driver" id="" placeholder="" value="" class="input-text">
-			</div>
-		</div> -->
-		<!-- <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">材质：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text">
-			</div>
-		</div> -->
-		<!-- <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">文章来源：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="news_url" id="" placeholder="" value="" class="input-text">
-			</div>
-		</div> -->
-		<!-- <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">价格计算单位：</label>
-			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-				<select class="select">
-					<option>请选择</option>
-					<option value="1">件</option>
-					<option value="2">斤</option>
-					<option value="3">KG</option>
-					<option value="4">吨</option>
-					<option value="5">套</option>
-				</select>
-				</span> </div>
-		</div> -->
-		<!-- <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">产品重量：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-				kg</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">产品展示价格：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-				元</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">市场价格：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-				元</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">成本价格：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-				元</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">最低销售价格：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-				元</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">销售开始时间：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss',maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin" class="input-text Wdate" style="width:180px;">
-			</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">销售结束时间：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\'datemin\')}' })" id="datemax" class="input-text Wdate" style="width:180px;">
-			</div>
-		</div> -->
+		</div>		
         
         <div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">封面图：</label>
@@ -115,16 +26,7 @@
             </div>
 		</div>
         <br />
-        <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">上传视频：</label>
-			<div style="width:80px;height:80px;float:left;">
-                <img src="" alt="" class="video" style="width:80px;height:80px;margin-left:15px;">
-                
-                    <input type="file" multiple id="video" style="float:left;margin-left:100px;margin-top:-43px;">
-                    <!-- <input type="hidden" id="face" name="face_img" value=""> -->
-                
-            </div>
-		</div>
+        
 		<!-- <div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">SEO关键字：</label>
 			<div class="formControls col-xs-8 col-sm-9">
@@ -158,12 +60,12 @@
 				<!-- </div> -->
 			<!-- </div> -->
 		</div>
-		<!-- <div class="row cl">
+		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">详细内容：</label>
 			<div class="formControls col-xs-8 col-sm-9"> 
 				<script id="editor" type="text/plain" style="width:100%;height:400px;"></script> 
 			</div>
-		</div> -->
+		</div>
 		<div class="row cl">
 			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
 				<button class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</button>
@@ -187,65 +89,14 @@
 <script type="text/javascript" src="/H-ui.admin/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
 <script type="text/javascript" src="/H-ui.admin/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
 <script>
-// $.ajaxSetup({
-//     headers: {
-//         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-//     }
-// });
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
 </script>
 <script type="text/javascript">
 
-/**
- * 视频上传调用爱奇艺后台管理
- */
-$("#video").change(function(){
-    
-
-$.ajaxSetup({ 
-    async : false 
-});
-    // var url = 'https://openapi.iqiyi.com/api/iqiyi/authorize';
-    // var app_key = 'febb5182ef1a46658f0b2383b1d81743';
-    // var app_secret = '2de24ccf664ca93d010fcd30b4e6cc11';
-    // var data ={'client_id':app_key,'client_secret':app_secret};
-    var filename = $("#video")[0].files[0].name;
-    // alert(fileName);
-    // return;
-    $.get('https://openapi.iqiyi.com/api/iqiyi/authorize?client_id=febb5182ef1a46658f0b2383b1d81743&client_secret=2de24ccf664ca93d010fcd30b4e6cc11',function(data){
-        var jsons =  jQuery.parseJSON(data);
-        console.log(jsons);
-        if(jsons.code=='A00000')
-        {
-            var access_token = jsons.data.access_token;
-        }else
-        {
-            alert('授权失败');
-            return;
-        }
-        var filesize = $("#video")[0].files[0].size;
-        // console.log(filesize);
-        $.get('http://upload.iqiyi.com/openupload?filetype=mp4&filesize='+filesize+'&access_token='+access_token,function(msg){
-            // var upload =  jQuery.parseJSON(msg);
-            // console.log(msg);
-            var upload_url = msg.data.upload_url;
-            var file_id = msg.data.file_id;
-            console.log(file_id);
-            $.get('http://openapi.iqiyi.com/api/file/info?access_token='+access_token+'&file_id='+file_id+'&file_name='+filename+'&description=DESC',function(data){
-                var data =  jQuery.parseJSON(data);
-
-                if(data.code=='A00000')
-                {
-                    $.get('http://openapi.iqiyi.com/api/file/fullStatus?access_token='+access_token+'&file_id='+file_id,function(ret){
-                        console.log(ret);
-                    })
-                }
-            })
-        })
-        
-
-       
-    })
-})
 
 
 //封面图
