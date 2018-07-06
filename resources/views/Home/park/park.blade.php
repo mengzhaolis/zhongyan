@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+@include('Home.common.head')
     <meta charset="UTF-8">
     <title>工业频道页</title>
-    @include('Home.common.head')
     <link rel="stylesheet" type="text/css" href="/Home/css/park/industry.css">
 </head>
 <body>
@@ -40,9 +37,9 @@
             <p><a href="">更多&gt;&gt;</a></p>
             <ul>
                 <li class="listFirst"><a href=""><img src="./images/industry/trendsBackground.png"><span>热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题</span></a></li>
-                <li><a href="">热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题</a></li>
-                <li><a href="">热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题</a></li>
-                <li class="listLast"><a href="">热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题</a></li>
+                @foreach($dongtai as $dongtai)
+                    <li><a href="{{$dongtai->id}}">{{$dongtai->title}}</a></li>
+                @endforeach
             </ul>
         </div>
         <div class="clear"></div>
@@ -54,43 +51,43 @@
     <ul>
         <li class="industrialSystem_first noMarginLeft">
             <p class="title"><em>建筑</em></p>
-            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="./images/industry/consulting.png"/>在线咨询</a></span>
-            <span><a href=""><img src="./images/industry/assess.png"/>需求评估</a></span>
+            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="/Home/images/park/consulting.png"/>在线咨询</a></span>
+            <span><a href=""><img src="/Home/images/park/assess.png"/>需求评估</a></span>
         </li>
         <li class="industrialSystem_second">
             <p class="title"><em>环保</em></p>
-            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="./images/industry/consulting.png"/>在线咨询</a></span>
-            <span><a href=""><img src="./images/industry/assess.png"/>需求评估</a></span>
+            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="/Home/images/park/consulting.png"/>在线咨询</a></span>
+            <span><a href=""><img src="/Home/images/park/assess.png"/>需求评估</a></span>
         </li>
         <li class="industrialSystem_third">
             <p class="title"><em>汽车</em></p>
-            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="./images/industry/consulting.png"/>在线咨询</a></span>
-            <span><a href=""><img src="./images/industry/assess.png"/>需求评估</a></span>
+            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="/Home/images/park/consulting.png"/>在线咨询</a></span>
+            <span><a href=""><img src="/Home/images/park/assess.png"/>需求评估</a></span>
         </li>
         <li class="industrialSystem_fourth">
             <p class="title"><em>能源</em></p>
-            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="./images/industry/consulting.png"/>在线咨询</a></span>
-            <span><a href=""><img src="./images/industry/assess.png"/>需求评估</a></span>
+            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="/Home/images/park/consulting.png"/>在线咨询</a></span>
+            <span><a href=""><img src="/Home/images/park/assess.png"/>需求评估</a></span>
         </li>
         <li class="industrialSystem_fifth noMarginLeft marginBottom">
             <p class="title"><em>新材料</em></p>
-            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="./images/industry/consulting.png"/>在线咨询</a></span>
-            <span><a href=""><img src="./images/industry/assess.png"/>需求评估</a></span>
+            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="/Home/images/park/consulting.png"/>在线咨询</a></span>
+            <span><a href=""><img src="/Home/images/park/assess.png"/>需求评估</a></span>
         </li>
         <li class="industrialSystem_sixth marginBottom">
             <p class="title"><em>天阳能</em></p>
-            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="./images/industry/consulting.png">在线咨询</a></span>
-            <span><a href=""><img src="./images/industry/assess.png">需求评估</a></span>
+            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="/Home/images/park/consulting.png">在线咨询</a></span>
+            <span><a href=""><img src="/Home/images/park/assess.png">需求评估</a></span>
         </li>
         <li class="industrialSystem_seventh marginBottom">
             <p class="title"><em>机械设备</em></p>
-            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="./images/industry/consulting.png"/>在线咨询</a></span>
-            <span><a href=""><img src="./images/industry/assess.png"/>需求评估</a></span>
+            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="/Home/images/park/consulting.png"/>在线咨询</a></span>
+            <span><a href=""><img src="/Home/images/park/assess.png"/>需求评估</a></span>
         </li>
         <li class="industrialSystem_eighth marginBottom">
             <p class="title six"><em>高端消费制造</em></p>
-            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="./images/industry/consulting.png"/>在线咨询</a></span>
-            <span><a href=""><img src="./images/industry/assess.png"/>需求评估</a></span>
+            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="/Home/images/park/consulting.png"/>在线咨询</a></span>
+            <span><a href=""><img src="/Home/images/park/assess.png"/>需求评估</a></span>
         </li>
     </ul>
 </div>
@@ -160,7 +157,7 @@
             <ul>
                 <li class="noMarginL">
                     <a href="#">
-                        <img src="./images/industry/com.png"/>
+                        <img src="/Home/images/park/com.png"/>
                         <div>
                             <span>竞争企业调研</span>
                             <p class="empty"></p>
@@ -170,7 +167,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <img src="./images/industry/industryBg.png">
+                        <img src="/Home/images/park/industryBg.png">
                         <div>
                             <span>竞争企业调研</span>
                             <p class="empty"></p>
@@ -180,7 +177,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <img src="./images/industry/channelBg.png"/>
+                        <img src="/Home/images/park/channelBg.png"/>
                         <div>
                             <span>竞争企业调研</span>
                             <p class="empty"></p>
@@ -190,7 +187,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <img src="./images/industry/satisfiedBg.png"/>
+                        <img src="/Home/images/park/satisfiedBg.png"/>
                         <div>
                             <span>竞争企业调研</span>
                             <p class="empty"></p>
@@ -200,7 +197,7 @@
                 </li>
                 <li class="noMarginL">
                     <a href="#">
-                        <img src="./images/industry/marketingBg.png"/>
+                        <img src="/Home/images/park/marketingBg.png"/>
                         <div>
                             <span>竞争企业调研</span>
                             <p class="empty"></p>
@@ -210,7 +207,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <img src="./images/industry/marketBg.png"/>
+                        <img src="/Home/images/park/marketBg.png"/>
                         <div>
                             <span>竞争企业调研</span>
                             <p class="empty"></p>
@@ -220,7 +217,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <img src="./images/industry/consultingBg.png"/>
+                        <img src="/Home/images/park/consultingBg.png"/>
                         <div>
                             <span>竞争企业调研</span>
                             <p class="empty"></p>
@@ -230,7 +227,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <img src="./images/industry/businessBg.png"/>
+                        <img src="/Home/images/park/businessBg.png"/>
                         <div>
                             <span>竞争企业调研</span>
                             <p class="empty"></p>
@@ -248,66 +245,12 @@
     <div class="classicCase_inner">
         <h3>经典案例 <a href="">更多&gt;&gt;</a></h3>
         <ul>
-            <li>
-                <span></span><img src="./images/industry/greenCar.png"/>
-
-                <p>新能源汽车驱动系统项目</p>
-            </li>
-            <li>
-                <img src="./images/industry/lithiumBattery.png"/>
-
-                <p>车用动力锂电池市场研究</p>
-            </li>
-            <li>
-                <img src="./images/industry/mineMechanical.png"/>
-
-                <p>矿山机械市场客户信息调查</p>
-            </li>
-            <li>
-                <img src="./images/industry/TOP3.png"/>
-
-                <p>TOP3家电企业竞争研究</p>
-            </li>
-            <li>
-                <img src="./images/industry/IT.png"/>
-
-                <p>IT企业新产品测试与定价</p>
-            </li>
-            <li class="noMarginR">
-                <img src="./images/industry/photovoltaic.png"/>
-
-                <p>光伏建筑一体化市场研究</p>
-            </li>
-            <li>
-                <img src="./images/industry/TOP10.png"/>
-
-                <p>TOP10企业风机保外服务</p>
-            </li>
-            <li>
-                <img src="./images/industry/waterSupplyLine.png"/>
-
-                <p>市政供水管道领域PVC-O</p>
-            </li>
-            <li>
-                <img src="./images/industry/householdPhotovoltaic.png"/>
-
-                <p>户用光伏系统市场调研</p>
-            </li>
-            <li>
-                <img src="./images/industry/waterPump.png"/>
-
-                <p>水泵及配套设备市场研究</p>
-            </li>
-            <li>
-                <img src="./images/industry/sewageDisposal.png"/>
-
-                <p>污水处理设备市场机会调研</p>
-            </li>
-            <li class="noMarginR">
-                <img src="./images/industry/macromolecule.png"/>
-
-                <p>高分子材料市场研究</p>
-            </li>
+            @foreach($case as $case)
+                <li>
+                    <span></span><img src="{{$case->img_path}}"/>
+                    <p>{{$case->case_name}}</p>
+                </li>
+            @endforeach
         </ul>
     </div>
 </div>
@@ -318,48 +261,48 @@
         <h3>中研流程图</h3>
 
         <div class="flowChart_inner_border">
-            <div class="flowChart_inner_left"><img src="./images/industry/flowLeft.png"></div>
+            <div class="flowChart_inner_left"><img src="/Home/images/park/flowLeft.png"></div>
             <div class="flowChart_inner_right">
                 <div class="flowContent">
-                    <span class="leftArrow"><img src="./images/industry/right.png"></span>
-                    <span class="rightArrow"><img src="./images/industry/right.png"></span>
+                    <span class="leftArrow"><img src="/Home/images/park/right.png"></span>
+                    <span class="rightArrow"><img src="/Home/images/park/right.png"></span>
                     <div class="demandList">
                         <div class="demandLine">
                             <ul>
                                 <li class="listOne">
-                                    <em class="TopLine"><img src="./images/industry/connect.png"></em>
+                                    <em class="TopLine"><img src="/Home/images/park/connect.png"></em>
                                     <div class="demandTopPoin sixWords">项目需求输入</div>
                                 </li>
                                 <li class="listTwo">
-                                    <em class="BomLine"><img src="./images/industry/connect.png"></em>
+                                    <em class="BomLine"><img src="/Home/images/park/connect.png"></em>
                                     <div class="demandBomPoin marginLeft20 tenWords">项目建议书撰写和修改</div>
                                 </li>
                                 <li class="listThire">
-                                    <em class="TopLine"><img src="./images/industry/connect.png"></em>
+                                    <em class="TopLine"><img src="/Home/images/park/connect.png"></em>
                                     <div class="demandTopPoin sixWords">项目立项沟通</div>
                                 </li>
                                 <li class="listFour">
-                                    <em class="BomLine"><img src="./images/industry/connect.png"></em>
+                                    <em class="BomLine"><img src="/Home/images/park/connect.png"></em>
                                     <div class="demandBomPoin demontLeft20 fourWords">项目启动</div>
                                 </li>
                                 <li class="listFive">
-                                    <em class="TopLine"><img src="./images/industry/connect.png"></em>
+                                    <em class="TopLine"><img src="/Home/images/park/connect.png"></em>
                                     <div class="demandTopPoin marginLeftTheer fourWords">项目准备</div>
                                 </li>
                                 <li class="listSix">
-                                   <em class="BomLine"><img src="./images/industry/connect.png"></em>
+                                   <em class="BomLine"><img src="/Home/images/park/connect.png"></em>
                                     <div class="demandBomPoin demontLeft20 fourWords">访问执行</div>
                                 </li>
                                  <li class="listSeven listNone">
-                                    <em class="TopLine"><img src="./images/industry/connect.png"></em>
+                                    <em class="TopLine"><img src="/Home/images/park/connect.png"></em>
                                     <div class="demandTopPoin fourWords">阶段讨论</div>
                                 </li>
                                 <li class="listEight listNone">
-                                    <em class="BomLine"><img src="./images/industry/connect.png"></em>
+                                    <em class="BomLine"><img src="/Home/images/park/connect.png"></em>
                                     <div class="demandBomPoin marginLeft20 fourWords">报告撰写</div>
                                 </li>
                                 <li class="listNine listNone">
-                                    <em class="TopLine"><img src="./images/industry/connect.png"></em>
+                                    <em class="TopLine"><img src="/Home/images/park/connect.png"></em>
                                     <div class="demandTopPoin fourWords">成果汇报</div>
                                 </li>
                             </ul>

@@ -16,6 +16,14 @@ Route::any('/','Home\IndexController@index');
 Route::any('/city','Home\IndexController@city');
 //网站工业频道页-前端
 Route::any('/park','Home\ParkController@park');
+//商业地产-前端
+Route::any('/land','Home\LandController@index');
+//竞争对手-前端
+Route::any('/rival','Home\RivalController@rival');
+//医药医疗-前端
+Route::any('/doctor','Home\DoctorController@doctor');
+//营销-咨询专题-前端
+Route::any('/consult','Home\ConsultController@consult');
 
 
 

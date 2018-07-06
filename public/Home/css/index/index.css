@@ -3,7 +3,7 @@ body{
     min-width: 1200px;
 }
 /*导航条*/
-.nav .headPublic2{
+.nav .headPublic1{
     border-bottom: 3px solid #fff;
 }
 .main{
@@ -33,10 +33,11 @@ body{
 .slider-extra {
     position:relative;
 }
+/*wxy 2018-07-05改*/
 .slider-nav {
-    margin-left:-51px;
     position:absolute;
     left:50%;
+    transform: translate(-50%,0);
     bottom:20px;
 }
 .slider-nav li {
@@ -181,8 +182,10 @@ h3{
     color: #fff;
     border-radius: 3px;
 }
+/*wxy 2018-07-05改*/
 .specialLeft p{
     margin-top: 15px;
+    margin-left: -3px;
     display:none;
 }
 .specialRight{
@@ -235,28 +238,10 @@ h3{
     top:60px;
     display: none;
 }
-.consult_img div{
+/*wxy 2018-07-05改*/
+.consult_img img{
     width:100%;
-    height:233px;
-    display:none;
-}
-.consult_img_second{
-    background-color:#f0f;
-}
-.consult_img_third{
-    background-color:#333;
-}
-.consult_img_fourth{
-   background-color:red;
-}
-.consult_img_fifth{
-   background-color:#666;
-}
-.consult_img_sixth{
-   background-color:#000;
-}
-.consult_img_seventh{
-   background-color:#999;
+    height:100%;
 }
 .consult_content{
     width:445px;
@@ -266,7 +251,7 @@ h3{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    line-height: 36px;
+    line-height: 46px;
 }
 .consult_content ul .noLineHeight{
     margin-top:-11px;
@@ -320,14 +305,19 @@ h3{
 .industry p span{
     padding:0 15px;
 }
+/*wxy 2018-07-05改*/
 .industry ul{
-   display: flex;
-   justify-content: space-between;
+    margin-left: -24px;
+    width:1224px;
+    height:326px;
+    overflow: hidden;
 }
 .industry ul li{
     width: 282px;
     height: 326px;
+    margin-left: 24px;
     position: relative;
+    float: left;
 }
 .industry ul li img{
     width: 100%;
@@ -378,7 +368,7 @@ h3{
     color: #fff;
     line-height: 24px;
 }
-.industry li div{
+.industry li .listBottom{
     height:50px;
     border:1px solid #44579a;
     background-color:rgba(68,90,154,0.5);
@@ -388,14 +378,14 @@ h3{
     right: 0;
     padding: 5px 0;
 }
-.industry li div a{
+.industry li .listBottom a{
     color: #fff;
     display: inline-block;
     text-align: center;
     width: 137px;
     line-height: 40px;
 }
-.industry li div a+a{
+.industry li .listBottom a+a{
     border-left: 1px solid #a6b1d1;
 }
 /*服务体系*/
@@ -538,6 +528,16 @@ height:336px;
 background: #44519a;
 padding: 10px 10px;
 }
+/*wxy 2018-07-05改*/
+.leftImg{
+    width:275px;
+    height:316px;
+}
+.leftImg img{
+    width: 100%;
+    height:100%;
+}
+/*完*/
 .leftContent{
     margin-left: 30px;
 }
@@ -777,17 +777,20 @@ padding: 10px 10px;
     background-color: #fff;
     position:relative;
 }
+/*wxy 2018-07-05改*/
+.demoImg{
+    width:214px;
+    height:243px;
+}
+#demo1 ul li img{
+    width:100%;
+    height:100%;
+}
 .arrowHeight p{
     text-align: center;
 }
 #demo2 {
     float: left;
-}
-#demo2 ul li{
-    float: left;
-}
-.arrowHeight p{
-    text-align: center;
 }
 #demo2 ul li{
      float: left;
@@ -798,6 +801,11 @@ padding: 10px 10px;
     background-color: #fff;
     position:relative;
 }
+#demo2 ul li img{
+    width:100%;
+    height:100%;
+}
+/*wxy 2018-07-05结束*/
 /*注册*/
 .register{
     width:100%;
@@ -809,7 +817,7 @@ padding: 10px 10px;
     width:1200px;
     min-width: 700px;
     height:506px;
-    background-color:rgba(198,208,218,0.7);
+    background-color:rgba(255,255,255,0.7);/*wxy 2018-07-05改*/
     margin:0 auto;
     display: flex;
     justify-content: space-between;
@@ -884,21 +892,21 @@ padding: 10px 10px;
     margin-top:35px;
 }
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    #999;
+    color:    #333;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    #999;
+   color:    #333;
    opacity:  1;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    #999;
+   color:    #333;
    opacity:  1;
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color:    #999;
+   color:    #333;
 }
 ::-ms-input-placeholder { /* Microsoft Edge */
-   color:    #999;
+   color:    #333;
 }
 .register_inner_right select{
     width:176px;
@@ -906,8 +914,6 @@ padding: 10px 10px;
     margin-top:20px;
     border:1px solid #44549a;
     border-radius: 5px;
-    font-size:12px;
-    color:#999;
      appearance:none;
     -webkit-appearance:none;
     -moz-appearance:none;

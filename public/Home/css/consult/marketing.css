@@ -1,0 +1,716 @@
+body{
+    width:100%;
+    min-width: 1200px;
+}
+/*导航条*/
+.nav .headPublic6{
+    border-bottom: 3px solid #fff;
+}
+/*主体*/
+.main{
+    width:100%;
+    background: #eddcc0;
+}
+.inner{
+    width:1200px;
+    margin: 0 auto;
+}
+h3{
+	background: url("/Home/images/consult/titleBG.png") no-repeat;
+	line-height: 74px;
+	text-align: center;
+	font-size: 40px;
+	color: #fffefe;
+}
+/*banner*/
+.banner{
+    width:100%;
+    height:600px;
+}
+.banner img{
+    width:100%;
+    height:100%;
+}
+/*前言*/
+.foreword{
+	width: 100%;
+	height:182px;
+	background: #936c34;
+}
+h2{
+	width:120px;
+	height:170px;
+	background: url("/Home/images/consult/forewordBG.png") no-repeat top left;
+	color:#936c34;
+	font-size: 34px;
+	padding-top: 30px;
+}
+h2>span{
+   display: block;
+   width: 33px;
+   line-height:37px;
+   margin: 0 auto;
+}
+.forewordRight{
+	margin-left: 30px;
+	width: 1008px;
+	padding-top: 30px;
+}
+.forewordRight p{
+	color: #fff;
+	line-height: 24px;
+	text-align: center;
+}
+.forewordRight p+p{
+	margin-top: 15px;
+}
+/*营销咨询面临的问题*/
+.problem{
+	padding: 50px 0 30px;
+	width: 100%;
+}
+.problem h3{
+	margin-bottom: 30px;
+}
+.problem .public{
+	text-align: center;
+	width:388px;
+	padding: 10px 26px 0;
+}
+.problem .public p{
+	line-height: 17px;
+	margin-top: 17px;
+	color: #fff;
+}
+.problem .rightBottom .marginTop{
+	margin-top: 8px;
+}
+.problem .public .marginTOP{
+	margin-top: 15px;
+}
+.problem .public .marginTopBig{
+	margin-top: 20px;
+}
+.leftTop,.leftBottom,.rightTop,.rightBottom{
+	height:140px;
+}
+.leftTop{
+	height:140px;
+	margin:0 18px 18px 0;
+	background: url("/Home/images/consult/problem0.png") no-repeat; 
+}
+.leftBottom{
+	height:140px;
+	margin-right:18px;
+	background: url("/Home/images/consult/problem1.png") no-repeat;
+}
+.problemCenter{
+	height:298px;
+	margin-right:18px;
+	background: url("/Home/images/consult/problem2.png") no-repeat;
+}
+.rightTop{
+	height:140px;
+	margin-bottom:18px;
+	background: url("/Home/images/consult/problem3.png") no-repeat;
+}
+.rightBottom{
+	width:100%;
+	height:140px;
+	background: url("/Home/images/consult/problem4.png") no-repeat;
+}
+.problem h4{
+	display: inline-block;
+	font-size: 18px;
+	font-weight: bold;
+	line-height:38px;
+	color:#fff;
+	border-bottom: 1px solid #fff;
+}
+.problemCenter a{
+	display: block;
+	width: 142px;
+	height:42px;
+	border: 1px solid #7e5924;
+	background: #936c34;
+	text-align: center;
+	line-height: 42px;
+	color: #fffefe;
+	font-size: 18px;
+	margin: 60px 0 0 200px;
+}
+/*营销咨询的优势*/
+.advantage{
+	width:100%;
+	padding-bottom: 46px;
+	background: #f3e8d5;
+	padding-top: 28px;
+}
+.advantage h3{
+	margin-bottom: 20px;
+}
+.outline{
+	padding: 10px 30px 0 37px;
+	border-left: 1px dashed #936c34;
+	text-align: center;
+	position: relative;
+}
+/*开始*/
+.advantageTop{
+	width:1132px;
+	height:170px;
+	background: url("/Home/images/consult/pentagon.png") no-repeat -50px center #eee2cd;
+	padding: 50px 32px 31px;
+	text-align: center;
+}
+.advantageTop img{
+	margin: 20px 0 0 916px;
+}
+/*箭头*/
+.arrow{
+	margin: 10px 0 15PX;
+}
+/*中间*/
+.advantageList ul{
+   display: flex;
+   justify-content: space-between;
+}
+.advantageList ul li{
+	width:110px;
+	text-align: center;
+	margin-bottom: 18PX;
+}
+.round{
+	width:110px;
+	height:110px;
+	border-radius: 50%;
+	border:1px solid #936c34;
+	position: relative;
+}
+.Tint{
+	border-color: #bb8942;
+}
+.round img{
+	position: absolute;
+	top:0;
+	bottom: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
+    -webkit-transition: -webkit-transform 0.6s ease-out;
+    -moz-transition: -moz-transform 0.6s ease-out;
+    -o-transition: -o-transform 0.6s ease-out;
+    -ms-transition: -ms-transform 0.6s ease-out;
+}
+.advantageList ul li .round:hover img{
+	-webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+.advantageList ul li h4{
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+/*底部*/
+.advantageContent{
+	width:1148px;
+	height:513px;
+	position: relative;
+	background: url("/Home/images/consult/line.png") no-repeat 275px center;
+}
+/*.advantageContent ul li{
+	cursor: pointer;
+}*/
+.advantageContent ul li div{
+	border-radius: 5px;
+	background: #eee2cd;
+	border: 1px solid #7e5924;
+	line-height: 30px;
+	padding: 11px 0 0 20px;
+	text-align: left;
+}
+.advantageContent ul li .changeBackground{
+    background: rgba(238,226,205,0);
+}
+.advantageLeft li div{
+	height:112px;
+}
+.advantageContent li div span{
+	margin-right: 18px;
+}
+.advantageContent li div .noMarginRight{
+	margin-right: 0;
+}
+.advantageContent li .list5{
+	padding-top: 20px;
+}
+.list1{
+    width:300px;
+    margin-bottom: 103px;
+}
+.list2,.list3{
+    width:271px;
+    margin-top: 70px;
+}
+.list4{
+	width:271px;
+	height:94px;
+	margin-bottom: 115px;
+	margin-left: 14px;
+}
+.list5{
+	width:274px;
+	height:112px;
+	margin-bottom: 98px;
+	margin-left: 14px;
+}
+.list6{
+	width:303px;
+	height: 94px;
+}
+.advantageContent ul li p{
+	position: absolute;
+}
+.listP1{
+	top:70px;
+	left: 413px;
+}
+.listP2{
+	top:164px;
+	left: 387px;
+}
+.listP3{
+	top:316px;
+	left: 412px;
+}
+
+.listP4{
+	top:70px;
+	right: 413px;
+}
+.listP5{
+	top:165px;
+	right: 387px;
+}
+.listP6{
+	top:316px;
+	right: 412px;
+}
+.advantageContent li p span{
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    display: inline-block;
+}
+.listP1 span{
+	top:46px;
+	left:32px;
+	transform:rotate(-31deg);
+-ms-transform:rotate(-31deg); 	/* IE 9 */
+-moz-transform:rotate(-31deg); 	/* Firefox */
+-webkit-transform:rotate(-31deg); /* Safari 和 Chrome */
+-o-transform:rotate(-31deg); 
+}
+.listP2 span{
+	width:38px;
+	top:55px;
+	left:20px;
+	transform:rotate(0deg);
+-ms-transform:rotate(0deg); 	/* IE 9 */
+-moz-transform:rotate(0deg); 	/* Firefox */
+-webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+-o-transform:rotate(0deg); 
+}
+.listP3 span{
+	top:56px;
+	left:31px;
+	transform:rotate(31deg);
+-ms-transform:rotate(31deg); 	/* IE 9 */
+-moz-transform:rotate(31deg); 	/* Firefox */
+-webkit-transform:rotate(31deg); /* Safari 和 Chrome */
+-o-transform:rotate(31deg); 
+}
+.listP4 span{
+	top:34px;
+	left:26px;
+	width:100px;
+	transform:rotate(30deg);
+-ms-transform:rotate(30deg); 	/* IE 9 */
+-moz-transform:rotate(30deg); 	/* Firefox */
+-webkit-transform:rotate(30deg); /* Safari 和 Chrome */
+-o-transform:rotate(30deg); 
+}
+
+.listP5 span{
+	width:38px;
+	top:55px;
+	left:27px;
+	transform:rotate(0deg);
+-ms-transform:rotate(0deg); 	/* IE 9 */
+-moz-transform:rotate(0deg); 	/* Firefox */
+-webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+-o-transform:rotate(0deg); 
+}
+.listP6 span{
+	top:56px;
+	left:17px;
+	transform:rotate(-30deg);
+-ms-transform:rotate(-30deg); 	/* IE 9 */
+-moz-transform:rotate(-30deg); 	/* Firefox */
+-webkit-transform:rotate(-30deg); /* Safari 和 Chrome */
+-o-transform:rotate(-30deg); 
+}
+
+/*中间*/
+.advantageCenter{
+	position: absolute;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width:214px;
+	height:214px;
+	background: #eee2cd;
+	border-radius: 50%;
+}
+.advantageCenter img{
+	position: absolute;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	  -webkit-transition: -webkit-transform 0.6s ease-out;
+    -moz-transition: -moz-transform 0.6s ease-out;
+    -o-transition: -o-transform 0.6s ease-out;
+    -ms-transition: -ms-transform 0.6s ease-out;
+}
+.advantageCenter:hover img{
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+.advantageCenter h4{
+	font-size: 18px;
+	font-weight: bold;
+	margin: 52px 0 18px;
+}
+.advantageCenter ol li{
+	float: left;
+	margin-left: 35px;
+	line-height: 31px;
+}
+.advantageCenter ol .MarginLeft{
+	margin-left: 23px;
+}
+.smallParts img{
+	position: absolute;
+	left: -12px;
+}
+.smallPartsTop{
+	top:85px;
+}
+.smallPartsCenter{
+	top:320px;
+}
+.smallPartsBottom{
+	top:780px;
+}
+/*营销咨询优势结束*/
+/*中研专家与案例*/
+.case,.flow{
+	width:100%;
+    padding-top: 30px;
+}
+.case h3{
+	margin-bottom: 30px;
+}
+.caseLeft{
+	width:532px;
+	height:442px;
+	background: #936c34;
+	padding: 10px;
+}
+.caseLeftImg p{
+	font-size: 18px;
+	color: #eee2cd;
+	margin-left: 23px;
+	margin-top: 3px;
+}
+.caseLeft p span{
+	font-size: 28px;
+	margin-left: 8px;
+}
+.caseLeftSynopsis{
+	margin-left: 15px;
+}
+.caseLeftSynopsis li{
+	line-height: 41px;
+	color: #eddcc0;
+}
+.caseLeftSynopsis .firstMargin{
+	margin:18px 0 7px;
+}
+.caseLeftSynopsis li p{
+	line-height: 18px;
+	color:#eddcc0;
+}
+.caseRight{
+	width:668px;
+	height:442px;
+	background: #f3e8d5;
+	position: relative;
+}
+.caseRight a{
+    display: block;
+    position: absolute;
+    background: #eee2cd;
+    border-style: solid;
+    border-color: #936c34;
+    overflow: hidden;
+    text-align: center;
+    padding: 6px 4px;
+}
+.borderTwelve{
+	width:165px;
+	height:136px;
+	border-width:12px;
+}
+.alone{
+	width: 136px;
+	height: 165px;
+	border-width: 14px 10px;
+}
+.borderEight{
+	width:108px;
+	height:136px;
+	border-width: 12px 8px;
+}
+.borderTen{
+	width: 136px;
+	height: 106px;
+	border-width: 10px;
+}
+.one{
+	top:78px;
+	left:10px;
+}
+.two{
+	top:100px;
+	left:192px;
+}
+.three{
+	top:42px;
+	left:343px;
+}
+.four{
+	top:72px;
+	left: 468px;
+}
+.five{
+	bottom: 68px;
+	left:68px;
+}
+.six{
+	bottom: 43px;
+	left:191px;
+}
+.seven{
+	bottom:110px;
+	right:159px;
+}
+.eight{
+	bottom:144px;
+	right:10px;
+}
+.caseRight .borderChange{
+	border-color: #a68554;
+}
+.caseRight a:hover{
+	background: #eedec4;
+}
+/*服务流程*/
+.flow{
+	padding: 50px 0 20px;
+}
+.flow h3{
+	margin-bottom: 20px;
+}
+.flow li{
+    width:322px;
+    height:200px;
+    float: left;
+    background: url("/Home/images/consult/flowLine.png") no-repeat right 58px;
+    position: relative;
+}
+.flow .heightChange{
+	height: 140px;
+}
+.leftList{
+	margin-left: 15px;
+}
+.flow .arrowBottom{
+	width:204px;
+	background: url("/Home/images/consult/flowLine2.png") no-repeat 94px 140px;
+}
+.flow .arrowLeft{
+	background: url("/Home/images/consult/flowLineLeft.png") no-repeat left 58px;
+}
+.flow .lastList{
+	width:219px;
+	background-size: 0 0;
+}
+.flow li p{
+	width:204px;
+	height:140px;
+	border: 1px solid #936c34;
+	padding: 68px 10px 0;
+	text-align: center;
+}
+.flow .arrowLeft p{
+	margin-left: 118px;
+}
+.flow .paddingTop p{
+	padding-top: 58px;
+}
+.flow li h4{
+	color:#fffefe;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	width:234px;
+	height:34px;
+	line-height: 34px;
+	background: url("/Home/images/consult/flow.png") no-repeat;
+	z-index: 10;
+	position:absolute;
+	top: 18px;
+	left: -15px;
+}
+.flow .arrowLeft h4{
+	left:104px;
+}
+/*一段话*/
+.passage{
+	width:100%;
+	height:138px;
+	background: #f3e8d5;
+	padding: 27px 14px;
+	margin-bottom: 30px;
+}
+/*注册*/
+.button{
+	width:100%;
+	height: 650px;
+	background: url(/Home/images/consult/buttonBG.png) no-repeat;
+	padding-top: 42px;
+}
+.button h3{
+	color:#eddcc0;
+}
+.button p{
+	color:#eddcc0;
+	text-align: center;
+	margin: 7px 0 45px;
+	line-height: 18px;
+}
+.button form .buttonLeft{
+	display: inline-block;
+	width: 380px;
+	margin-right: 40px;
+	margin-left: 100px;
+}
+.button form input{
+	width: 370px;
+	height: 50px;
+	border: 0;
+	background: rgba(255,255,255,0);
+	font-size: 16px;
+	padding-left: 11px;
+	outline:none;
+	color:#eddcc0;
+	border: 2px solid #eddcc0;
+	margin-bottom: 40px;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #eddcc0;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #eddcc0;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #eddcc0;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #eddcc0;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #eddcc0;
+}
+.button form select{
+	width: 180px;
+	height:50px;
+	border: 2px solid #eddcc0;
+	margin-right:6px;
+	color:#eddcc0;
+	font-size: 16px;
+	padding-left:60px;
+	appearance:none;  
+    -moz-appearance:none;  
+    -webkit-appearance:none;  
+    background: url("/Home/images/consult/select.png") no-repeat scroll 155px center transparent;  
+}
+.button form select .noMarginRight{
+	margin-right: 0;
+} 
+.button form textarea{
+	width:580px;
+	height:232px;
+	border:2px solid #eddcc0;
+	background: rgba(255,255,255,0);
+	font-size: 16px;
+	color: #eddcc0;
+	padding:5px 0 0 11px;
+	overflow-x:auto;
+    overflow-y:hidden;
+    display: block;
+}
+select::-ms-expand { display: none; }  
+.button form p{
+	width: 347px;
+	color:#eddcc0;
+	background: url("/Home/images/consult/lock.png") no-repeat left center;
+	padding-left:25px;
+	opacity:0.5;
+	margin:59px auto 25px;
+	line-height: 16px;
+}
+.button form .btn{
+	width: 252px;
+	height: 40px;
+	padding: 0;
+	background: #936c34;
+	color: #fff;
+	border:0;
+	margin-left:474px;
+}
+.BACKTOP{
+	position: fixed;
+	bottom: 80px;
+	right: 30px;
+	z-index: 1000;
+}
+.backTop{
+	position: absolute;
+	bottom: 50px;
+	right: 30px;
+}

@@ -85,22 +85,22 @@ $(function(){
      $(".rightArrow").click(function(){
         var $left=$(".demandLine").position().left;
         if($left>-330){
-            $(".rightArrow img").attr("src","./images/industry/left.png");
+            $(".rightArrow img").attr("src","/Home/images/park/left.png");
             $(".rightArrow").addClass("changeRotateRight");
             $(".demandLine").animate({ left: "-=110px" }, 0);
         }else if($left==-330){
-            $(".rightArrow img").attr("src","./images/industry/right.png");
+            $(".rightArrow img").attr("src","/Home/images/park/right.png");
             $(".rightArrow").removeClass("changeRotateRight");
         }
     })
     $(".leftArrow").click(function(){
         var $left=$(".demandLine").position().left;
         if($left<0){
-            $(".leftArrow img").attr("src","./images/industry/left.png");
+            $(".leftArrow img").attr("src","/Home/images/park/left.png");
             $(".leftArrow").addClass("changeRotateLeft");
             $(".demandLine").animate({ left: "+=110px" }, 0);
         }else if($left==0){
-            $(".leftArrow img").attr("src","./images/industry/right.png");
+            $(".leftArrow img").attr("src","/Home/images/park/right.png");
             $(".leftArrow").removeClass("changeRotateLeft");
         }           
     })
