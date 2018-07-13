@@ -1,0 +1,241 @@
+body{
+    width:100%;
+    min-width: 1200px;
+}
+/*导航条*/
+.nav .headPublic1{
+    border-bottom: 3px solid #fff;
+}
+.main{
+    width:100%;
+    height:786px;
+    background: url(/Home/images/online/background.png) no-repeat;
+}
+.inner{
+   width:1200px;
+    margin: 0 auto;
+}
+.mainInner{
+    height:638px;
+    background: rgba(255,255,255,0.66);
+    position: relative;
+    padding:17px 30px;
+}
+.img{
+	position: relative;
+	width:1183px;
+    margin-left:-72px;
+    z-index: 10;
+}
+.money{
+	position: absolute;
+	bottom: -11px;
+	right:-7px;
+}
+/*相同的样式*/
+h3{
+	font-size: 28px;
+	color:#000;
+	line-height: 48px;
+	background: url(/Home/images/online/titleLine.png) no-repeat left bottom;
+}
+h3+p{
+	line-height: 32px;
+	margin-bottom: 28px;
+}	
+h4,label{
+	font-size: 20px;
+	font-weight: bold;
+	color: #445a9a;
+}	
+/*左边*/
+.mainLeft{
+    width:500px;
+}
+input{
+	display: block;
+	margin: 10px 0 36px;
+	width: 100%;
+	height:30px;
+	border:0;
+	border-bottom: 3px solid #445a9a;
+	background: rgba(255,255,255,0);
+	font-size: 18px;
+	color: #666666;
+	padding-left: 22px;
+}
+.show,.show2{
+	display: block;
+	width:500px;
+	height:46px;
+	appearance:none;  
+    -moz-appearance:none;  
+    -webkit-appearance:none;   
+	background:url(/Home/images/online/downArrow.png) no-repeat scroll 456px transparent;
+	background-color: #ebf0ff;
+	border-radius:6px 6px 0 0;
+	margin: 21px 0 36px; 
+	color: #445a9a;
+	font-size: 18px;
+	line-height: 46px;
+	padding-left: 197px;
+	border: 0;
+}
+.trade .change,.type .change{
+	background-image:url(/Home/images/online/upArrow.png);
+}
+.hide{
+	width:500px;
+	height:248px;
+	background: #ebf0ff;
+	position: absolute;
+	top:423px;
+	left:30px;
+	line-height: 24px;
+	overflow: auto;
+	z-index: 200;
+	border-radius: 0 0 6px 6px;
+	display: none;
+}
+.hide .oneLevel{
+	margin-left: 22px;
+	cursor: pointer;
+}
+.hide .twoLevel{
+    margin-left: 50px;
+    cursor: pointer;
+}
+.hide .threeLevel{
+	margin-left: 78px;
+	cursor: pointer;
+}
+.hide .fourLevel{
+	margin-left: 106px;
+	cursor: pointer;
+	display: none;
+}
+.hide2{
+	width:500px;
+	height:119px;
+	background: #ebf0ff;
+	position: absolute;
+	top:552px;
+	left:30px;
+	padding:14px 22px;
+	line-height: 24px;
+	overflow: auto;
+	display: none;
+	z-index: 100;
+	border-radius: 0 0 6px 6px;
+}
+.hide2 li{
+	cursor: pointer;
+}
+.mainCenter{
+	width:100px;
+	height:596px;
+	text-align: center;
+    position: absolute;
+    top:12px;
+    left:50%;
+    margin-left: -50px;
+    background: url(/Home/images/online/button.png) no-repeat center center;
+
+}
+.mainCenter input{
+	padding-left: 0;
+	width:100px;
+	height:100px;
+	border-radius: 50%;
+	line-height: 100px;
+	margin-top: 248px;
+	font-size: 24px;
+	font-weight: bold;
+	color: #bdc6dd;
+	cursor: pointer;
+	border: 0;
+}
+.mainCenter .changeColor{
+	color:#445a9a;
+}
+/*右边*/
+.mainRight{
+	width: 500PX;
+}
+.classify,.typeRight{
+	height:65px;
+    margin-bottom: 40px;
+}
+.classify dl{
+	margin-top: 7px;
+    
+}
+.classify dl dt{
+	z-index: 10;
+}
+.classify dl dt,.classify dl dd,.typeRight p{
+	display: inline-block;
+	padding: 0 15px 0 30px;
+	height:36px;
+	line-height: 36px;
+	background: #445a9a;
+	position: relative;
+	font-size: 18px;
+	color:#ebf0ff;
+}
+.classify dl dt:before,.classify dl dd:before,.typeRight p:before{
+  content: "";
+  position: absolute;
+  right: -13px;
+  top: 6px;
+  width: 25px;
+  height: 25px;
+  transform: rotate(225deg);
+  background: #445a9a;
+  z-index: 9;
+}
+.classify dl dd:after {
+  content: "";
+  position: absolute;
+  left: -13px;
+  top: 6px;
+  width: 25px;
+  background: rgba(255,255,255,0.66);
+  height: 25px;
+  transform: rotate(225deg);
+}
+.typeRight p{
+	margin-top: 7px;
+	
+}
+.content{
+	height: 135px;
+	margin-bottom: 24px;
+}
+.content p{
+	width:500px;
+	height:92px;
+	background: rgba(235,240,255,0.5);
+	margin-top: 23px;
+	padding:15px 20px;
+	line-height: 20px;
+	
+}
+.price h4{
+	margin-top: 12px;
+    float: left;
+}
+.price p{
+	font-size: 36px;
+	color: #f63f39;
+	font-weight: bold;
+	float: left;
+}
+.price p span{
+	font-size: 24px;
+}
+.price ul li{
+	line-height: 20px;
+	font-size: 12px;
+	color:rgba(68,90,154,0.45);
+}

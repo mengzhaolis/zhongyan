@@ -51,4 +51,40 @@ class IndexController extends Controller
         $city = DB::table('city')->where('pid','=',$pid)->get();
         return view('Home.index.login_city',['city'=>$city]);
     }
+    //首页-课程管理-课程详情
+    public function course(Request $request)
+    {
+        $id = $request->input('id');
+        if(empty($id))
+        {
+            return '数据参数错误！！！';
+        }
+        $data = DB::table('course')->where('id','=',$id)->first();
+        return view('Home.course_xiang.course_xiang',['course'=>$data]);
+    }
+    //首页-最新资讯-资讯详情
+    public function zx_details(Request $request)
+    {
+         $id = $request->input('id');
+         if(empty($id))
+         {
+            return '数据参数错误！！！';
+         }
+         $data = DB::table('channel_table')->leftJoin('type','channel_table.message_type','=','type.id')->where('channel_table.id','=',$id)->first();
+         $data_id = DB::table('channel_table')->where('id','=',$id)->first();
+         $tuijian = DB::table('channel_table')->where('message_type','=',$data_id->message_type)->limit(10)->select('title','id')->get();
+         return view('Home.zx_details.zx_details',['zixun'=>$data,'tuijian'=>$tuijian]);
+    }
+    //首页-中研行业-换一批
+    public function change_one(Request $request)
+    {
+        $id = $request->input('id');
+        if(empty($id))
+        {
+            return '';
+        }
+        $data = DB::table('guild')->leftJoin('images','guild.guild_img','=','images.id')->where('guild.status','=',1)->select('guild.guild_title','img_path','guild_miao','guild_url')->inRandomOrder()->take(4)->get();
+        // return $data;
+        return view('Home.index.guild_ti',['guild'=>$data]);
+    }
 }

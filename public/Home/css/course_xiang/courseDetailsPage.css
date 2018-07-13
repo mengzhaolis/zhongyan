@@ -1,0 +1,265 @@
+body{
+    width:100%;
+    min-width: 1200px;
+}
+/*导航条*/
+.nav .headPublic2{
+    border-bottom: 3px solid #fff;
+}
+/*主体*/
+.main{
+    width:100%;
+    background: #f2f2f2;
+}
+.mainInner{
+   width:1200px;
+   margin:45px auto 0;
+   padding: 30px 0 50px;
+}
+.breadcrumb{
+    margin-bottom: 30px;
+}
+.breadcrumb a{
+   display: inline-block;
+   width:98px;
+   line-height:26px;
+   text-align: center;
+}
+.breadcrumb .currentPosition{
+   background-image: url("/Home/images/course_xiang/breadcrumbWhite0.png");
+}
+.breadcrumb .index{
+    width:112px;
+    margin-left:-13px;
+    background-image: url("/Home/images/course_xiang/breadcrumbWhite1.png");
+}
+.sarticle{
+  padding-bottom: 40px;
+  background-image: url("/Home/images/course_xiang/contentBackground.png");
+}
+/*左边*/
+.sarticleLeft{
+    width:864px;
+    padding-top:15px;
+}
+.sarticleLeftInner{
+  border-right: 1px solid #dfdfdf;
+  padding-bottom: 10px;
+}
+/*文章详情页*/
+.detailPage{
+  margin-top: 20px;
+  padding: 10px 30px 40px 30px;
+  margin-bottom: 24px;
+  text-align: center;
+  border-bottom: 1px solid #dcdcdc
+}
+.detailPage h3{
+  font-size: 26px;
+  color: #000;
+  margin-bottom: 18px;
+}
+.detailPage h3+p{
+  width:805px;
+  height:20px;
+  background: #c2d0e7;
+  margin-bottom: 36px;
+}
+.detailPage p span{
+  color:#445a9a;
+  margin-right: 52px;
+}
+.detailPage p .noMargin{
+  margin-right: 0;
+}
+.detailPage div p{
+  text-align: left;
+  margin-top: 20px;
+  line-height: 20px;
+  text-indent: 2em;
+}
+/*客户评价*/
+.evaluate{
+  background-color: #e7e9ef;
+  width:100%;
+  padding:2px 30px 50px 30px;
+}
+.evaluate_inner .evaluateTitle{
+  margin-top: 18px;
+}
+.mainInnerRightType h3,.ClassBegins h3,.evaluate_inner h3{
+    color: #445a9a;
+    font-size: 24px;
+    width:197px;
+    line-height:24px;
+    border-left: 3px solid #445a9a;
+    padding-left: 6px;
+}
+.evaluate_inner h3{
+    float: left;
+}
+.evaluate_inner h3+a{
+  float: right;
+  color: #52649a;
+  margin-top: 13px;
+}
+.evaluate_inner ul{
+  margin-top: 21px;
+}
+.evaluate_inner li{
+    width:186px;
+    height:254px;
+    background-color: #fff;
+    padding:5px 5px 0;
+    float:left;
+    margin-right:19px;
+    cursor:pointer;
+}
+.evaluate_inner li img{
+    width:178px;
+    height:205px;
+} 
+.evaluate_inner li p{
+    margin-top:4px;
+    text-align: center;
+    overflow: hidden;
+}
+.evaluate_inner .noMarginR{
+    margin-right:0;
+}
+.tempContainer {
+    position:fixed;
+    width:482px;
+    height:582px;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    margin:auto;
+    text-align:center;
+    z-index:101;
+    overflow: auto;
+}
+/*最后删除*/
+.tempContainer img{
+    max-width: 1000px;
+    max-height:1200px;
+}
+/*最后删除*/
+/*右边*/
+.mainInnerRight{
+    width:336px;
+    padding-left:20px;
+}
+/*开课时间*/
+.ClassBegins{
+    width:295px;
+    padding-bottom:35px;
+    padding-right:37px;
+    border-bottom: 1px solid #dcdcdc;
+}
+.ClassBegins p{
+    margin:57px 0 30px;
+}
+.ClassBegins ul li{
+    margin-top:30px;
+    padding-left:25px;   
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.ClassBegins ul .ClassBeginsFire{
+    background:url("/Home/images/course_xiang/fire.png") no-repeat left center;
+}
+.ClassBegins li a{
+    color:#333;
+}
+.ClassBegins ul .ClassBeginsFire a{
+    color:#445a9a;
+}
+.apply{
+  margin:12px 0 20px -20px;
+}
+/*注册*/
+.mainInnerRightType{
+    padding:20px 0;
+    border-top: 1px solid #dcdcdc;
+}
+.mainInnerRightType form{
+    margin-top:22px;
+}
+.mainInnerRightType div{
+    width:295px;
+    height:40px;
+    background: #ececec;
+    margin-bottom: 4px;
+    padding:5px 0;
+}
+.mainInnerRightType div em{
+    display: inline-block;
+    width:40px;
+    height:30px;
+    text-align: center;
+    border-right: 1px solid #dfdfdf;
+}
+.mainInnerRightType div em img{
+    vertical-align: middle;
+}
+.mainInnerRightType div input{
+    width:254px;
+    line-height:30px;
+    border: 0;
+    background: rgba(255,255,255,0);
+    padding-left:19px;
+}
+.mainInnerRightType select{
+    width:144px;
+    height:40px;
+    margin-bottom: 4px;
+    border: 0;
+    padding-left: 55px;
+    color: #777777;
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    background: url("/Home/images/course_xiang/triangle.png") no-repeat 124px center #ececec;
+}
+.mainInnerRightType .downtown{
+    padding-left: 50px;
+    margin-left: 1px;
+}
+.mainInnerRightType .signClass{
+    width:295px;
+    padding-left: 105px;
+    background-position: 275px center;
+}
+.mainInnerRightType .btn{
+    width:295px;
+    line-height: 46px;
+    background: #445a9a;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    border: 0;
+    margin-top:14px;
+    cursor: pointer;
+}
+.mainInnerRightType p{
+  line-height: 43px;
+}
+.mainInnerRightType p .openClass+label{
+  margin:0 20px 0 7px;
+}
+.mainInnerRightType label{
+  border:none; 
+  background:url(/Home/images/course_xiang/radio.png) no-repeat left;
+  background-size:16px 16px; 
+  padding-left:20px;
+}  
+.mainInnerRightType input[type=radio]{
+  display: none;
+}  
+.mainInnerRightType input[type=radio]:checked + label{
+  background:url(/Home/images/course_xiang/radios.png) no-repeat left;
+  background-size:16px 16px;
+}  

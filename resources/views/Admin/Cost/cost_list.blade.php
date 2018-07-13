@@ -57,17 +57,15 @@
                     <a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
                 </div>
                 <div class="row cl">
-                    <label class="form-label col-xs-4 col-sm-2" style="width:120px"><span class="c-red">*</span>调研行业：</label>
-                    <div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+                    <label class="form-label col-xs-4 col-sm-2" style="width:120px;margin-left:25px;"><span class="c-red">*</span>调研行业：</label>
+                    <div class="formControls col-xs-8 col-sm-9" style="margin-left:-12px;"> <span class="select-box" style="width:415px;margin-left:7px">
                         <select name="pid" id="pid" class="select">
                             <option value="0">请选择分类</option>
                             @foreach($type as $v)
                                 <option value="{{$v['id']}}">{{$v['type_name']}}</option>
                                     @foreach($v['son'] as $val)
                                         <option value="{{$val['id']}}">&nbsp;&nbsp;--|{{$val['type_name']}}</option>
-                                        @foreach($val['son'] as $value)
-                                            <option value="{{$value['id']}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--|{{$value['type_name']}}</option>
-                                        @endforeach
+                                        
                                     @endforeach
                             @endforeach
                         </select>
@@ -77,21 +75,21 @@
 
                 <div class="modal-body">
                     <div class="row cl">
-                        <label class="form-label col-xs-4 col-sm-2" style="width:120px">调研名称：</label>
+                        <label class="form-label col-xs-4 col-sm-2" style="width:105px;margin-left:20px;">调研名称：</label>
                         <div class="formControls col-xs-8 col-sm-9">
                             <input type="text" class="input-text" value="0" placeholder="" id="diaoyan_type" name="img_type_name">
                             <input type="hidden" id="token" value="{{csrf_token()}}">
                         </div>
                     </div>
 					<div class="row cl">
-                        <label class="form-label col-xs-4 col-sm-2" style="width:120px">参考金额：</label>
+                        <label class="form-label col-xs-4 col-sm-2" style="width:105px;margin-left:20px;">参考金额：</label>
                         <div class="formControls col-xs-8 col-sm-9">
                             <input type="text" class="input-text" value="0" placeholder="" id="money" name="img_type_name">
                             
                         </div>
                     </div>
 					<div class="row cl">
-                        <label class="form-label col-xs-4 col-sm-2" style="width:120px">类型描述：</label>
+                        <label class="form-label col-xs-4 col-sm-2" style="width:105px;margin-left:20px;">类型描述：</label>
                         <div class="formControls col-xs-8 col-sm-9">
                             <textarea id="xiang" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空"></textarea>
                             <p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>

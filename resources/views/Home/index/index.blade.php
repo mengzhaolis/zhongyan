@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="specialRight L">
                                     <h5>{{$course->course_title}}</h5>
-                                    <p>{{$course->course_jian}}<a href="{{$course->id}}">【详情】</a></p>
+                                    <p>{{$course->course_jian}}<a href="{{url('/course')}}?id={{$course->id}}">【详情】</a></p>
                                 </div>
                             </a>
                         </li>
@@ -64,7 +64,7 @@
                     <ul>
                         @foreach($message as $message)
                             <li class="noLineHeight" id="list">
-                                <a href="{{$message->id}}">
+                                <a href="{{url('/zx_details')}}?id={{$message->id}}">
                                     <div class="consult_img_first consult_img">
                                         <img src="{{$message->img_path}}">
                                     </div>
@@ -139,18 +139,18 @@
         <div class="inner">
              <div class="public_top textLeft">
                  <h3>中研行业</h3>
-                 <a href="">换一批&gt;&gt;</a>
+                 <a href="javascript:;" id="change_one">换一批&gt;&gt;</a>
              </div>
              <div class="clear"></div>
              <p class="TitleP">工业<span>/</span>商业地产<span>/</span>竞争对手<span>/</span>医药&nbsp;·&nbsp;医疗<span>/</span>营销咨询<span>/</span>科技园区<span>/</span>互联网大数据</p>
-             <ul>
+             <ul class="hang">
                 @foreach($guild as $guild)
                 <li>
                     <img src="{{$guild->img_path}}">
                     <div class="listTop">
                          <h4>{{$guild->guild_title}}</h4>
                          <em></em>
-                         <p>{{$guild->guild_miao}}</p>
+                         <p>{{$guild->guild_miao}}<a href="{{$guild->guild_url}}" style="color:white;">【详情】</a></p>
                     </div>
                      <div class="listBottom">
                          <a href="">参考报价</a>
@@ -301,7 +301,18 @@
                 <div class="presidentRight R">
                     <div class="presidentLeftTitle"><h5 class="L">零距离</h5><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897" class="R">更多&gt;&gt;</a></div>
                     <div class="clear"></div>
-                    <div class="presidentRightRideo"><a href=""><img src="./images/index/video.png"></a></div>
+                    <!-- 视频在线播放 -->
+                    <div class="presidentRightRideo">
+                                
+                        <video width="462" height="315" controls >
+                            <source src="/Home/asd.ogg" type="video/ogg">
+                            <source src="/Home/asd.mp4" type="video/mp4">
+                            <source src="/Home/asd.webm" type="video/webm">
+                            <object data="/Home/asd.mp4" width="320" height="240">
+                                <embed width="462" height="315" src="/Home/asd.swf">
+                            </object>
+                        </video>
+                    </div>
                 </div>
             </div>
     	</div>

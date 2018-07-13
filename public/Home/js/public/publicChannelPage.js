@@ -1,6 +1,6 @@
-// 轮播图
 $(function(){
-        var length, currentIndex = 0,
+    // 轮播图
+      var length, currentIndex = 0,
         interval, hasStarted = false,
         t = 3000;
     length = $('.slider-panel').length;
@@ -9,7 +9,7 @@ $(function(){
     $('.slider-page').hide();
     $('.slider-panel, .slider-pre, .slider-next').hover(function() {
         stop();
-        $('.slider-page').show()
+        $('.slider-page').show();
     }, function() {
         $('.slider-page').hide();
         start()
@@ -18,7 +18,7 @@ $(function(){
         stop();
         var preIndex = $(".slider-item").filter(".slider-item-selected").index();
         currentIndex = $(this).index();
-        play(preIndex, currentIndex)
+        play(preIndex, currentIndex);
     }, function() {
         start()
     });
@@ -34,13 +34,13 @@ $(function(){
     function pre() {
         var preIndex = currentIndex;
         currentIndex = (--currentIndex + length) % length;
-        play(preIndex, currentIndex)
+        play(preIndex, currentIndex);
     }
 
     function next() {
         var preIndex = currentIndex;
         currentIndex = ++currentIndex % length;
-        play(preIndex, currentIndex)
+        play(preIndex, currentIndex);
     }
 
     function play(preIndex, currentIndex) {
@@ -60,49 +60,55 @@ $(function(){
         clearInterval(interval);
         hasStarted = false;
     }
-    start()
-    // 开课时间
-    var eq=$(".special").find("li").eq(0);
-    eq.addClass("specialFirst");
-    eq.find(".specialLeft").addClass("changeHeight");
-    eq.find("h5").addClass("changeSize");
-    eq.find("p").show();
-    $(".special").find("li").hover(function(){
-        var $this=$(this);
-        $this.addClass("specialFirst").siblings().removeClass("specialFirst");
-        $this.find(".specialLeft").addClass("changeHeight");
-        $this.siblings().find(".specialLeft").removeClass("changeHeight");
-        $this.find("h5").addClass("changeSize")
-        $this.siblings().find("h5").removeClass("changeSize");
-        $this.find("p").show();
-        $this.siblings().find("p").hide();
+    start();
+
+  //成功案例
+    $("#indemo ul li").hover(function(){
+        $(this).find(".diaplayHide").show();
+    },function(){
+    	$(this).find(".diaplayHide").hide();
     })
-   // 最新资讯
-    $(".consult_img_first").show();
-    $("#list p").mouseover(
-        function () {
-            $this = $(this).parents("#list");
-            $this.find(".consult_img").show();
-            $this.siblings().find(".consult_img").hide();
-        })
-    // 中研行业
-    $(window).scroll(function(){
-        var T=$(document).scrollTop();
-        if(T>=1200&&T<=2300){
-            $(".industryL").stop().animate({width:"50%"},400);
-            $(".industryR").stop().animate({width:"50%"},400);
-        }else{
-            $(".industryL").stop().animate({width:"0"},400);
-            $(".industryR").stop().animate({width:"0"},400);
+    // 中研流程图
+   $(".demandContent .first").show();
+    var $left=$(".demandLine").position().left;
+     $(".rightArrow").click(function(){
+        var $left=$(".demandLine").position().left;
+        if($left>-330){
+            $(".rightArrow img").attr("src","/Home/images/public/left.png");
+            $(".rightArrow").addClass("changeRotateRight");
+            $(".demandLine").animate({ left: "-=110px" }, 0);
+        }else if($left==-330){
+            $(".rightArrow img").attr("src","/Home/images/public/right.png");
+            $(".rightArrow").removeClass("changeRotateRight");
         }
-    }) 
-$(".industry_middle ul li a").eq(0).show();
-    $(".industry_middle ul li").mouseover(
-        function(){
-            var index=$(this).index();
-            $(".industry_middle_outer ol").eq(index).show().siblings().hide();
-        })
-    // 成功案例 
+    })
+    $(".leftArrow").click(function(){
+        var $left=$(".demandLine").position().left;
+        if($left<0){
+            $(".leftArrow img").attr("src","/Home/images/public/left.png");
+            $(".leftArrow").addClass("changeRotateLeft");
+            $(".demandLine").animate({ left: "+=110px" }, 0);
+        }else if($left==0){
+            $(".leftArrow img").attr("src","/Home/images/public/right.png");
+            $(".leftArrow").removeClass("changeRotateLeft");
+        }           
+    })
+    $(".demandLine ul li").hover( function(){
+        $(this).find("div").addClass("change")
+        $(this).siblings().find("div").removeClass("change");
+        $(this).addClass("bgchange").siblings().removeClass("bgchange");
+        var index=$(this).index();
+        $(".demandContent ul li").eq(index).show().siblings().hide();
+    },function(){
+        $(".demandLine ul li").find("div").removeClass("change");
+        $(".demandLine ul li").removeClass("bgchange");
+    })
+    $(".bottom a").hover(function(){
+        $(this).addClass("fontColor").siblings().removeClass("fontColor");
+    },function(){
+        $(".bottom a").removeClass("fontColor");
+    })
+      // 成功案例 
 window.onload=function(){
     var speed=20;
     var tab=document.getElementById("demo");
@@ -125,31 +131,15 @@ window.onload=function(){
         $(this).find(".diaplayHide").hide();
     }) 
  };
- 
 })
-
 //首页底部注册-省市二级联动
-$('.city').change(function(){
+$('.city').change(function () {
 
     var province_id = $(this).val();
-    var token = $("#token").val();
+    // var token = $("#token").val();
     var url = '/city';
-    var data ={'_token':token,'province_id':province_id};
-    $.post(url,data,function(data){
+    var data = {'province_id': province_id };
+    $.get(url, data, function (data) {
         $('.second').html(data);
     })
 })
-//首页-中研行业-换一批
-$('#change_one').click(function(){
-    var url ='/change_one';
-    var data ={'id':1};
-    $.get(url,data,function(msg){
-        // console.log(msg)
-        if(msg=='')
-        {
-            alert('暂无最新数据');
-            return;
-        }
-        $('.hang').html(msg)
-    })
-});

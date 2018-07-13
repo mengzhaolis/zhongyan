@@ -11,9 +11,35 @@
 |
 */
 //网站首页-前端
-Route::any('/','Home\IndexController@index');
+Route::group(['prefix' => '/'],function(){
+    Route::any('/','Home\IndexController@index');
+    //首页-课程详情
+    Route::any('/course','Home\IndexController@course');
+    //首页-资讯详情页
+    Route::any('/zx_details','Home\IndexController@zx_details');
+    //首页-中研行业-换一批
+    Route::any('/change_one','Home\IndexController@change_one');
+});
+//首页-公共部分-计算、需求、留言
+Route::group(['prefix' => '/online'],function(){
+    //计算器
+    Route::any('/counter','Home\OnlineController@counter');
+    //计算器联动
+    Route::any('/counter_type','Home\OnlineController@counter_type');
+    //计算器结果
+    Route::any('/jieguo','Home\OnlineController@jieguo');
+    //首页-资讯详情页
+    Route::any('/zx_details','Home\OnlineController@zx_details');
+    //首页-中研行业-换一批
+    Route::any('/change_one','Home\OnlineController@change_one');
+});
+//公共频道页
+Route::any('/channel','Home\PublicController@channel');
+
 //首页底部注册-省市二级联动
 Route::any('/city','Home\IndexController@city');
+
+/**专题页 */
 //网站工业频道页-前端
 Route::any('/park','Home\ParkController@park');
 //商业地产-前端
@@ -281,4 +307,17 @@ Route::group(['prefix' => '/seo'],function(){
     Route::any('/seo_data_up','Admin\SeoController@seo_data_up');
     //seo数据编辑
     Route::any('/seo_update','Admin\SeoController@seo_update');
+});
+//需求评估
+Route::group(['prefix' => '/need'],function(){
+    //费用计算器-计算器数据展示
+    Route::any('/need_list','Admin\NeedController@need_list');
+    //费用计算器-数据添加
+    Route::any('/need_data_add','Admin\NeedController@need_data_add');
+    //费用计算器-调研类型添加
+    Route::any('/type_data_add','Admin\NeedController@type_data_add');
+    //费用计算器-调研类型列表
+    Route::any('/type_list','Admin\NeedController@type_list');
+    //费用计算器-调研类型删除
+    Route::any('/type_stop','Admin\NeedController@type_stop');
 });

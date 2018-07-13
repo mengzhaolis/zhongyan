@@ -130,6 +130,26 @@
         </dl>
         <dl id="menu-member">
             <dt>
+                <i class="Hui-iconfont">&#xe639;</i> 需求评估
+                <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
+            </dt>
+            <dd>
+                <ul>
+                    <li>
+                        <a data-href="{{url('/need/need_list')}}" data-title="数据添加" href="javascript:;">数据添加</a>
+                    </li>
+                    <li>
+                        <a data-href="member-del.html" data-title="评估注册" href="javascript:;">评估注册</a>
+                    </li>
+                    <!-- <li>
+                        <a data-href="member-level.html" data-title="总裁专栏" href="javascript:;">总裁专栏</a>
+                    </li> -->
+                    
+                </ul>
+            </dd>
+        </dl>
+        <dl id="menu-member">
+            <dt>
                 <i class="Hui-iconfont">&#xe60d;</i> 团队管理
                 <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
             </dt>
