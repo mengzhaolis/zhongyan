@@ -10,9 +10,9 @@
     <!-- 轮播图 -->
 <div class="slider">
   <ul class="slider-main">
-    <li class="slider-panel"> <a><img src="./images/industry/industry.png"></a> </li>
-    <li class="slider-panel"> <a><img src="./images/industry/industry.png"></a> </li>
-    <li class="slider-panel"> <a><img src="./images/industry/industry.png"></a> </li>
+    <li class="slider-panel"> <a><img src="/Home/images/park/industry.png"></a> </li>
+    <li class="slider-panel"> <a><img src="/Home/images/park/industry.png"></a> </li>
+    <li class="slider-panel"> <a><img src="/Home/images/park/industry.png"></a> </li>
   </ul>
   <div class="slider-extra">
     <ul class="slider-nav">
@@ -36,9 +36,12 @@
             <h4>行业动态</h4>
             <p><a href="">更多&gt;&gt;</a></p>
             <ul>
-                <li class="listFirst"><a href=""><img src="./images/industry/trendsBackground.png"><span>热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题热门专题</span></a></li>
+             @foreach($first as $first)
+                    <li class="listFirst"><a href="{{url('/zx_details')}}?id={{$first->z_id}}" target="_blank"><img src="{{$first->img_path}}" style="width:470px;height:158px"><span>{{$first->title}}</span></a></li>
+                @endforeach
+                
                 @foreach($dongtai as $dongtai)
-                    <li><a href="{{$dongtai->id}}">{{$dongtai->title}}</a></li>
+                    <li><a href="url('/zx_details')}}?id={{$dongtai->id}}" target="_blank">{{$dongtai->title}}</a></li>
                 @endforeach
             </ul>
         </div>
@@ -51,42 +54,42 @@
     <ul>
         <li class="industrialSystem_first noMarginLeft">
             <p class="title"><em>建筑</em></p>
-            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="/Home/images/park/consulting.png"/>在线咨询</a></span>
+            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897" target="_blank"><img src="/Home/images/park/consulting.png"/>在线咨询</a></span>
             <span><a href=""><img src="/Home/images/park/assess.png"/>需求评估</a></span>
         </li>
         <li class="industrialSystem_second">
             <p class="title"><em>环保</em></p>
-            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="/Home/images/park/consulting.png"/>在线咨询</a></span>
+            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897" target="_blank"><img src="/Home/images/park/consulting.png"/>在线咨询</a></span>
             <span><a href=""><img src="/Home/images/park/assess.png"/>需求评估</a></span>
         </li>
         <li class="industrialSystem_third">
             <p class="title"><em>汽车</em></p>
-            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="/Home/images/park/consulting.png"/>在线咨询</a></span>
+            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897" target="_blank"><img src="/Home/images/park/consulting.png"/>在线咨询</a></span>
             <span><a href=""><img src="/Home/images/park/assess.png"/>需求评估</a></span>
         </li>
         <li class="industrialSystem_fourth">
             <p class="title"><em>能源</em></p>
-            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="/Home/images/park/consulting.png"/>在线咨询</a></span>
+            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897" target="_blank"><img src="/Home/images/park/consulting.png"/>在线咨询</a></span>
             <span><a href=""><img src="/Home/images/park/assess.png"/>需求评估</a></span>
         </li>
         <li class="industrialSystem_fifth noMarginLeft marginBottom">
             <p class="title"><em>新材料</em></p>
-            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="/Home/images/park/consulting.png"/>在线咨询</a></span>
+            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897" target="_blank"><img src="/Home/images/park/consulting.png"/>在线咨询</a></span>
             <span><a href=""><img src="/Home/images/park/assess.png"/>需求评估</a></span>
         </li>
         <li class="industrialSystem_sixth marginBottom">
             <p class="title"><em>天阳能</em></p>
-            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="/Home/images/park/consulting.png">在线咨询</a></span>
+            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897" target="_blank"><img src="/Home/images/park/consulting.png">在线咨询</a></span>
             <span><a href=""><img src="/Home/images/park/assess.png">需求评估</a></span>
         </li>
         <li class="industrialSystem_seventh marginBottom">
             <p class="title"><em>机械设备</em></p>
-            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="/Home/images/park/consulting.png"/>在线咨询</a></span>
+            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897" target="_blank"><img src="/Home/images/park/consulting.png"/>在线咨询</a></span>
             <span><a href=""><img src="/Home/images/park/assess.png"/>需求评估</a></span>
         </li>
         <li class="industrialSystem_eighth marginBottom">
             <p class="title six"><em>高端消费制造</em></p>
-            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"><img src="/Home/images/park/consulting.png"/>在线咨询</a></span>
+            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897" target="_blank"><img src="/Home/images/park/consulting.png"/>在线咨询</a></span>
             <span><a href=""><img src="/Home/images/park/assess.png"/>需求评估</a></span>
         </li>
     </ul>

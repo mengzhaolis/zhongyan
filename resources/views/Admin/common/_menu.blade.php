@@ -137,33 +137,27 @@
                 <ul>
                     <li>
                         <a data-href="{{url('/need/need_list')}}" data-title="数据添加" href="javascript:;">数据添加</a>
-                    </li>
-                    <li>
-                        <a data-href="member-del.html" data-title="评估注册" href="javascript:;">评估注册</a>
-                    </li>
+                    </li>                  
                     <!-- <li>
                         <a data-href="member-level.html" data-title="总裁专栏" href="javascript:;">总裁专栏</a>
                     </li> -->
-                    
                 </ul>
             </dd>
         </dl>
         <dl id="menu-member">
             <dt>
-                <i class="Hui-iconfont">&#xe60d;</i> 团队管理
+                <i class="Hui-iconfont">&#xe60d;</i> 总裁专享
                 <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
             </dt>
             <dd>
                 <ul>
                     <li>
-                        <a data-href="member-list.html" data-title="团队列表" href="javascript:;">团队列表</a>
+                        <a data-href="{{url('/supremo/supremo_list')}}" data-title="总裁动态" href="javascript:;">总裁动态</a>
                     </li>
                     <li>
                         <a data-href="member-del.html" data-title="回收站" href="javascript:;">回收站</a>
                     </li>
-                    <li>
-                        <a data-href="member-level.html" data-title="总裁专栏" href="javascript:;">总裁专栏</a>
-                    </li>
+                    
                     <!-- <li><a data-href="member-scoreoperation.html" data-title="积分管理" href="javascript:;">积分管理</a></li> -->
                     <!-- <li><a data-href="member-record-browse.html" data-title="浏览记录" href="javascript:void(0)">浏览记录</a></li> -->
                     <!-- <li><a data-href="member-record-download.html" data-title="下载记录" href="javascript:void(0)">下载记录</a></li> -->
@@ -187,7 +181,9 @@
                     <li>
                         <a data-href="{{url('/administrator/admin_list')}}" data-title="管理员列表" href="javascript:void(0)">管理员列表</a>
                     </li>
-                   
+                    <li>
+                        <a data-href="{{url('/administrator/a_list')}}" data-title="A类管理" href="javascript:void(0)">A类管理</a>
+                    </li>
                 </ul>
             </dd>
         </dl>

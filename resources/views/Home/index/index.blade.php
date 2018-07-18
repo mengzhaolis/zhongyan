@@ -32,7 +32,7 @@
             <div class="special L">
                 <div class="specialTop">
                     <h4 class="L"><span>开课时间</span></h4>
-                    <a href="#" class="contentMore R">更多&gt&gt</a>
+                    <a href="{{url('/course_list')}}" class="contentMore R">更多&gt&gt</a>
                 </div>
                 <div class="clear"></div>
                 <ul>
@@ -56,7 +56,7 @@
             <div class="consult R">
                 <div class="consultTop">
                     <h4 class="L"><span>最新资讯</span></h4>
-                    <a href="#" class="contentMore R">更多&gt&gt</a>
+                    <a href="{{url('/message_list')}}" class="contentMore R">更多&gt&gt</a>
                 </div>
                 <div class="clear"></div>
                 
@@ -410,7 +410,7 @@
                                     <div class="diaplayHide">
                                         <p class="IndustrialResearch">{{$case->case_name}}</p>
                                         <p class="IndustrialResearchText">{{$case->case_miaoshu}}</p>
-                                        <p class="ForDetails"><a href="">了解详情</a></p>
+                                        <p class="ForDetails"><a href="{{url('/case_xiang')}}?id={{$case->id}}">了解详情</a></p>
                                     </div>
                                 </li>
                             @endforeach

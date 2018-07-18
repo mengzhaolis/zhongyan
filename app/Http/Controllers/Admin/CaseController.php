@@ -38,7 +38,7 @@ class CaseController extends CommonController
         }
         $data['case_num']=rand(1111,9999);
         $data['created_at']=time();
-        $id = $this->model->new_add($this->database,$data);
+        $id = DB::table('case')->insertGetId($data);
         return $id;
     }
     //案例封面图添加

@@ -9,156 +9,61 @@
 	<form action="javascript:void(0)" method="post" class="form form-horizontal" id="form-article-add">
     {{csrf_field()}}
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>案例标题：</label>
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>资讯标题：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="case_name">
+				<input type="text" class="input-text" value="{{$data->title}}" placeholder="" id="" name="title">
+                <input type="hidden" name="id" value="{{$data->id}}">
 			</div>
 		</div>
-		<!-- <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">简略标题：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="" id="" name=" title_jian">
-			</div>
-		</div> -->
-        <!-- 分类 -->
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>案例类型：</label>
-			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-				<select name="case_type" class="select">
-					<option value="0">请选择分类</option>
-                    @foreach($type as $v)
-                        <option value="{{$v['id']}}">{{$v['type_name']}}</option>
-                            @foreach($v['son'] as $val)
-                                <option value="{{$val['id']}}">&nbsp;&nbsp;--|{{$val['type_name']}}</option>
-                                @foreach($val['son'] as $value)
-                                    <option value="{{$value['id']}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--|{{$value['type_name']}}</option>
-                                @endforeach
-                            @endforeach
-                    @endforeach
-				</select>
-				</span> </div>
-		</div>
-        
+		
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">排序(反序)：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="0" placeholder="" id="" name="asc">
+				<input type="text" class="input-text" value="{{$data->asc}}" placeholder="" id="" name="asc">
 			</div>
 		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>案例类型：</label>
-			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-				<select name="direction_name" class="select">
-					<option value="0">请选择分类</option>
-                    @foreach($data as $a)
-                        <option value="{{$a->id}}">{{$a->direction_name}}</option>
-                          
-                    @endforeach
-				</select>
-				</span> </div>
-		</div>
+		
 		
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">作者：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="case_driver" id="" placeholder="" value="" class="input-text">
+				<input type="text" name="drive" id="" placeholder="" value="{{$data->drive}}" class="input-text">
 			</div>
 		</div>
-		<!-- <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">材质：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text">
-			</div>
-		</div> -->
-		<!-- <div class="row cl">
+		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">文章来源：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="news_url" id="" placeholder="" value="" class="input-text">
-			</div>
-		</div> -->
-		<!-- <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">价格计算单位：</label>
-			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-				<select class="select">
-					<option>请选择</option>
-					<option value="1">件</option>
-					<option value="2">斤</option>
-					<option value="3">KG</option>
-					<option value="4">吨</option>
-					<option value="5">套</option>
-				</select>
-				</span> </div>
-		</div> -->
-		<!-- <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">产品重量：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-				kg</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">产品展示价格：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-				元</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">市场价格：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-				元</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">成本价格：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-				元</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">最低销售价格：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-				元</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">销售开始时间：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss',maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin" class="input-text Wdate" style="width:180px;">
+				<input type="text" name="news_url" id="" placeholder="" value="{{$data->news_url}}" class="input-text">
 			</div>
 		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">销售结束时间：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\'datemin\')}' })" id="datemax" class="input-text Wdate" style="width:180px;">
-			</div>
-		</div> -->
-        
         <div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">封面图：</label>
 			<div style="width:80px;height:80px;float:left;">
-                <img src="" alt="" class="ing" style="width:80px;height:80px;margin-left:15px;">
+                <img src="{{$data->img_path}}" alt="" class="ing" style="width:80px;height:80px;margin-left:15px;">
                 
                     <input type="file" multiple id="fil" style="float:left;margin-left:100px;margin-top:-43px;">
                     <input type="hidden" id="face" name="face_img" value="">
+                    <input type="hidden" id="face_up" valude="{{$data->face_img}}">
                 
             </div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">SEO关键字：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="seo_title" id="" placeholder="多个关键字用英文逗号隔开，限10个关键字" value="" class="input-text">
+				<input type="text" name="seo_title" id="" placeholder="多个关键字用英文逗号隔开，限10个关键字" value="{{$data->seo_title}}" class="input-text">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">SEO摘要：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<textarea name="seo_keyword" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" ></textarea>
+				<textarea name="seo_keyword" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="$.Huitextarealength(this,200)">{{$data->seo_keyword}}</textarea>
 				<p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">文章摘要：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<textarea name="case_miaoshu" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！"></textarea>
+				<textarea name="describe" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="$.Huitextarealength(this,200)">{{$data->describe}}</textarea>
 				<p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
 			</div>
 		</div>
@@ -178,7 +83,7 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">详细内容：</label>
 			<div class="formControls col-xs-8 col-sm-9"> 
-				<script id="editor" type="text/plain" style="width:100%;height:400px;"></script> 
+				<script id="editor" type="text/plain" style="width:100%;height:400px;">{!! html_entity_decode($data->editorValue) !!}</script> 
 			</div>
 		</div>
 		<div class="row cl">
@@ -224,26 +129,21 @@ var img_url = $('.ing').attr('src');
          var fordate=new FormData();  //得到一个FormData对象：
          var fils=$("#fil").get(0).files[0];  //得到file对象
         //  console.log(fils);
-		// var id = $("#a_id").val();
+		var id = $("#face_up").val();
          fordate.append('image',fils);  //用append方法添加键值对
-        //  fordate.append('id',id);  //用append方法添加键值对
+         fordate.append('id',id);  //用append方法添加键值对
 		 
         var srcc=window.URL.createObjectURL(fils);
 		$(".ing").attr({'src':srcc,'width':80+'px','heigth':80+'px'});  
          $.ajax({  //发送ajax请求
-              url: "/case/img_add",  
+              url: "/supremo/img_up",  
               type: "post",  
               data: fordate, 
               processData : false,  
               contentType : false,   
               success: function(data){  
-                console.log(data)
-                if(data!='')
-                {
-
-                    $("#face").val(data);
-                    layer.msg('添加成功!',{icon:1,time:1000});
-                }
+				console.log(data)
+				$("#face").val(data);
                 // layer.msg(data.message,{icon:data.status});
 				
               },
@@ -274,7 +174,10 @@ $("#form-article-add").validate({
         {
             required: true,
         },
-        
+        seo_title:
+        {
+            required: true,
+        },
 
     },
     onkeyup:false,
@@ -284,18 +187,19 @@ $("#form-article-add").validate({
     {
         $(form).ajaxSubmit({
             'type':'post',
-            'url' :'/case/ca_add',
+            'url' :'/supremo/supremo_update',
             'success':function(data)
             {
-                console.log(data)
+                console.log(data);
+                // return;
                 if(data !='')
                 {
-                    layer.msg('添加成功!',{icon:1,time:1000});
+                    layer.msg('修改成功!',{icon:1,time:1000});
                     window.close(); 
-					window.location.href='{{url("/case/ca_list")}}'; 
+					window.location.href='{{url("/supremo/supremo_list")}}'; 
                 }else
                 {
-                    layer.msg('添加失败!',{icon:1,time:3000});
+                    layer.msg('修改失败!',{icon:1,time:3000});
                 }
             }
         });

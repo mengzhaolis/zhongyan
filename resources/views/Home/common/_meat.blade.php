@@ -13,7 +13,7 @@
 <div class="logo">
     <div class="logo_img L"><img src="/Home/images/header/logo.png" alt=""></div>
     <div class="logoR R">
-        <a href="#" class="R needsIcon">需求评估</a>
+        <a href="{{url('/online/need')}}" class="R needsIcon">需求评估</a>
         <a href="#" class="R onlineIcon">在线留言</a>
         <a href="{{url('/online/counter')}}" class="R flicker">费用计算器</a>
     </div>

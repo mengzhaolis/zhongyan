@@ -36,15 +36,22 @@ class OnlineController extends Controller
             return '';
         }
         $data['created_at'] = time();
-        // $id = DB::table('jisuan_login')->insertGetId($data);
-        // if(empty($id))
-        // {
-        //     return '';
-        // }
+        $id = DB::table('jisuan_login')->insertGetId($data);
+        if(empty($id))
+        {
+            return '';
+        }
         $pid = $data['hangye'];
         $type = $data['type'];
         $ret = DB::table('cost')->leftJoin('type','cost.pid','=','type.id')->where([['cost.pid','=',$pid],['cost.id','=',$data['type']]])->first();
         // var_dump($ret);die;
         return view('Home.online.jieguo',['ret'=>$ret]);
     }
+    //费用计算-需求评估
+    public function need()
+    {
+        $type = $this->menu->first('type');
+        return view('Home.online.need',['type'=>$type]);
+    }
+    
 }

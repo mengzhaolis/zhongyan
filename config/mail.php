@@ -15,8 +15,14 @@ return [
     |            "sparkpost", "log", "array"
     |
     */
-
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    //原配置
+    // 'driver' => env('MAIL_DRIVER', 'smtp'),
+//使用ses邮件发送
+    'ses' => [
+    'key' => 'your-ses-key',
+    'secret' => 'your-ses-secret',
+    'region' => 'ses-region',  // e.g. us-east-1
+],
 
     /*
     |--------------------------------------------------------------------------

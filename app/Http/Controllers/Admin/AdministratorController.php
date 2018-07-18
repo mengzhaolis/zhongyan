@@ -10,7 +10,7 @@ use App\Http\Models\Admin\Cms;
 use App\Http\Models\Admin\menu;
 use App\Http\Models\Admin\administrator;
 use Illuminate\Support\Facades\Storage;
-
+error_reporting(E_ALL ^ E_NOTICE);
 class AdministratorController extends CommonController
 {
     private $database = 'juris';
@@ -89,5 +89,27 @@ class AdministratorController extends CommonController
         $data['created_at']=date("Y-m-d H-i-s",time());
         $id = $this->administrator->admin_add($this->user,$data);
         return $id;
+    }
+    //管理员管理-A类数据控制
+    public function a_list()
+    {
+        $data = DB::table('jisuan_login')->leftJoin('type','jisuan_login.hangye','=','type.id')->leftJoin('cost','jisuan_login.type','=','cost.id')->orderBy('created_at','desc')->select('jisuan_login.*','type.type_name','cost.diaoyan_type')->get();
+
+        return view('Admin.Administrator.a_list',['data'=>$data]);
+    }
+    //管理员管理-A类数据-查看描述
+    public function xiang(Request $request)
+    {
+        $id = $request->input('id');
+        $data = DB::table('jisuan_login')->where('id','=',$id)->select('miaoshu')->first();
+        $data = json_decode(json_encode($data),true);
+        return $data;
+    }
+    //管理员管理-A类数据-操作状态
+    public function status(Request $request)
+    {
+        $id = $request->input('id');
+        $data = DB::table('jisuan_login')->where('id','=',$id)->update(['status'=>0]);
+        return $data;
     }
 }

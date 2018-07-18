@@ -1,0 +1,224 @@
+body{
+    width:100%;
+    min-width: 1200px;
+}
+/*导航条*/
+.nav .headPublic2{
+    border-bottom: 3px solid #fff;
+}
+/*banner*/
+.banner{
+    width:100%;
+    height:500px;
+}
+.banner img{
+    width:100%;
+    height:100%;
+}
+/*主体*/
+.main{
+    width:100%;
+    background: #f2f2f2;
+}
+.mainInner{
+   width:1200px;
+   margin:0 auto;
+   padding: 80px 0 50px;
+}
+.breadcrumb{
+    margin-bottom: 18px;
+}
+.breadcrumb a{
+   display: inline-block;
+   width:98px;
+   line-height:26px;
+   text-align: center;
+/*   font-weight: 600;*/
+}
+.breadcrumb .currentPosition{
+   background-image: url("/Home/images/index/message/breadcrumbWhite0.png");
+}
+.breadcrumb .index{
+    width:112px;
+    margin-left:-13px;
+    background-image: url("/Home/images/index/message/breadcrumbWhite1.png");
+}
+/*左边*/
+.mainInnerLeft{
+    width:875px;
+    border-right: 1px solid #dfdfdf;
+    padding:20px 0;
+}
+.mainInnerLeft>ul>li{
+    width: 845px;
+    height:220px;
+    padding-bottom:25px;
+    border-bottom: 1px solid #dfdfdf;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+.mainInnerLeftImg a{
+    display: block;
+    width: 260px;
+    height: 194px;
+    background: #b9b9b9;
+}
+.mainInnerLeftContent{
+    width: 585px;
+    height:194px;
+    padding:0 30PX;
+}
+.mainInnerLeftContent:hover{
+    background: #ececec
+} 
+.mainInnerLeftContent h4{
+    margin: 30px 0 33px;
+}
+.mainInnerLeftContent h4 a{
+    font-size: 18px;
+    color: #445a9a;
+    font-weight: bold;
+    float: left;
+}
+.mainInnerLeftContent h4 em{
+    margin-right: 25px;
+    color: #666;
+    font-size: 16px;
+    float: right;
+}
+.mainInnerLeftContent p{
+    line-height: 20px;
+}
+.mainInnerLeftContent p span{
+    font-weight: bold;
+}
+.mainInnerLeft>ul>.noMarginBottom{
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+/*右边*/
+.mainInnerRight{
+    width:324px;
+    padding-left:30px;
+}
+/*注册*/
+.mainInnerRightType{
+    padding:20px 0;
+}
+.mainInnerRightType h3,.mainInnerRightVideo h3{
+    color: #fffefe;
+    font-size: 22px;
+    width:197px;
+    height:42px;
+    background-image: url("/Home/images/index/message/rectangleBG.png");
+    padding-left: 17px;
+    line-height:48px;
+    margin:0 auto;
+}
+.mainInnerRightType form{
+    margin-top:18px;
+}
+.mainInnerRightType div{
+    width:295px;
+    height:40px;
+    background: #ececec;
+    margin-bottom: 4px;
+    padding:5px 0;
+}
+.mainInnerRightType div em{
+    display: inline-block;
+    width:40px;
+    height:30px;
+    text-align: center;
+    border-right: 1px solid #dfdfdf;
+}
+.mainInnerRightType div em img{
+    vertical-align: middle;
+}
+.mainInnerRightType div input{
+    width:254px;
+    line-height:30px;
+    border: 0;
+    background: rgba(255,255,255,0);
+    padding-left:19px;
+}
+.mainInnerRightType select{
+    width:144px;
+    height:40px;
+    margin-bottom: 4px;
+    border: 0;
+    padding-left: 55px;
+    color: #777777;
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    background: url("/Home/images/index/message/triangle.png") no-repeat 125px center #ececec;
+}
+.mainInnerRightType .downtown{
+    padding-left: 50px;
+    margin-left: 1px;
+}
+.mainInnerRightType textarea{
+    max-width: 295px;
+    min-width: 295px;
+    background: #ececec;
+    border:0;
+    padding-left:10px;
+    resize:none;  
+    color: #777777;
+}
+.mainInnerRightType .genre{
+    max-height:40px;
+    min-height: 40px;
+    line-height:40px;
+}
+.mainInnerRightType .need{
+    max-height: 100px;
+    min-height: 100px;
+    padding-top: 14px;
+}
+.mainInnerRightType .btn{
+    width:295px;
+    line-height: 46px;
+    background: #445a9a;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    border: 0;
+    margin-top:14px;
+    cursor: pointer;
+}
+/*视频*/
+.mainInnerRightVideo{
+    border-top: 1px solid #dfdfdf;
+    margin-top: 5px;
+    padding: 24px 0;
+    border-bottom: 1px solid #dfdfdf;
+}
+.mainInnerRightVideo h3{
+    padding-left: 55px;
+    margin-bottom: 18px;
+}
+.mainInnerRightVideo li a{
+    display: block;
+    width: 295px;
+    height: 198px;
+    background-image: url("/Home/images/index/message/backGround.png");
+    margin-top: 10px;
+}
+.mainInnerRightVideo li a span{
+    display: inline-block;
+    width:285px;
+    line-height: 40px;
+    background: rgba(228,229,230,0.5);
+    margin-top: 158px;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+.empty{
+    width:295px;
+    height:295px;
+    border: 2px solid #445a9a;
+    margin-top:25px;
+}

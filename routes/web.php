@@ -15,8 +15,14 @@ Route::group(['prefix' => '/'],function(){
     Route::any('/','Home\IndexController@index');
     //首页-课程详情
     Route::any('/course','Home\IndexController@course');
+    //首页-课程-更多(课程列表页)
+    Route::any('/course_list','Home\IndexController@course_list');
     //首页-资讯详情页
     Route::any('/zx_details','Home\IndexController@zx_details');
+    //首页-资讯-更多(资讯列表页)
+    Route::any('/message_list','Home\IndexController@message_list');
+    //案例详情页
+    Route::any('/case_xiang','Home\IndexController@case_xiang');
     //首页-中研行业-换一批
     Route::any('/change_one','Home\IndexController@change_one');
 });
@@ -32,6 +38,9 @@ Route::group(['prefix' => '/online'],function(){
     Route::any('/zx_details','Home\OnlineController@zx_details');
     //首页-中研行业-换一批
     Route::any('/change_one','Home\OnlineController@change_one');
+    //首页头部-需求评估
+    Route::any('/need','Home\OnlineController@need');
+
 });
 //公共频道页
 Route::any('/channel','Home\PublicController@channel');
@@ -154,24 +163,24 @@ Route::group(['prefix' => '/case'],function(){
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
-//团队管理
-Route::group(['prefix' => '/team'],function(){
-    //案例数据列表展示页
-    Route::any('/team_list','Admin\TeamController@team_list');
-    //案例管理数据添加
-    Route::any('/team_add','Admin\TeamController@team_add');
-    //案例封面图片上传
-    Route::any('/img_add','Admin\TeamController@img_add');
-    //专题列表数据伪删除
-    Route::any('/stop','Admin\TeamController@stop');
-    //专题列表数据编辑功能
-    Route::any('/Team_up','Admin\TeamController@Team_up');
-    //执行数据修改
-    Route::any('/Team_update','Admin\TeamController@Team_update');
-    //专题回收站
-    Route::any('/Team_recycle','Admin\TeamController@Team_recycle');
-    //专题置顶-取消置顶
-    Route::any('/top','Admin\TimeController@top');
+//总裁专享
+Route::group(['prefix' => '/supremo'],function(){
+    //总裁动态数据添加
+    Route::any('/add','Admin\SupremoController@add');
+    //总裁动态列表
+    Route::any('/supremo_list','Admin\SupremoController@supremo_list');
+    //总裁动态图片上传
+    Route::any('/img_add','Admin\SupremoController@img_add');
+    //总裁动态数据伪删除
+    Route::any('/supremo_stop','Admin\SupremoController@supremo_stop');
+    //总裁动态数据置顶-取消置顶
+    Route::any('/top','Admin\SupremoController@top');
+    //总裁动态数据编辑页面展示
+    Route::any('/supremo_up','Admin\SupremoController@supremo_up');
+   //总裁动态数据编辑图片更换
+   Route::any('/img_up','Admin\SupremoController@img_up');
+   //总裁动态数据编辑-编辑数据入库
+   Route::any('/supremo_update','Admin\SupremoController@supremo_update');
 });
 //管理员管理
 Route::group(['prefix' => '/administrator'],function(){
@@ -187,6 +196,12 @@ Route::group(['prefix' => '/administrator'],function(){
     Route::any('/admin_list','Admin\AdministratorController@admin_list');
     //添加管理员
     Route::any('/admin_add','Admin\AdministratorController@admin_add');
+    //管理员管理-A类数据控制
+    Route::any('/a_list','Admin\AdministratorController@a_list');
+    //管理员管理-A类数据控制-查看描述
+    Route::any('/xiang','Admin\AdministratorController@xiang');
+    //管理员管理-A类数据-更改数据状态
+    Route::any('/status','Admin\AdministratorController@status');
 });
 //注册管理
 Route::group(['prefix' => '/register'],function(){
@@ -320,4 +335,5 @@ Route::group(['prefix' => '/need'],function(){
     Route::any('/type_list','Admin\NeedController@type_list');
     //费用计算器-调研类型删除
     Route::any('/type_stop','Admin\NeedController@type_stop');
+
 });

@@ -1,0 +1,143 @@
+body{
+    width:100%;
+    min-width: 1200px;
+}
+/*导航条*/
+.nav .headPublic2{
+    border-bottom: 3px solid #fff;
+}
+/*banner*/
+.banner{
+    width:100%;
+    height:500px;
+}
+.banner img{
+    width:100%;
+    height:100%;
+}
+/*主体*/
+.main{
+    width:100%;
+    background: #f2f2f2;
+    padding-bottom: 55px;
+}
+.mainInner{
+   width:1200px;
+   margin:0 auto;
+   padding-top:80px;
+}
+.breadcrumb{
+    margin-bottom: 18px;
+}
+.breadcrumb a{
+   display: inline-block;
+   width:98px;
+   line-height:26px;
+   text-align: center;
+}
+.breadcrumb .currentPosition{
+   background-image: url("/Home/images/index/course_list/breadcrumbWhite0.png");
+}
+.breadcrumb .index{
+    width:112px;
+    margin-left:-13px;
+    background-image: url("/Home/images/index/course_list/breadcrumbWhite1.png");
+}
+.mainInner h3{
+	width:1200px;
+	line-height:30px;
+	background: url("/Home/images/index/course_list/timeLine.png") no-repeat left center;
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: 30px;
+}
+.mainInner ul{
+	width:1200px;
+	background: #fff;
+	margin-bottom: 40px;
+}
+.mainInner ul li{
+	padding:30px 44px;
+	height:160px;
+    border-bottom: 1px solid #dcdcdc;
+}
+.leftImg{
+	width:103px;
+	height:87px;
+	margin:13px 40px 0 0;
+}
+.centerContent{
+	width: 770px;
+}
+.centerContent h4{
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 6px;
+}
+.centerContent p{
+	color: #666;
+}
+.centerContent p i{
+	margin-left: 30px;
+}
+.centerContent p+p{
+    color:#333;
+    margin-top: 18px;
+}
+.centerContent p+p span{
+	font-weight: bold;
+}
+.rightLink{
+	margin-top: 5px;
+}
+.rightLink a{
+	display: block;
+	width: 104px;
+	line-height:35px;
+	background: #445a9a;
+	text-align: center;
+	color: #fff;
+	font-size: 16px;
+	border-radius: 5px;
+}
+.rightLink a+a{
+	margin-top: 18px;
+}
+.grayContent{
+    background: url("/Home/images/index/course_list/background.png") no-repeat left top;
+}
+.mainInner ul .grayContent a,.mainInner ul .grayContent em,.mainInner ul .grayContent i,.mainInner ul .grayContent p,.mainInner ul .grayContent h4{
+	color:#999;
+}
+.mainInner ul .grayContent .rightLink a{
+	color:#fff;
+}
+.grayContent .rightLink a{
+	background: #cdcdcd;
+}
+/*分页*/
+.pager {
+	border-radius:3px;
+	display:inline-block;
+	clear:both;
+}
+.pager a,.pager span {
+	padding:4px 9px;
+	display: inline-block;
+	border:#dddddd 1px solid;
+	text-align: center;	
+	margin:6px;
+	border-radius: 5px;
+	background-color:#fff;
+}
+.pager span {
+	color:#fff;
+	background:#445a9a;
+}
+.pager a:hover {
+	background-color:#445a9a;
+	color:#fff;
+}
+.pager a.last {
+	border-right:0;
+}
