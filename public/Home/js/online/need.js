@@ -36,13 +36,29 @@ $("#submit").click(function () {
     var type = $('.type').val();
     if (type == 0 || type == '') {
         alert('请选择行业');
+        return;
     }
     var type_hang = $('.type_hang').val();
 
-    var data = { 'username': username, 'phone': phones, 'hangye': type, 'type': type_hang }
+    var money = $('input:radio[name="money"]:checked').val();
+    var company = $("#company").val();
+    var miaoshu = $("#area").val();
+    if(money==0||money==''||money==undefined)
+    {
+        alert('请选择预算,详情参考计算器');
+        return;
+    }
+    var data = { 'username': username, 'phone': phones, 'hangye': type, 'type': type_hang,'money':money,'company':company,'miaoshu':miaoshu }
     // console.log(data)
-    var url = '/online/jieguo';
+    var url = '/administrator/need_add';
     $.get(url, data, function (data) {
-       
+       if(data!='')
+       {
+           layer.msg('添加成功,我们尽快和您取得联系!', { icon: 1, time: 3000 });
+           window.location.reload();
+       }else
+       {
+           layer.msg('添加失败!', { icon: 5, time: 1000 });
+       }
     })
 })

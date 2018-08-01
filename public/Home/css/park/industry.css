@@ -3,9 +3,9 @@ body{
     min-width: 1200px;
 }
 /*导航条*/
-.nav .headPublic2{
+/*.nav .headPublic2{
     border-bottom: 3px solid #fff;
-}
+}*/
 .main{
        background-color: #ecf0f8; 
        padding-bottom: 50px;
@@ -352,7 +352,7 @@ h3{
     background: #ecf0f8;
 }
 .text{
-    width:225px;
+    margin-right: 27px;
     position: absolute;
     top:80px;
     left:272px;

@@ -86,6 +86,7 @@ body{
     background-color: #ebf0ff;
     text-align:center;
     text-align-last:center;
+    cursor: pointer;
 }
 .need .sel select option{
     font-size: 16px;
@@ -98,6 +99,7 @@ body{
 }
 .budget i{
     margin-right: 5px;
+    cursor: pointer;
 }
 .budget span{
     display: inline-block;
@@ -107,6 +109,7 @@ body{
     background: #ebf0ff;
     font-size: 16px;
     color: #444;
+    cursor: pointer;
 }
 .budget span:hover{
     background: #445a9a;
@@ -121,9 +124,14 @@ body{
     color: #445a9a;
     text-decoration: underline;
 }
+.area label{
+    display: block;
+    float: left;
+    margin-right: 20px;
+}
 .need textarea{
     margin: 25px 0 30px;
-    width:500px;
+    width:398px;
     height:75px;
     background: #ebf0ff;
     color: #445a9a;
@@ -142,5 +150,5 @@ body{
     color: #fff;
     font-weight: bold;
     border:0;
-
+    cursor: pointer;
 }

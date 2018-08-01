@@ -1,0 +1,211 @@
+body{
+    width:100%;
+    min-width: 1200px;
+}
+/*导航条*/
+.nav .headPublic2{
+    border-bottom: 3px solid #fff;
+}
+.main{
+    width:100%;
+    background: #ecf0f8;
+}
+.inner{
+    width:1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 35px;
+}
+h3{
+	width:100%;
+	height:45px;
+	border-bottom: 4px solid #445a9a;
+	background: url("/Home/images/index/casemore/titleBackground.png") no-repeat;
+	color: #fff;
+	font-size: 28px;
+	line-height: 35px;
+	padding-left: 22px;
+	margin-bottom: 10px;
+}
+/*案例顶部*/
+.caseTitle{
+	width:100%;
+	height:430px;
+	border:1px solid #a6b1d1;
+	background: #e3e8f3;
+	padding: 27px 0 0 19px;
+	margin-bottom:30px; 
+}
+.caseTitle h4{
+   font-size: 16px;
+   margin-right: 15px;
+   margin-bottom: -18PX;
+}
+.caseContent .neirong{
+	margin-top: 18px;
+	margin-left: 110PX;
+}
+.caseTitle div em{
+	display: inline-block;
+   font-size: 14px;
+   padding: 0 12px;
+   line-height: 22px;
+   cursor: pointer;
+}
+.caseTitle div .changeColor{
+	color:#fff;
+	background-color: #445a9a;
+}
+.caseTitle div h5{
+    width:138px;
+    line-height: 22px;
+    color: #5367a1;
+    cursor: pointer;
+    font-weight: bold;
+}
+.caseTitle div span{
+	padding: 0 12px;
+	line-height: 22px;
+}
+.caseTitle dl .firstDL{
+	margin-top: 40px;
+}
+.caseTitle div{
+	 margin-right: 11px;
+}
+.caseTitle div b{
+	display:block;
+    line-height: 22px;
+    color: #5367a1;
+    margin-top: 18px;
+    padding: 0 12px;
+    cursor: pointer;
+}
+.caseTitle div em:hover{
+	color: #fff;
+	background-color: #445a9a;
+}
+.eightService{
+	margin: 25px 0 20px;
+	height:75px;
+	border-top: 1px solid #a6b1d1;
+	border-bottom:  1px solid #a6b1d1;
+	line-height: 75px;
+}
+.eightService .marginTop{
+	margin-top: 26px;
+}
+.btn{
+	display: block;
+	width:112px;
+	line-height:39px;
+	background-color: #445a9a;
+	text-align: center;
+	color: #fff;
+	font-size: 16px;
+	border:0;
+	margin:0 auto;
+	cursor: pointer;
+}
+/*下面的详细内容*/
+.content{
+	width:100%;
+	margin-bottom: 15px;
+	border:1px solid #a6b1d1;
+	border-top: 4px solid #445a9a;
+	background-color: #e3e8f3;
+	height:auto;
+	overflow: hidden;
+}
+.contentTop{
+    height: auto;
+    overflow: hidden;
+    width:100%;
+    position: relative;
+}
+.left{
+    height: 100%;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    overflow: hidden;
+	width:203px;
+	border-bottom: 1px solid #a6b1d1;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.leftInner>p{
+	color: #445a9a;
+	font-size:18px;
+	font-weight: bold;
+	line-height: 50px;
+}
+.right{
+	margin-left: 203px;
+	width:995px;
+	height:auto;
+	border-left: 1px solid #a6b1d1;
+}
+.list{
+	width:100%;
+	height:277px;
+	border-bottom: 1px solid #a6b1d1;
+}
+.listLeft{
+	width:150px;
+	height:100%;
+	border-right: 1px solid #a6b1d1;
+	text-align: center;
+	line-height: 277px;
+	font-size: 16px;
+	color: #000;
+}
+.listRight{
+	width:844px;
+	height:256px;
+	padding:20px 0;
+	overflow: hidden;
+}
+.displayNone{
+	display:none;
+}
+.listRight li{
+	width:254px;
+	height:236px;
+	margin-left:20px;
+	float: left;
+	background-color: #cfd8f4;
+}
+.listRight li:hover{
+	border-bottom: 3px solid #445a9a;
+}
+.bottomList{
+	padding-left: 10px;
+}
+.listRight li h5{
+	font-weight: bold;
+	color: #000;
+	line-height: 24px;
+}
+.listRight li em{
+	line-height: 18px;
+}
+.listRight li a{
+    margin-left: 10px;
+    color: #445a9a;
+}
+.contentBottom{
+	margin:19px 0 19px 607px;
+}
+.contentBottom span{
+	display: inline-block;
+	margin-right: 40px;
+	width:168px;
+	height:42px;
+	background-color: #445a9a;
+	color: #fff;
+	text-align: center;
+	line-height: 42px;
+}

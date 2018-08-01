@@ -32,15 +32,15 @@
 		            	<div class="recommendInner">
 			            	<h4>阅读推荐</h4>
 			            	<div class="recommendContent">
+                            @foreach($tuijian as $tuijian)
 			            		<div class="L">
 			            			<ul>
-                                        @foreach($tuijian as $tuijian)
 			            				<li>
 			            					<em></em><a href="{{url('/case_xiang')}}?id={{$tuijian->id}}">{{$tuijian->case_name}}</a>
 			            				</li>
-			            				@endforeach
 			            			</ul>
 			            		</div>
+			            	@endforeach
 			            		
 			            		<div class="clear"></div>
 			            	</div>

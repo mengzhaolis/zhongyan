@@ -10,6 +10,10 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
+    public function __construct()
+    {
+        $this->menu = new menu;
+    }
     //前端-首页
     public function index()
     {
@@ -32,8 +36,15 @@ class IndexController extends Controller
         //首页-调研大讲堂
         
         //首页-成功案例
-        $case = DB::table('case')->leftJoin('images','case.face_img','=','images.id')->where('case.status','=',1)->select('case_name','case_miaoshu','img_path','case.id')->orderBy('asc','desc')->orderBy('case.created_at','desc')->get();
-
+        $case = DB::table('case')->leftJoin('images','case.face_img','=','images.id')->where('case.status','=',1)->select('case_name','case_miaoshu','img_path','case.id')->orderBy('asc','desc')->orderBy('case.created_at','desc')->limit(15)->get();
+        foreach ($case as $key => $value) 
+        {
+            if(strlen($value->case_miaoshu)>100)
+            {
+                $value->case_miaoshu = mb_substr($value->case_miaoshu,0,100,'utf-8').'...';
+            }
+            
+        }
 
         //首页注册-二级联动城市选项
         $province = DB::table('province')->get();
@@ -123,5 +134,46 @@ class IndexController extends Controller
         $data = DB::table('case')->where('id','=',$id)->first();
         $tuijian = DB::table('case')->where('case_type','=',$data->case_type)->limit(10)->select('case_name','id')->get();
         return view('Home.case.case_xiang',['data'=>$data,'tuijian'=>$tuijian]);
+    }
+    //关于中研
+    public function aboutcmrc()
+    {
+        return view('Home.index.aboutcmrc');
+    }
+   
+    //首页八项服务
+    public function eight()
+    {
+        return view('Home.index.eight');
+    }
+    //首页-总裁专栏-总裁详情页
+    public function president()
+    {
+        //课程列表
+        $course = DB::table('course')->where('status','=',1)->orderBy('asc','desc')->orderBy('created_at','desc')->select('course_title','id')->limit(7)->get();
+        foreach ($course as $key => $value) 
+        {
+            if(strlen($value->course_title)>50)
+            {
+                $value->course_title = mb_substr($value->course_title,0,30,'utf-8').'...';
+            }else
+            {
+                $value->course_title = $value->course_title;
+            }
+            
+        }
+        $supremo = DB::table('supremo')->leftJoin('images','supremo.face_img','=','images.id')->where('supremo.status','=',1)->orderBy('asc','desc')->orderBy('created_at','desc')->select('title','supremo.id','img_path')->limit(7)->get();
+        foreach ($supremo as $key => $value) 
+        {
+            if(strlen($value->title)>50)
+            {
+                $value->title = mb_substr($value->title,0,35,'utf-8').'...';
+            }else
+            {
+                $value->title = $value->title;
+            }
+            
+        }
+        return view('Home.index.president',['course'=>$course,'supremo'=>$supremo]);
     }
 }

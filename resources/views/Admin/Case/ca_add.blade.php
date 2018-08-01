@@ -64,74 +64,6 @@
 				<input type="text" name="case_driver" id="" placeholder="" value="" class="input-text">
 			</div>
 		</div>
-		<!-- <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">材质：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text">
-			</div>
-		</div> -->
-		<!-- <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">文章来源：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="news_url" id="" placeholder="" value="" class="input-text">
-			</div>
-		</div> -->
-		<!-- <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">价格计算单位：</label>
-			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-				<select class="select">
-					<option>请选择</option>
-					<option value="1">件</option>
-					<option value="2">斤</option>
-					<option value="3">KG</option>
-					<option value="4">吨</option>
-					<option value="5">套</option>
-				</select>
-				</span> </div>
-		</div> -->
-		<!-- <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">产品重量：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-				kg</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">产品展示价格：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-				元</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">市场价格：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-				元</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">成本价格：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-				元</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">最低销售价格：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-				元</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">销售开始时间：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss',maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin" class="input-text Wdate" style="width:180px;">
-			</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">销售结束时间：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\'datemin\')}' })" id="datemax" class="input-text Wdate" style="width:180px;">
-			</div>
-		</div> -->
-        
         <div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">封面图：</label>
 			<div style="width:80px;height:80px;float:left;">
@@ -291,7 +223,8 @@ $("#form-article-add").validate({
                 if(data !='')
                 {
                     layer.msg('添加成功!',{icon:1,time:1000});
-                    window.close(); 
+                    window.parent.location.reload();
+                    // window.close(); 
 					window.location.href='{{url("/case/ca_list")}}'; 
                 }else
                 {

@@ -286,8 +286,8 @@ $("#form-article-add").validate({
                 if(data !='')
                 {
                     layer.msg('添加成功!',{icon:1,time:1000});
-                    parent.location.reload()
-                    window.close(); 
+                    window.parent.location.reload();
+                    // window.close(); 
 					window.location.href='{{url("/course/course_list")}}'; 
                 }else
                 {

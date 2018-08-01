@@ -1,0 +1,909 @@
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    min-width: 1200px;
+}
+
+.positionRight {
+    height: 390px;
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    margin-top: -193px;
+    z-index: 100;
+}
+
+.positionRight p {
+    margin-left: 54px;
+    cursor: pointer;
+}
+
+.positionRight ul {
+    margin: 10px 0 16px;
+}
+
+.positionRight ul li a {
+    display: block;
+    width: 128px;
+    height: 36px;
+    background-color: rgba(68, 90, 154, 0.7);
+    margin-top: 6px;
+    font-size: 18px;
+    line-height: 36px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+.positionRight ul .change {
+    background: #5b78cd;
+}
+
+#container {
+    top: 0%;
+}
+
+#container,
+.sections,
+.section {
+    position: relative;
+    height: 100%;
+}
+
+.section {
+    background-color: #000;
+    background-size: cover;
+    background-position: 50% 50%;
+    padding-top: 20px;
+}
+
+.inner {
+    width: 62.5%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 4%;
+}
+
+.logo {
+    position: absolute;
+    margin-left: 2.6%;
+    z-index: 10;
+}
+
+h3 {
+    font-size: 3.6vh;
+    text-align: center;
+    height: 8vmin;
+    color: #fff;
+    background: url(/Home/images/index/eight/trilateralWhite.png) no-repeat center bottom;
+}
+
+.bottomImg {
+    width: 100%;
+    position: absolute;
+    bottom: -0.6vmin;
+    left: 0;
+    z-index: 200;
+}
+
+.bottomImg a {
+    display: block;
+}
+
+.bottomImg img {
+    width: 100%;
+    height: 100%;
+}
+
+/*八大服务体系*/
+.know {
+    background: url(/Home/images/index/eight/eightServiceBG.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.know .inner {
+    z-index: 1;
+}
+
+.knowCenter {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    transform: translate(7%, 0);
+    bottom: 0;
+    z-index: 5;
+}
+
+.knowCenter img {
+    height: 100%;
+}
+
+.neirong {
+    position: absolute;
+    top: 11.2%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+}
+
+.knowContent {
+    margin-top: 4.2%;
+    width: 100%;
+    height: 55%;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 4% 4% 0 3%;
+}
+
+.knowLeft {
+    padding: 2.5% 0 3.5%;
+    width: 35.4%;
+    border-right: 1px solid #6777a5;
+}
+
+.leftOne {
+    width: 50%;
+    float: left;
+}
+
+.leftTwo {
+    width: 50%;
+    float: left;
+}
+
+.knowLeft p {
+    font-size: 2.2vmin;
+    line-height: 8vmin;
+    color: #000;
+    background: url(/Home/images/index/eight/star.png) no-repeat left 3vmin;
+    padding-left: 30px;
+}
+
+.knowLeft p em {
+    color: #9f0914;
+}
+
+.knowRight {
+    width: 63.6%;
+    padding-left: 3%;
+    height: 100%;
+    padding-top: 1%;
+}
+
+.knowImg {
+    width: 100%;
+    height: 40%;
+    margin-bottom: 2%;
+}
+
+.knowImg img {
+    width: 100%;
+    height: 100%;
+}
+
+.rightBottom p {
+    line-height: 3.2vmin;
+    font-size: 1.8vmin;
+    color: #000;
+}
+
+/*竞争企业调研*/
+.field {
+    background: url(/Home/images/index/eight/contendBG.png) no-repeat;
+    background-size: 100% 100%;
+}
+.fieldContent{
+    width:91%;
+    margin:0 auto;
+}
+.fieldContent ul {
+    position: relative;
+    margin-top: 4vmin;
+}
+
+.flip_wrap {
+    display: inline-block;
+    width: 30vmin;
+    height: 30vmin;
+    text-align: center;
+    perspective: 800px;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -ms-perspective: 800px;
+    -o-perspective: 800px;
+    position: absolute;
+}
+
+.flip {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transform-style: preserve-3d;
+}
+
+.flip div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+}
+.list1{
+     top:0;
+    left:15.1vmin;
+}
+.list2{
+    top:0;
+    left:45.3vmin;
+}
+.list3{
+    top:0;
+    left:75.5vmin;
+}
+.list4{
+    top:15.1vmin;
+    left:0;
+}
+.list5{
+    top:15.1vmin;
+    left:30.2vmin;
+}
+.list6{
+    top:15.1vmin;
+    left:60.4vmin;
+}
+.list7{
+    top:15.1vmin;
+    left:90.6vmin;
+}
+.list8{
+    top:30.2vmin;
+    left:15.1vmin;
+}
+.list9{
+    top:30.2vmin;
+    left:45.3vmin;
+}
+.list10{
+    top:30.2vmin;
+    left:75.5vmin;
+}
+.list11{
+    top:45.3vmin;
+    left:30.2vmin;
+}
+.list12{
+    top:45.3vmin;
+    left:60.4vmin;
+}
+.show {
+    padding-top: 8.5vmin;
+    cursor: pointer;
+    text-align: center;
+    background: url(/Home/images/index/eight/square.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.show h4 {
+    display: block;
+    font-size: 3.6vmin;
+    color: #5b78cd;
+}
+
+.show p {
+    font-size: 2vmin;
+    color: #000;
+    margin-top: 3vmin;
+}
+
+.back {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    background: url(/Home/images/index/eight/squareBian.png) no-repeat;
+    background-size: 100% 100%;
+    padding: 17px 10px 0;
+    cursor: pointer;
+}
+
+.back ol {
+    width: 30%;
+    margin: 0 auto;
+    padding-top: 20%;
+}
+
+.back ol li {
+    display: block;
+    font-size: 1.6vmin;
+    line-height: 2.6vmin;
+    text-align: left;
+}
+
+.back ol li em {
+    display: block;
+    width: 0.5vmin;
+    height: 0.5vmin;
+    background-color: #333;
+    border-radius: 50%;
+    margin-right: 1vmin;
+    float: left;
+    margin-top: 1.2vmin;
+}
+
+.flip_wrap:hover .flip {
+    transform: rotateY(180deg);
+(180);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+}
+
+/*行业调研*/
+.advantage {
+    background: url(/Home/images/index/eight/industry.png) no-repeat;
+    background-size: 100% 100%;
+}
+.advantageTop{
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    transform: translate(10%, 0);
+    bottom: 0;
+    z-index: 100;
+}
+.advantageTop img{
+    height:100%;
+}
+.advantage h3{
+    z-index: 50;
+}
+.advantageContent{
+    position: absolute;
+    top: 30%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    height:29.3%;
+}
+.leftContent{
+    width:26.6%;
+    height:100%;
+}
+.leftContent img{
+    width:100%;
+    height:100%;
+}
+.rightContent{
+    width:73.4%;
+    height:100%;
+}
+.rightContent ul{
+    width:75%;
+    height:100%;
+    float: left;
+}
+.rightContent ul p{
+    float: left;
+}
+.rightContent ul li{
+    float: left;
+    width:33.3%;
+    height:50%;
+    font-size: 2.4vmin;
+    color: #000;
+    text-align: center;
+    line-height: 12vmin;
+}
+.changeHeight {
+    height:100%;
+    line-height: 30vmin;
+    text-align: center;
+    font-size: 2.4vmin;
+    color: #000;
+}
+.changeHeight:hover,.rightContent ul li:hover{
+    background: #5b78cd;
+    color: #fff;
+}
+.whiteBG{
+    background-color: #fff;
+}
+.grayBG{
+    background-color: #f2f2f2;
+}
+/*全方位服务*/
+.service {
+    background: url(/Home/images/index/eight/satisficing.png) no-repeat;
+    background-size: 100% 100%;
+}
+.serviceContent{
+    height:55%;
+}
+.serviceContent>ol{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 4%;
+    height:100%;
+}
+.serviceContent>ol>li{
+    width: 33%;
+    height:100%;
+}
+.serviceContent>ol>li>h4{
+    font-size: 1.8vmin;
+    font-weight: bold;
+    color: #010101;
+    line-height: 2.4vmin;
+    border-bottom: 1px solid #445a9a;
+    padding-bottom: 1vmin;
+    margin:2.5vmin 1.5vmin 2.2vmin;
+}
+.serviceContent>ol>li>p{
+    line-height: 2.2vmin;
+    color: #000;
+    margin: 0 1.5vmin;
+}
+.olisOne{
+    background:url(/Home/images/index/eight/orangeBG.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.olisTwo{
+    background: url(/Home/images/index/eight/blueBG.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top:0;
+    left: 33%;
+    z-index: 10;
+}
+.serviceContent>ol>.olisThree{
+    background: url(/Home/images/index/eight/greenBG.png) no-repeat 0 0;
+    background-size: 100% 100%;
+    height:50%;
+    position: absolute;
+    top:50%;
+    left: 33%;
+    z-index: 20;
+    overflow: hidden;
+}
+.serviceContent>ol>.olisFour{
+    position: absolute;
+    top:0;
+    left:66%;
+    width: 34%;
+    background:url(/Home/images/index/eight/pinkBG.png) no-repeat;
+    background-size: 100% 100%;
+}
+.olisThree>.olisImg{
+    display: none;
+
+}
+.serviceContent>ol>.olisThree>.displayChange{
+    display: block;
+}
+.olisImg{
+    width:95%;
+    position: absolute;
+    bottom: 1vmin;
+    left: 1vmin;
+    z-index: 2;
+}
+.olisImg img{
+    width:100%;
+}
+/*渠道调研*/
+.specialist {
+    background: url(/Home/images/index/eight/channelBG.png) no-repeat;
+    background-size: 100% 100%;
+}
+.specialistContent{
+    margin-top: 5%;
+    width:65%;
+    height:70%;
+    background: url(/Home/images/index/eight/channel.png) no-repeat;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    margin-left: 4.2%;
+    position: relative;
+}
+.nowStudy{
+    position:absolute;
+}
+.nowStudy h4{
+    font-size: 2.4vmin;
+    color: #000;
+    margin-bottom: 13.5%;
+}
+.nowStudy ol li{
+    font-size: 1.6vmin;
+    line-height: 4.2vmin;
+    padding-left: 1vmin;
+
+}
+.oneStudy{
+    top:8%;
+    left:3%;
+}
+.twoStudy{
+    top:30%;
+    left:32%;
+}
+.threeStudy{
+    top:53%;
+    left:62%;
+}
+
+/*客户研究*/
+.map {
+    background: url(/Home/images/index/eight/clientBG.png) no-repeat;
+    background-size: 100% 100%;
+}
+.satisfactionContent{
+    width: 91%;
+    height:70%;
+    margin:0 auto;
+    background: url(/Home/images/index/eight/clientContent.png) no-repeat;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    margin-top: 5%;
+    position: relative;
+}
+.satisfactionContent div{
+    position: absolute;
+}
+.satisfaction1{
+    width:36%;
+    top:10%;
+    left:2%;
+}
+.satisfaction2{
+    top:10%;
+    left:72%;
+}
+.satisfaction3{
+    top:52%;
+    left:45.5%;
+}
+.satisfaction4{
+    top:54%;
+    left:72%;
+}
+.satisfaction1 h4{
+    font-size: 2.8vmin;
+    font-weight: bold;
+    color: #000;
+}
+.satisfaction1 p{
+    font-size: 1.75vmin;
+    color: #000;
+    line-height: 3vmin;
+    margin-top: 5%;
+}
+.alike {
+    width: 22.6%;
+}
+.alike h4{
+    font-size: 1.8vmin;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 5%;
+}
+.alike p,.alike ol li,.alike p span{
+    font-size: 1.4vmin;
+    color: #fff;
+}
+.satisfaction3 p span{
+    display: block;
+}
+.satisfaction4 ol li em{
+    display: block;
+    width:0.5vmin;
+    height:0.4vmin;
+    background: #fff;
+    border-radius: 50%;
+    float: left;
+    margin-top: 1vmin;
+    margin-right: 0.8vmin;
+}
+.marginBottom{
+    margin-bottom: 4%;
+}
+/*商业模式设计*/
+.system {
+    background: url(/Home/images/index/eight/business.png) no-repeat;
+    background-size: 100% 100%;
+}
+.systemContent{
+    width:100%;
+    height:77%;
+    background: rgba(255,255,255,0.8);
+    margin-top: 4.5%;
+    position: relative;
+    padding: 6% 4%;
+}
+.systemImg{
+    position: absolute;
+    z-index: 1;
+    top:7%;
+    left:1.3%;
+}
+.systemContent ul{
+    display: flex;
+  flex-wrap: wrap;
+  height:100%;
+}
+.systemContent ul li{
+    width:26%;
+    height:35%;
+    margin-right: 11%;
+    position: relative;
+}
+.listImg{
+    width:10%;
+    height:23%;
+    position: absolute;
+    top:-30%;
+    left:45%;
+    background: url(/Home/images/index/eight/whiteImg.png) no-repeat;
+    background-size: 100% 100%;
+    z-index: 15;
+}
+.systemContent ul li .changeBG{
+    background: url(/Home/images/index/eight/blueImg.png) no-repeat;
+    background-size: 100% 100%;
+}
+.topSystem{
+    margin-top: 0;
+}
+.centerSystem{
+    margin-top: 3.5%;
+}
+.bottomSystem{
+    margin-top:3.5%; 
+}
+.systemContent ul .noMarginRight{
+    margin-right: 0;
+}
+.systemContent ul li h4{
+    text-align: center;
+    font-size: 1.8vmin;
+    color: #5b78ce;
+    font-weight: bold;
+}
+.systemContent ul li p{
+    font-size: 1.4vmin;
+    color: #5b78ce;
+    margin-top: 2%;
+}
+/*市场战略咨询*/
+.strategic {
+    background: url(/Home/images/index/eight/strategic.png) no-repeat;
+    background-size: 100% 100%;
+}
+.strategicImg{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index: -1;
+}
+.strategicImg img{
+    width:100%;
+    height:50%;
+}
+.strategic2{
+    margin-top: -0.4vmin;
+}
+.strategicContent{
+    position: absolute;
+    top:2%;
+    left:0;
+    right:0;
+    bottom: 0;
+    margin:auto;
+    width:70%;
+    height:90%;
+    margin:0 auto;
+}
+.strategicContent img{
+    width:100%;
+    height:100%;
+}
+/*营销咨询*/
+.cooperation {
+    background: url(/Home/images/index/eight/Marketing.png) no-repeat;
+    background-size: 100% 100%;
+}
+.cooperatioContent{
+    width:100%;
+    height:38%;
+    background: rgba(255,255,255,0.5);
+    margin-top: 4%;
+    position: relative;
+}
+.cooperatioContent h4{
+    width:75%;
+    height:60%;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+}
+.cooperatioContent h4 img{
+    width:100%;
+    height:100%;
+}
+.cooperatioContent span img{
+    width:100%;
+    height:100%;
+}
+.quotesLeft{
+    width:7%;
+    height:15%;
+    position: absolute;
+    top:1.5vmin;
+    left:2vmin;
+}
+.quotesRight{
+    width:7%;
+    height:15%;
+    position: absolute;
+    bottom:1.5vmin;
+    right:2vmin;
+}
+.cooperatioContent p{
+    width:78%;
+    height:15vmin;
+    position: absolute;
+    top:14vmin;
+    left:15vmin;
+    font-size: 1.8vmin;
+    line-height: 2.4vmin;
+}
+/*底部*/
+.footer {
+    position: absolute;
+    background: #3d518b;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 36%;
+    padding-top: 50px;
+    border-top: 1px solid #999;
+}
+
+.fooer_inner, .footer_bottom {
+    width: 62.5%;
+    margin: 0 auto;
+}
+
+.footer_copyright {
+    height: 81.8%;
+    border-bottom: 1px solid #999;
+}
+
+.footer_left_img {
+    width: 14.5vmin;
+    height: 12vmin;
+    padding-right: 4vmin;
+    border-right: 1px solid #666;
+}
+
+.footer_left_img div {
+    width: 12vmin;
+    height: 12vmin;
+    background-color: #5b78ce;
+}
+
+.class_left_tel {
+    margin: 3.7vmin 0 0 2vmin;
+}
+
+.class_left_tel p {
+    color: #eee;
+    font-size: 1.4vmin;
+}
+
+/*.class_left_tel p a{
+	color:#eee;
+}*/
+.class_left_tel .telephone {
+    font-size: 2.4vmin;
+}
+
+.footer_right ol {
+    height: 2.8vmin;
+    background: url("../images/footer/underline.png") no-repeat left bottom;
+    margin-bottom: 2vmin;
+}
+
+.footer_right ol li {
+    float: left;
+    width: 3.3vmin;
+    line-height: 2.5vmin;
+    margin-right: 2.5vmin;
+    font-size: 1.6vmin;
+}
+
+.current {
+    border-bottom: 2px solid #c6cbdb;
+}
+
+.footer_right ol li a {
+    color: #eee;
+}
+
+.footer_right_list {
+    width: 41vmin;
+    position: relative;
+}
+
+.footer_right_list ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.footer_right_list ul li {
+    line-height: 2.3vmin;
+    color: #eee;
+    font-size: 1.4vmin;
+}
+
+/*.footer_right_list ul li a{
+	color:#eee;
+}*/
+.footer_right_list .dalian {
+    display: none;
+}
+
+.item {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.footer_bottom {
+    line-height: 5vmin;
+}
+
+.footer_bottom div {
+    color: #999;
+    font-size: 1.2vmin;
+}

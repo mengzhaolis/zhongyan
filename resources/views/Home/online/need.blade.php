@@ -53,14 +53,15 @@
                 </div>
                 <div class="budget">
                     <i>预&nbsp;&nbsp;&nbsp;&nbsp;算：</i>
-                    <span>10&nbsp;-&nbsp;30万</span>
+                    <!-- <span>10&nbsp;-&nbsp;30万</span>
                     <span>30&nbsp;-&nbsp;50万</span>
                     <span>50&nbsp;-&nbsp;80万</span>
-                    <span>80万以上</span>
+                    <span>80万以上</span> -->
+                    <input type="radio" name="money" value="10万-30万">10&nbsp;-&nbsp;30万 
                 </div>
                 <p>注：预算请参考<a href="{{url('/online/counter')}}" target="view_window">计算器</a></p>
-                <textarea>请简要描述您的需求：</textarea>
-                <input type="button" name="" value="提交" class="btn" id="submit">
+                <div class="area"><label for="area">描&nbsp;&nbsp;&nbsp;&nbsp;述：</label><textarea placeholder="请简要描述您的需求：" id="area"></textarea></div>
+                <input type="button" value="提交" class="btn" id="submit">
             </form>
         </div>
         <div class="clear"></div>
@@ -70,5 +71,6 @@
 <script src="/Home/js/node_modules/jquery/dist/jquery.min.js"></script>
 <script src="/Home/js/online/need.js"></script>
 <script src="/Home/js/footer.js"></script>
+<script type="text/javascript" src="/H-ui.admin/H-ui/lib/layer/2.4/layer.js"></script>
 </body>
 </html>

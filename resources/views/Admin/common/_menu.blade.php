@@ -157,11 +157,22 @@
                     <li>
                         <a data-href="member-del.html" data-title="回收站" href="javascript:;">回收站</a>
                     </li>
-                    
-                    <!-- <li><a data-href="member-scoreoperation.html" data-title="积分管理" href="javascript:;">积分管理</a></li> -->
-                    <!-- <li><a data-href="member-record-browse.html" data-title="浏览记录" href="javascript:void(0)">浏览记录</a></li> -->
-                    <!-- <li><a data-href="member-record-download.html" data-title="下载记录" href="javascript:void(0)">下载记录</a></li> -->
-                    <!-- <li><a data-href="member-record-share.html" data-title="分享记录" href="javascript:void(0)">分享记录</a></li> -->
+                </ul>
+            </dd>
+        </dl>
+        <dl id="menu-member">
+            <dt>
+                <i class="Hui-iconfont">&#xe60d;</i> 客户评价
+                <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
+            </dt>
+            <dd>
+                <ul>
+                    <li>
+                        <a data-href="{{url('/evaluate/eval_list')}}" data-title="客户评价上传" href="javascript:;">客户评价上传</a>
+                    </li>
+                    <li>
+                        <a data-href="member-del.html" data-title="回收站" href="javascript:;">回收站</a>
+                    </li>
                 </ul>
             </dd>
         </dl>
@@ -182,7 +193,10 @@
                         <a data-href="{{url('/administrator/admin_list')}}" data-title="管理员列表" href="javascript:void(0)">管理员列表</a>
                     </li>
                     <li>
-                        <a data-href="{{url('/administrator/a_list')}}" data-title="A类管理" href="javascript:void(0)">A类管理</a>
+                        <a data-href="{{url('/administrator/a_list')}}" data-title="计算器列表" href="javascript:void(0)">计算器列表</a>
+                    </li>
+                    <li>
+                        <a data-href="{{url('/administrator/n_list')}}" data-title="需求评估列表" href="javascript:void(0)">需求评估列表</a>
                     </li>
                 </ul>
             </dd>
@@ -194,24 +208,6 @@
             </dt>
             <dd>
                 <ul>
-                    <!-- <li>
-                        <a data-href="charts-1.html" data-title="折线图" href="javascript:void(0)">折线图</a>
-                    </li>
-                    <li>
-                        <a data-href="charts-2.html" data-title="时间轴折线图" href="javascript:void(0)">时间轴折线图</a>
-                    </li>
-                    <li>
-                        <a data-href="charts-3.html" data-title="区域图" href="javascript:void(0)">区域图</a>
-                    </li>
-                    <li>
-                        <a data-href="charts-4.html" data-title="柱状图" href="javascript:void(0)">柱状图</a>
-                    </li> -->
-                    <li>
-                        <a data-href="charts-5.html" data-title="需求评估" href="javascript:void(0)">需求评估</a>
-                    </li>
-                    <!-- <li>
-                        <a data-href="charts-6.html" data-title="3D柱状图" href="javascript:void(0)">3D柱状图</a>
-                    </li> -->
                     <li>
                         <a data-href="{{url('/cost/cost_list')}}" data-title="计算器" href="javascript:void(0)">计算器</a>
                     </li>

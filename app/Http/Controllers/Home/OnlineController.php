@@ -53,5 +53,14 @@ class OnlineController extends Controller
         $type = $this->menu->first('type');
         return view('Home.online.need',['type'=>$type]);
     }
-    
+    //在线留言页面展示
+    public function message()
+    {
+        return view('Home.online.message');
+    }
+    //注册页-页面展示
+    public function login()
+    {
+        return view('Home.online.login');
+    }
 }

@@ -1,0 +1,110 @@
+body{
+    width:100%;
+    min-width: 1200px;
+}
+/*导航条*/
+.nav .headPublic1{
+    border-bottom: 3px solid #fff;
+}
+.main{
+    width:100%;
+    height:683px;
+    background: url(/Home/images/online/message/background.png) no-repeat;
+}
+.inner{
+    width:1200px;
+    margin:0 auto;
+}
+/*左面*/
+.left{
+	width:252px;
+	margin:143px 48px 0 99px;
+}
+.topImg{
+	margin-left: 40px;
+}
+.bottomImg{
+	margin-top:64px; 
+}
+/*右面form*/
+.right{
+	width:702px;
+	height:584px;
+	background: url(/Home/images/online/message/formBG.png) no-repeat;
+	margin-top: 50px;
+	padding: 19px 100px;
+}
+.right h3{
+	font-size: 28px;
+	color:#000;
+	height:51px;
+	line-height: 48px;
+	background: url(/Home/images/online/message/line.png) no-repeat center bottom;
+	text-align: center;
+}
+.right p{
+	line-height: 33px;
+	text-align: center;
+	margin-bottom: 40px;
+}
+.right form .marginBottom{
+    margin-bottom: 26px;
+}
+.right form label{
+	font-size: 18px;
+	color: #000;
+	line-height: 46px;
+}
+.right form input{
+	width:404px;
+	height:46px;
+	background: #ebf0ff;
+	border-radius: 5px;
+	border: none;
+	color: #a5afd0;
+	line-height: 46px;
+	padding-left: 20px;
+}
+.right form textarea{
+	width:404px;
+	height:140px;
+	background: #ebf0ff;
+	border: none;
+	border-radius: 5px;
+	padding:20px;
+}
+.right form .area label{
+	display: block;
+	float: left;
+	margin-right: 5px;
+}
+::-webkit-input-placeholder {
+    color:    #a5afd0;
+}
+:-moz-placeholder { 
+   color:    #a5afd0;
+   opacity:  1;
+}
+::-moz-placeholder { 
+   color:    #a5afd0;
+   opacity:  1;
+}
+:-ms-input-placeholder { 
+   color:    #a5afd0;
+}
+::-ms-input-placeholder { 
+   color:    #a5afd0;
+}
+#btn{
+   width:260px;
+   height:60px;
+   margin-left:125px;
+   text-align: left;
+   padding-left: 110px;
+   background: url(/Home/images/online/message/button.png) no-repeat center center;
+   line-height: 58px;
+   color: #fff;
+   font-size: 18px;
+   font-weight: bold;
+   cursor: pointer;
+}

@@ -16,13 +16,8 @@ return [
     |
     */
     //原配置
-    // 'driver' => env('MAIL_DRIVER', 'smtp'),
-//使用ses邮件发送
-    'ses' => [
-    'key' => 'your-ses-key',
-    'secret' => 'your-ses-secret',
-    'region' => 'ses-region',  // e.g. us-east-1
-],
+    'driver' => env('MAIL_DRIVER', 'smtp'),
+
 
     /*
     |--------------------------------------------------------------------------
@@ -62,8 +57,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', '18310568509@163.com'),
+        'name' => env('MAIL_FROM_NAME', '中研世纪市场运营部'),
     ],
 
     /*

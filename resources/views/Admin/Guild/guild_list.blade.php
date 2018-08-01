@@ -43,10 +43,7 @@
                         <td>{{date('Y-m-d H-i-s',$val->created_at)}}</td>
                         <!-- <td class="td-status"><span class="label label-success radius">已发布</span></td> -->
                         <td class="td-manage">
-							
-							<a style="text-decoration:none" onClick="picture_stop(this,'{{$val->id}}')" href="javascript:;" title="取消置顶"><i class="Hui-iconfont">&#xe6de;</i></a> 
-						
-							<a style="text-decoration:none" onClick="picture_start(this,'{{$val->id}}')" href="javascript:;" title="置顶"><i class="Hui-iconfont">&#xe6dc;</i></a>
+							<a style="text-decoration:none" href="{{url('/guild/guild_up')}}?id={{$val->id}}" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>
 						
 							 <a style="text-decoration:none" class="ml-5" onClick="picture_del(this,'{{$val->id}}')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
                     </tr>
@@ -206,52 +203,6 @@ function picture_show(title,url,id){
 
 
 
-/*图片-下架*/
-function picture_stop(obj,id){
-
-	layer.confirm('确认要取消吗？',function(index){
-		var url = "/images/images_top";
-		var token = $("#token").val();
-		var data = {'_token':token,'id':id,'type':1};
-		$.post(url,data,function(msg){
-			if(msg!='')
-			{
-				$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="picture_start(this,{{$val->id}})" href="javascript:;" title="置顶"><i class="Hui-iconfont">&#xe6dc;</i></a>');
-				$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">未置顶</span>');
-				$(obj).remove();
-				layer.msg('操作成功!',{icon: 1,time:1000});
-			}else
-			{
-				layer.msg('参数错误!',{icon: 5,time:1000});
-			}
-
-		})
-
-	});
-}
-
-/*图片-发布*/
-function picture_start(obj,id){
-	layer.confirm('确认要置顶吗？',function(index){
-		var url = "/images/images_top";
-		var token = $("#token").val();
-		var data = {'_token':token,'id':id,'type':2};
-		$.post(url,data,function(msg){
-			if(msg!='')
-			{
-				$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="picture_stop(this,{{$val->id}})" href="javascript:;" title="取消置顶"><i class="Hui-iconfont">&#xe6de;</i></a>');
-				$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已置顶</span>');
-				$(obj).remove();
-				layer.msg('操作成功!',{icon: 6,time:1000});
-			}else
-			{
-				layer.msg('参数错误!',{icon: 5,time:1000});
-			}
-
-		});
-		
-	});
-}
 
 
 
@@ -262,7 +213,7 @@ function picture_del(obj,id){
 	layer.confirm('确认要删除吗？',function(index){
 		$.ajax({
 			type: 'POST',
-			url: '/images/images_stop',
+			url: '/guild/guild_del',
 			data: {'_token':token,'id':id},
 			success: function(data){
 				// console.log(data);
@@ -278,9 +229,6 @@ function picture_del(obj,id){
 				window.location.reload();
 				
 			},
-			// error:function(data) {
-				
-			// },
 		});		
 	});
 }

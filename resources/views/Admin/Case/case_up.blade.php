@@ -53,73 +53,7 @@
 				<input type="text" name="case_driver" id="" placeholder="" value="{{$data->case_driver}}" class="input-text">
 			</div>
 		</div>
-		<!-- <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">材质：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text">
-			</div>
-		</div> -->
-		<!-- <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">文章来源：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="news_url" id="" placeholder="" value="" class="input-text">
-			</div>
-		</div> -->
-		<!-- <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">价格计算单位：</label>
-			<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
-				<select class="select">
-					<option>请选择</option>
-					<option value="1">件</option>
-					<option value="2">斤</option>
-					<option value="3">KG</option>
-					<option value="4">吨</option>
-					<option value="5">套</option>
-				</select>
-				</span> </div>
-		</div> -->
-		<!-- <div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">产品重量：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-				kg</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">产品展示价格：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-				元</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">市场价格：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-				元</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">成本价格：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-				元</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">最低销售价格：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" name="" id="" placeholder="" value="" class="input-text" style="width:90%">
-				元</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">销售开始时间：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss',maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin" class="input-text Wdate" style="width:180px;">
-			</div>
-		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2">销售结束时间：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\'datemin\')}' })" id="datemax" class="input-text Wdate" style="width:180px;">
-			</div>
-		</div> -->
+		
         
         <div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">封面图：</label>
@@ -127,7 +61,7 @@
                 <img src="{{$data->img_path}}" alt="" class="ing" style="width:80px;height:80px;margin-left:15px;">
                 
                     <input type="file" multiple id="fil" style="float:left;margin-left:100px;margin-top:-43px;">
-                    <input type="hidden" id="face" name="face_img" value="">
+                    <input type="hidden" id="face" name="face_img" value="{{$data->face_img}}">
                 
             </div>
 		</div>
@@ -140,14 +74,14 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">SEO摘要：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<textarea name="seo_keyword" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="$.Huitextarealength(this,200)">{{$data->seo_keyword}}</textarea>
+				<textarea name="seo_keyword" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！">{{$data->seo_keyword}}</textarea>
 				<p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">文章摘要：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<textarea name="case_miaoshu" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="$.Huitextarealength(this,200)">{{$data->case_miaoshu}}</textarea>
+				<textarea name="case_miaoshu" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" >{{$data->case_miaoshu}}</textarea>
 				<p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
 			</div>
 		</div>
@@ -278,7 +212,7 @@ $("#form-article-add").validate({
                 if(data !='')
                 {
                     layer.msg('执行成功!',{icon:1,time:1000});
-                    window.close(); 
+                    window.parent.location.reload();
 					window.location.href='{{url("/case/ca_list")}}'; 
                 }else
                 {

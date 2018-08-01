@@ -25,7 +25,17 @@ Route::group(['prefix' => '/'],function(){
     Route::any('/case_xiang','Home\IndexController@case_xiang');
     //首页-中研行业-换一批
     Route::any('/change_one','Home\IndexController@change_one');
+    //首页-关于中研
+    Route::any('/aboutcmrc','Home\IndexController@aboutcmrc');
+
+    //首页-八项服务
+    Route::any('/eight','Home\IndexController@eight');
+    //首页-总裁专栏-总裁专题
+    Route::any('/president','Home\IndexController@president');
+    
 });
+    //首页-案例-了解更多
+    Route::any('/casemore','Home\CasemoreController@casemore');
 //首页-公共部分-计算、需求、留言
 Route::group(['prefix' => '/online'],function(){
     //计算器
@@ -40,7 +50,10 @@ Route::group(['prefix' => '/online'],function(){
     Route::any('/change_one','Home\OnlineController@change_one');
     //首页头部-需求评估
     Route::any('/need','Home\OnlineController@need');
-
+    //首页-头部-在线留言
+    Route::any('/message','Home\OnlineController@message');
+    //公共注册页
+    Route::any('/login','Home\OnlineController@login');
 });
 //公共频道页
 Route::any('/channel','Home\PublicController@channel');
@@ -51,6 +64,8 @@ Route::any('/city','Home\IndexController@city');
 /**专题页 */
 //网站工业频道页-前端
 Route::any('/park','Home\ParkController@park');
+Route::any('/park_column','Home\ParkController@park_column');
+
 //商业地产-前端
 Route::any('/land','Home\LandController@index');
 //竞争对手-前端
@@ -202,6 +217,14 @@ Route::group(['prefix' => '/administrator'],function(){
     Route::any('/xiang','Admin\AdministratorController@xiang');
     //管理员管理-A类数据-更改数据状态
     Route::any('/status','Admin\AdministratorController@status');
+    //管理员管理-需求评估注册
+    Route::any('/need_add','Admin\AdministratorController@need_add');
+    //管理员管理-需求评估列表、查看详情
+    Route::any('/n_list','Admin\AdministratorController@n_list');
+    //管理员管理-需求评估列表更改数据状态
+    Route::any('/n_status','Admin\AdministratorController@n_status');
+    //管理员管理-需求评估列表查看
+    Route::any('/n_xiang','Admin\AdministratorController@n_xiang');
 });
 //注册管理
 Route::group(['prefix' => '/register'],function(){
@@ -267,6 +290,12 @@ Route::group(['prefix' => '/guild'],function(){
     Route::any('/guild_add','Admin\GuildController@guild_add');
     //行业管理-添加封面图
     Route::any('/images_add','Admin\GuildController@images_add');
+    //行业删除
+    Route::any('/guild_del','Admin\GuildController@guild_del');
+    //行业数据编辑
+    Route::any('/guild_up','Admin\GuildController@guild_up');
+    //执行编辑数据入库
+    Route::any('/guild_update','Admin\GuildController@guild_update');
 });
 
 
@@ -335,5 +364,23 @@ Route::group(['prefix' => '/need'],function(){
     Route::any('/type_list','Admin\NeedController@type_list');
     //费用计算器-调研类型删除
     Route::any('/type_stop','Admin\NeedController@type_stop');
+
+});
+//邮件发送
+Route::group(['prefix' => '/email'],function(){
+    //邮件发送
+    Route::any('/mail','Admin\EmailController@mail');
+    //请求发送邮件
+    Route::any('/email_go','Admin\EmailController@email_go');
+    
+
+});
+//客户评价图片上传
+Route::group(['prefix' => '/evalute'],function(){
+    //邮件发送
+    Route::any('/eval_add','Admin\EvaluteController@eval_add');
+    //请求发送邮件
+    Route::any('/eval_list','Admin\EvaluteController@eval_list');
+    
 
 });

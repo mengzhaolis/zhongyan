@@ -122,9 +122,11 @@ class CaseController extends CommonController
     public function case_up(Request $request)
     {
         $id = $request->input('id');
+        // var_dump($id);die;
         $data = DB::table("$this->database")->leftjoin('images',"$this->database.face_img",'=','images.id')->where("$this->database.id",'=',$id)->first();
         $data->c_id =$id;
-        $case_type = DB::table("$this->database")->leftJoin('type',"$this->database.case_type",'=','type.id')->where("$this->database.status",'=',1)->first();
+        $case_type = DB::table("$this->database")->leftJoin('type',"$this->database.case_type",'=','type.id')->where([["$this->database.status",'=',1],['case.id','=',$id]])->first();
+        // var_dump($case_type);die;
         $type = $this->menu->first('type');
         return view('Admin.Case.case_up',['data'=>$data,'case_type'=>$case_type,'type'=>$type]);
     }

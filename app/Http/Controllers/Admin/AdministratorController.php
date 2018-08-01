@@ -112,4 +112,38 @@ class AdministratorController extends CommonController
         $data = DB::table('jisuan_login')->where('id','=',$id)->update(['status'=>0]);
         return $data;
     }
+    //管理员管理-需求评估数据注册
+    public function need_add(Request $request)
+    {
+        $data = $request->input();
+        if(empty($data))
+        {
+            return '';
+        }
+        $data['created_at'] = time();
+        $id = DB::table('need_list')->insertGetId($data);
+        return $id;
+    }
+    //管理员管理-需求读取、标记状态
+    public function n_list()
+    {
+         $data = DB::table('need_list')->leftJoin('type','need_list.hangye','=','type.id')->leftJoin('cost','need_list.type','=','cost.id')->orderBy('created_at','desc')->select('need_list.*','type.type_name','cost.diaoyan_type')->get();
+
+        return view('Admin.Administrator.n_list',['data'=>$data]);
+    }
+    //管理员管理-需求评估-操作状态
+    public function n_status(Request $request)
+    {
+        $id = $request->input('id');
+        $data = DB::table('need_list')->where('id','=',$id)->update(['status'=>1]);
+        return $data;
+    }
+    //管理员管理-需求评估-查看描述
+    public function n_xiang(Request $request)
+    {
+        $id = $request->input('id');
+        $data = DB::table('need_list')->where('id','=',$id)->select('miaoshu')->first();
+        $data = json_decode(json_encode($data),true);
+        return $data;
+    }
 }

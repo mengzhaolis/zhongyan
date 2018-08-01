@@ -10,7 +10,7 @@
 <div class="slider">
   <ul class="slider-main">
   @foreach($banner as $banner)
-    <li class="slider-panel"> <a href="{{$banner->img_url}}"><img src="{{$banner->img_path}}"></a> </li>
+    <li class="slider-panel"> <a href="{{$banner->img_url}}" target="_blank"><img src="{{$banner->img_path}}"></a> </li>
   @endforeach
   </ul>
   <div class="slider-extra">
@@ -32,20 +32,20 @@
             <div class="special L">
                 <div class="specialTop">
                     <h4 class="L"><span>开课时间</span></h4>
-                    <a href="{{url('/course_list')}}" class="contentMore R">更多&gt&gt</a>
+                    <a href="{{url('/course_list')}}" target="_blank" class="contentMore R">更多&gt&gt</a>
                 </div>
                 <div class="clear"></div>
                 <ul>
                     @foreach($course as $course)
                         <li>
-                            <a href="">
+                            <a href=""  target="_blank">
                                 <div class="specialLeft L">
-                                    <a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897">预约</a>
+                                    <a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"  target="_blank">预约</a>
                                     <p>{{$course->created_at}}</p>
                                 </div>
                                 <div class="specialRight L">
                                     <h5>{{$course->course_title}}</h5>
-                                    <p>{{$course->course_jian}}<a href="{{url('/course')}}?id={{$course->id}}">【详情】</a></p>
+                                    <p>{{$course->course_jian}}<a href="{{url('/course')}}?id={{$course->id}}"  target="_blank">【详情】</a></p>
                                 </div>
                             </a>
                         </li>
@@ -56,7 +56,7 @@
             <div class="consult R">
                 <div class="consultTop">
                     <h4 class="L"><span>最新资讯</span></h4>
-                    <a href="{{url('/message_list')}}" class="contentMore R">更多&gt&gt</a>
+                    <a href="{{url('/message_list')}}" class="contentMore R" target="_blank">更多&gt&gt</a>
                 </div>
                 <div class="clear"></div>
                 
@@ -64,7 +64,7 @@
                     <ul>
                         @foreach($message as $message)
                             <li class="noLineHeight" id="list">
-                                <a href="{{url('/zx_details')}}?id={{$message->id}}">
+                                <a href="{{url('/zx_details')}}?id={{$message->id}}" target="_blank">
                                     <div class="consult_img_first consult_img">
                                         <img src="{{$message->img_path}}">
                                     </div>
@@ -85,7 +85,7 @@
             <p class="TitleP">权威调研咨询机构&nbsp让调研无忧</p>
             <ul>
                 <li>
-                    <a href="">
+                    <a href="{{url('/aboutcmrc')}}" target="view_window">
                     <div class="knowZY_details_title">
                         <em>26年</em><br/>
                         <i>品牌积淀</i>
@@ -94,7 +94,8 @@
                         <p>中国唯一一家提供<em>工业应用</em>和生产流程<em>技术调研</em>的市场研究 <em>专业机构</em>。</p>
                     </div></a>
                 </li>
-                <li><a href="">
+                <li>
+                    <a href="{{url('/aboutcmrc')}}" target="view_window">
                     <div class="knowZY_details_title">
                         <em>600个</em><br/>
                         <i>覆盖全国城市</i>
@@ -103,7 +104,8 @@
                         <p><em>一站式</em>服务业务覆盖全国<em>600多个城市</em>，满足客户<em>跨地域</em>的调研需求。</p>
                     </div></a>
                 </li>
-                <li><a href="">
+                <li>
+                    <a href="{{url('/aboutcmrc')}}" target="view_window">
                     <div class="knowZY_details_title">
                         <em>3000+</em><br/>
                         <i>成功案例</i>
@@ -112,7 +114,8 @@
                         <p>工业、医疗·医药、地产、竞争等不同行业，<em>超过3000+成功案例</em>，调研行业<em>权威品牌</em>。</p>
                     </div></a>
                 </li>
-                <li><a href="">
+                <li>
+                    <a href="{{url('/aboutcmrc')}}" target="view_window">
                     <div class="knowZY_details_title">
                         <em>100名</em><br/>
                         <i>行业研究专家</i>
@@ -121,7 +124,8 @@
                         <p><em>60名硕士</em>以上学历研究人员<em>实力团队</em>，确保一手数据<em>真实可靠</em>。</p>
                     </div></a>
                 </li>
-                <li><a href="">
+                <li>
+                    <a href="{{url('/aboutcmrc')}}" target="view_window">
                     <div class="knowZY_details_title">
                         <em>需求服务</em><br/>
                         <i>客户专属</i>
@@ -139,7 +143,7 @@
         <div class="inner">
              <div class="public_top textLeft">
                  <h3>中研行业</h3>
-                 <a href="javascript:;" id="change_one">换一批&gt;&gt;</a>
+                 <a href="javascript:;" id="change_one" target="_blank">换一批&gt;&gt;</a>
              </div>
              <div class="clear"></div>
              <p class="TitleP">工业<span>/</span>商业地产<span>/</span>竞争对手<span>/</span>医药&nbsp;·&nbsp;医疗<span>/</span>营销咨询<span>/</span>科技园区<span>/</span>互联网大数据</p>
@@ -150,11 +154,11 @@
                     <div class="listTop">
                          <h4>{{$guild->guild_title}}</h4>
                          <em></em>
-                         <p>{{$guild->guild_miao}}<a href="{{$guild->guild_url}}" style="color:white;">【详情】</a></p>
+                         <p>{{$guild->guild_miao}}<a href="{{$guild->guild_url}}" style="color:white;" target="_blank">【详情】</a></p>
                     </div>
                      <div class="listBottom">
-                         <a href="">参考报价</a>
-                         <a href="">需求评估</a>
+                         <a href="{{url('/online/counter')}}" target="_blank">参考报价</a>
+                         <a href="{{url('/online/need')}}" target="_blank">需求评估</a>
                      </div>
                  </li>
                  
@@ -176,9 +180,11 @@
                             <img src="/Home/images/index/vs.png">
                             <h4>竞争企业调研</h4>
                         </div>
-                        <div class="back"><a href="">
-                            <p>竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞争企业调研</p>
-                            <h4>竞争企业调研</h4></a>
+                        <div class="back">
+                            <a href="{{url('/eight#page2')}}" target="_blank">
+                                <p>竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞争企业调研</p>
+                                <h4>竞争企业调研</h4>
+                            </a>
                         </div>
                     </div>
                  </li>  
@@ -188,9 +194,11 @@
                             <img src="/Home/images/index/industryBg.png">
                             <h4>行业调研</h4>
                         </div>
-                        <div class="back"><a href="">
-                            <p>竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞争企业调研</p>
-                            <h4>行业调研</h4></a>
+                        <div class="back">
+                            <a href="{{url('/eight#page3')}}" target="_blank">
+                                <p>竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞争企业调研</p>
+                                <h4>行业调研</h4>
+                            </a>
                         </div>
                     </div>
                  </li> 
@@ -200,9 +208,11 @@
                             <img src="/Home/images/index/channelBg.png">
                             <h4>渠道调研</h4>
                         </div>
-                        <div class="back"><a href="">
-                            <p>竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞</p>
-                            <h4>渠道调研</h4></a>
+                        <div class="back">
+                            <a href="{{url('/eight#page5')}}" target="_blank">
+                                <p>竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞</p>
+                                <h4>渠道调研</h4>
+                            </a>
                         </div>
                     </div>
                  </li>
@@ -212,9 +222,11 @@
                             <img src="/Home/images/index/satisfiedBg.png">
                             <h4>满意度调研</h4>
                         </div>
-                        <div class="back"><a href="">
-                            <p>竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞争企业调研</p>
-                            <h4>满意度调研</h4></a>
+                        <div class="back">
+                            <a href="{{url('/eight#page4')}}" target="_blank">
+                                <p>竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞争企业调研</p>
+                                <h4>满意度调研</h4>
+                            </a>
                         </div>
                     </div>
                  </li>
@@ -224,9 +236,11 @@
                             <img src="/Home/images/index/marketingBg.png">
                             <h4>营销咨询</h4>
                         </div>
-                        <div class="back"><a href="">
-                            <p>竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞争企业调研</p>
-                            <h4>营销咨询</h4></a>
+                        <div class="back">
+                            <a href="{{url('/eight#page9')}}" target="_blank">
+                                <p>竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞争企业调研</p>
+                                <h4>营销咨询</h4>
+                            </a>
                         </div>
                     </div>
                  </li>
@@ -234,11 +248,13 @@
                     <div class="flip">
                         <div class="show">
                             <img src="/Home/images/index/marketBg.png">
-                            <h4>市场战略规划</h4>
+                            <h4>市场战略咨询</h4>
                         </div>
-                        <div class="back"><a href="">
-                            <p>竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞争企业调研</p>
-                            <h4>市场战略规划</h4></a>
+                        <div class="back">
+                            <a href="{{url('/eight#page8')}}" target="_blank">
+                                <p>竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞争企业调研</p>
+                                <h4>市场战略咨询</h4>
+                            </a>
                         </div>
                     </div>
                  </li>
@@ -246,11 +262,13 @@
                     <div class="flip">
                         <div class="show">
                             <img src="/Home/images/index/consultingBg.png">
-                            <h4>业务咨询</h4>
+                            <h4>客户研究</h4>
                         </div>
-                        <div class="back"><a href="">
-                            <p>竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞</p>
-                            <h4>业务咨询</h4></a>
+                        <div class="back">
+                            <a href="{{url('/eight#page6')}}" target="_blank">
+                                <p>竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞</p>
+                                <h4>客户研究</h4>
+                            </a>
                         </div>
                     </div>
                  </li>
@@ -260,9 +278,11 @@
                             <img src="/Home/images/index/businessBg.png">
                             <h4>商业模式设计</h4>
                         </div>
-                        <div class="back"><a href="">
-                            <p>竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞</p>
-                            <h4>商业模式设计</h4></a>
+                        <div class="back">
+                            <a href="{{url('/eight#page7')}}" target="_blank">
+                                <p>竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞争企业调研竞</p>
+                                <h4>商业模式设计</h4>
+                            </a>
                         </div>
                     </div>
                  </li>
@@ -278,7 +298,7 @@
             <p class="TitleP">26载风雨磨炼始终如一的专业领袖</p>
             <div class="presidentContent">
                 <div class="presidentLeft L">
-                    <div class="presidentLeftTitle"><h5 class="L">总裁简介</h5><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897" class="R">更多&gt;&gt;</a></div>
+                    <div class="presidentLeftTitle"><h5 class="L">总裁简介</h5><a href="{{url('/president')}}" class="R" target="_blank">更多&gt;&gt;</a></div>
                     <div class="clear"></div>
                     <div class="presidentLeftContent">
                         <div class="L leftImg"><img src="./images/index/president.png"/></div>
@@ -299,7 +319,7 @@
                     <div class="clear"></div>
                 </div>
                 <div class="presidentRight R">
-                    <div class="presidentLeftTitle"><h5 class="L">零距离</h5><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897" class="R">更多&gt;&gt;</a></div>
+                    <div class="presidentLeftTitle"><h5 class="L">零距离</h5><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897" class="R" target="_blank">更多&gt;&gt;</a></div>
                     <div class="clear"></div>
                     <!-- 视频在线播放 -->
                     <div class="presidentRightRideo">
@@ -326,28 +346,28 @@
             <div class="team_inner_list">
             	<ul>
             		<li>
-            		    <a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"  class="onlineConsultant">在线咨询</a>
-                        <a href=""  class="contactMe">给我留言</a>    
+            		    <a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"  class="onlineConsultant" target="_blank">在线咨询</a>
+                        <a href=""  class="contactMe" target="_blank">给我留言</a>    
             		</li>
             		<li>
-            		    <a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"  class="onlineConsultant">在线咨询</a>
-                        <a href=""  class="contactMe">给我留言</a> 
+            		    <a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"  class="onlineConsultant" target="_blank">在线咨询</a>
+                        <a href=""  class="contactMe" target="_blank">给我留言</a> 
             		</li>
             		<li>
-            		    <a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"  class="onlineConsultant">在线咨询</a>
-                        <a href=""  class="contactMe">给我留言</a> 
+            		    <a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"  class="onlineConsultant" target="_blank">在线咨询</a>
+                        <a href=""  class="contactMe" target="_blank">给我留言</a> 
             		</li>
             		<li>
-            		    <a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"  class="onlineConsultant">在线咨询</a>
-                        <a href=""  class="contactMe">给我留言</a> 
+            		    <a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"  class="onlineConsultant" target="_blank">在线咨询</a>
+                        <a href=""  class="contactMe" target="_blank">给我留言</a> 
             		</li>
             		<li>
-            		    <a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"  class="onlineConsultant">在线咨询</a>
-                        <a href=""  class="contactMe">给我留言</a> 
+            		    <a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"  class="onlineConsultant" target="_blank">在线咨询</a>
+                        <a href=""  class="contactMe" target="_blank">给我留言</a> 
             		</li>
             		<li>
-                        <a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"  class="onlineConsultant">在线咨询</a>
-                        <a href=""  class="contactMe">给我留言</a> 
+                        <a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897"  class="onlineConsultant" target="_blank">在线咨询</a>
+                        <a href=""  class="contactMe" target="_blank">给我留言</a> 
             		</li>
             	</ul>
             </div>
@@ -358,27 +378,35 @@
         <div class="inner">
             <div class="public_top textLeft">
                  <h3>调研大讲堂</h3>
-                 <a href="">更多&gt;&gt;</a>
+                 <a href="" target="_blank">更多&gt;&gt;</a>
             </div>
             <div class="clear"></div>
             <p class="TitleP">精英团队为您提供专业的方案</p>
             <div>
-                <div class="classroomVideo L"><a href="">
-                    <img src="./images/index/abc.png">
-                    <p><span>01</span><i>工业市场调研工业市场调研工业市场调研</i>
-                        <em>2018-05-25</em></p></a>
+                <div class="classroomVideo L">
+                    <a href="" target="_blank">
+                        <img src="./images/index/abc.png">
+                        <p>
+                            <span>01</span><i>工业市场调研工业市场调研工业市场调研</i>
+                            <em>2018-05-25</em>
+                        </p>
+                    </a>
                 </div>
-                 <div class="classroomVideo L"><a href="">
-                    <img src="./images/index/abc.png">
-                    <p><span>02</span><i>工业市场调研工业市场调研工业市场调研</i>
-                        <em>2018-05-25</em></p></a>
+                 <div class="classroomVideo L">
+                    <a href="" target="_blank">
+                        <img src="./images/index/abc.png">
+                        <p>
+                            <span>02</span><i>工业市场调研工业市场调研工业市场调研</i>
+                            <em>2018-05-25</em>
+                        </p>
+                    </a>
                 </div>
                 <div class="classroomList L">
                     <ul>
-                        <li><a href=""><span>03</span><p><i>工业市场调研工业市场调研工业市场调研</i><em>2018-05-25</em></p><div class="clear"></div></a></li>
-                        <li><a href=""><span>04</span><p><i>工业市场调研工业市场调研工业市场调研</i><em>2018-05-25</em></p><div class="clear"></div></a></li>
-                        <li><a href=""><span>05</span><p><i>工业市场调研工业市场调研工业市场调研</i><em>2018-05-25</em></p><div class="clear"></div></a></li>
-                        <li><a href=""><span>06</span><p><i>工业市场调研工业市场调研工业市场调研</i><em>2018-05-25</em></p><div class="clear"></div></a></li>
+                        <li><a href="" target="_blank"><span>03</span><p><i>工业市场调研工业市场调研工业市场调研</i><em>2018-05-25</em></p><div class="clear"></div></a></li>
+                        <li><a href="" target="_blank"><span>04</span><p><i>工业市场调研工业市场调研工业市场调研</i><em>2018-05-25</em></p><div class="clear"></div></a></li>
+                        <li><a href="" target="_blank"><span>05</span><p><i>工业市场调研工业市场调研工业市场调研</i><em>2018-05-25</em></p><div class="clear"></div></a></li>
+                        <li><a href="" target="_blank"><span>06</span><p><i>工业市场调研工业市场调研工业市场调研</i><em>2018-05-25</em></p><div class="clear"></div></a></li>
                     </ul>
                 </div>
             </div>
@@ -390,7 +418,7 @@
         <div class="inner">
             <div class="public_top textLeft">
                 <h3>成功案例</h3>
-                <a href="">更多&gt;&gt;</a>
+                <a href="" target="_blank">更多&gt;&gt;</a>
             </div>
             <div class="clear"></div>
             <p class="TitleP">不忘初心&nbsp以诚为本</p>
@@ -401,7 +429,7 @@
                             @foreach($case as $case)
                                 <li>
                                     <div class="diaplayShow">
-                                        <p><img src="{{$case->img_path}}"/></p>
+                                        <p class="psImg"><img src="{{$case->img_path}}"/></p>
                                         <div class="arrowHeight">
                                             <p class="arrow"></p>
                                             <p>{{$case->case_name}}</p>
@@ -410,7 +438,7 @@
                                     <div class="diaplayHide">
                                         <p class="IndustrialResearch">{{$case->case_name}}</p>
                                         <p class="IndustrialResearchText">{{$case->case_miaoshu}}</p>
-                                        <p class="ForDetails"><a href="{{url('/case_xiang')}}?id={{$case->id}}">了解详情</a></p>
+                                        <p class="ForDetails"><a href="{{url('/case_xiang')}}?id={{$case->id}}" target="_blank">了解详情</a></p>
                                     </div>
                                 </li>
                             @endforeach
@@ -419,7 +447,7 @@
                     <div id="demo2"></div>
                 </div>
             </div>
-            <div class="case_inner_more"><a href="http://p.qiao.baidu.com/cps/chat?siteId=4348149&userId=7029897">了解更多&nbsp&nbsp&gt&gt</a></div>
+            <div class="case_inner_more"><a href="{{url('/casemore')}}" target="_blank">了解更多&nbsp&nbsp&gt&gt</a></div>
         </div>
     </div>
     <!-- 注册 -->
