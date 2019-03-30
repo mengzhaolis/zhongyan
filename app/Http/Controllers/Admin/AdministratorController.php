@@ -27,6 +27,7 @@ class AdministratorController extends CommonController
         $data = $request->input();
         if(empty($data))
         {
+            // 角色查询
            $data = DB::table("role")->where('status','=',1)->get();
            return view('Admin.Administrator.administrator',['data'=>$data]);
         }
